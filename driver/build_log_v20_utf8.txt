@@ -1,0 +1,87 @@
+﻿Running Gradle task 'assembleDebug'...                          
+flutter : lib/functions/notificati
+ons.dart:52:36: Error: No named 
+parameter with the name 
+'initializationSettings'.
+At line:1 char:1
++ flutter build apk --debug > 
+build_log_v20.txt 2>&1
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : Not 
+   Specified: (lib/functions/n..  
+  .ationSettings'.:String) [],    
+ RemoteException
+    + FullyQualifiedErrorId : Nat 
+   iveCommandError
+ 
+  await fltNotification.initialize
+(initializationSettings: 
+initSetting);
+                                  
+ ^^^^^^^^^^^^^^^^^^^^^^
+lib/functions/notifications.dart:1
+31:9: Error: No named parameter 
+with the name 
+'initializationSettings'.
+        initializationSettings: 
+initSetting,
+        ^^^^^^^^^^^^^^^^^^^^^^
+lib/functions/notifications.dart:1
+55:9: Error: No named parameter 
+with the name 
+'initializationSettings'.
+        initializationSettings: 
+initSetting,
+        ^^^^^^^^^^^^^^^^^^^^^^
+lib/functions/notifications.dart:1
+86:7: Error: No named parameter 
+with the name 
+'initializationSettings'.
+      initializationSettings: 
+initSetting,
+      ^^^^^^^^^^^^^^^^^^^^^^
+lib/functions/notifications.dart:2
+17:31: Error: No named parameter 
+with the name 
+'initializationSettings'.
+  rideNotification.initialize(init
+ializationSettings: initSetting);
+                              
+^^^^^^^^^^^^^^^^^^^^^^
+lib/functions/notifications.dart:2
+46:31: Error: No named parameter 
+with the name 
+'initializationSettings'.
+  rideNotification.initialize(init
+ializationSettings: initSetting);
+                              
+^^^^^^^^^^^^^^^^^^^^^^
+Target kernel_snapshot_program 
+failed: Exception
+
+
+FAILURE: Build failed with an 
+exception.
+
+* What went wrong:
+Execution failed for task 
+':app:compileFlutterBuildDebug'.
+> Process 'command 'C:\tools\flutt
+er\bin\flutter.bat'' finished 
+with non-zero exit value 1
+
+* Try:
+> Run with --stacktrace option to 
+get the stack trace.
+> Run with --info or --debug 
+option to get more log output.
+> Run with --scan to get full 
+insights.
+> Get more help at 
+https://help.gradle.org.
+
+BUILD FAILED in 22s
+Running Gradle task 'assembleDebug'...                             22.9s
+Gradle task assembleDebug failed 
+with exit code 1

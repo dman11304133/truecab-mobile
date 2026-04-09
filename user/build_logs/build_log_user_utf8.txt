@@ -1,0 +1,326 @@
+﻿Upgrading build.gradle
+Running Gradle task 'assembleDebug'...                          
+flutter : e: Daemon compilation 
+failed: null
+At line:1 char:1
++ flutter build apk --debug > 
+build_log_user.txt 2>&1
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~
+    + CategoryInfo          : Not    
+Specified: (e: Daemon compila    tion 
+failed: null:String) [],     
+RemoteException
+    + FullyQualifiedErrorId : Nat    
+iveCommandError
+ 
+java.lang.Exception
+	at org.jetbrains.kotlin.daemon.common
+.CompileService$CallResult$Error.get(C
+ompileService.kt:69)
+	at org.jetbrains.kotlin.daemon.common
+.CompileService$CallResult$Error.get(C
+ompileService.kt:65)
+	at org.jetbrains.kotlin.compilerRunne
+r.GradleKotlinCompilerWork.compileWith
+Daemon(GradleKotlinCompilerWork.kt:244
+)
+	at org.jetbrains.kotlin.compilerRunne
+r.GradleKotlinCompilerWork.compileWith
+DaemonOrFallbackImpl(GradleKotlinCompi
+lerWork.kt:175)
+	at org.jetbrains.kotlin.compilerRunne
+r.GradleKotlinCompilerWork.run(GradleK
+otlinCompilerWork.kt:135)
+	at org.jetbrains.kotlin.compilerRunne
+r.GradleCompilerRunnerWithWorkers$Grad
+leKotlinCompilerWorkAction.execute(Gra
+dleCompilerRunnerWithWorkers.kt:73)
+	at org.gradle.workers.internal.Defaul
+tWorkerServer.execute(DefaultWorkerSer
+ver.java:63)
+	at org.gradle.workers.internal.NoIsol
+ationWorkerFactory$1$1.create(NoIsolat
+ionWorkerFactory.java:66)
+	at org.gradle.workers.internal.NoIsol
+ationWorkerFactory$1$1.create(NoIsolat
+ionWorkerFactory.java:62)
+	at org.gradle.internal.classloader.Cl
+assLoaderUtils.executeInClassloader(Cl
+assLoaderUtils.java:100)
+	at org.gradle.workers.internal.NoIsol
+ationWorkerFactory$1.lambda$execute$0(
+NoIsolationWorkerFactory.java:62)
+	at org.gradle.workers.internal.Abstra
+ctWorker$1.call(AbstractWorker.java:44
+)
+	at org.gradle.workers.internal.Abstra
+ctWorker$1.call(AbstractWorker.java:41
+)
+	at org.gradle.internal.operations.Def
+aultBuildOperationRunner$CallableBuild
+OperationWorker.execute(DefaultBuildOp
+erationRunner.java:204)
+	at org.gradle.internal.operations.Def
+aultBuildOperationRunner$CallableBuild
+OperationWorker.execute(DefaultBuildOp
+erationRunner.java:199)
+	at org.gradle.internal.operations.Def
+aultBuildOperationRunner$2.execute(Def
+aultBuildOperationRunner.java:66)
+	at org.gradle.internal.operations.Def
+aultBuildOperationRunner$2.execute(Def
+aultBuildOperationRunner.java:59)
+	at org.gradle.internal.operations.Def
+aultBuildOperationRunner.execute(Defau
+ltBuildOperationRunner.java:157)
+	at org.gradle.internal.operations.Def
+aultBuildOperationRunner.execute(Defau
+ltBuildOperationRunner.java:59)
+	at org.gradle.internal.operations.Def
+aultBuildOperationRunner.call(DefaultB
+uildOperationRunner.java:53)
+	at org.gradle.internal.operations.Def
+aultBuildOperationExecutor.call(Defaul
+tBuildOperationExecutor.java:73)
+	at org.gradle.workers.internal.Abstra
+ctWorker.executeWrappedInBuildOperatio
+n(AbstractWorker.java:41)
+	at org.gradle.workers.internal.NoIsol
+ationWorkerFactory$1.execute(NoIsolati
+onWorkerFactory.java:59)
+	at org.gradle.workers.internal.Defaul
+tWorkerExecutor.lambda$submitWork$0(De
+faultWorkerExecutor.java:170)
+	at java.base/java.util.concurrent.Fut
+ureTask.run(Unknown Source)
+	at org.gradle.internal.work.DefaultCo
+nditionalExecutionQueue$ExecutionRunne
+r.runExecution(DefaultConditionalExecu
+tionQueue.java:187)
+	at org.gradle.internal.work.DefaultCo
+nditionalExecutionQueue$ExecutionRunne
+r.access$700(DefaultConditionalExecuti
+onQueue.java:120)
+	at org.gradle.internal.work.DefaultCo
+nditionalExecutionQueue$ExecutionRunne
+r$1.run(DefaultConditionalExecutionQue
+ue.java:162)
+	at org.gradle.internal.Factories$1.cr
+eate(Factories.java:31)
+	at org.gradle.internal.work.DefaultWo
+rkerLeaseService.withLocks(DefaultWork
+erLeaseService.java:264)
+	at org.gradle.internal.work.DefaultWo
+rkerLeaseService.runAsWorkerThread(Def
+aultWorkerLeaseService.java:128)
+	at org.gradle.internal.work.DefaultWo
+rkerLeaseService.runAsWorkerThread(Def
+aultWorkerLeaseService.java:133)
+	at org.gradle.internal.work.DefaultCo
+nditionalExecutionQueue$ExecutionRunne
+r.runBatch(DefaultConditionalExecution
+Queue.java:157)
+	at org.gradle.internal.work.DefaultCo
+nditionalExecutionQueue$ExecutionRunne
+r.run(DefaultConditionalExecutionQueue
+.java:126)
+	at java.base/java.util.concurrent.Exe
+cutors$RunnableAdapter.call(Unknown 
+Source)
+	at java.base/java.util.concurrent.Fut
+ureTask.run(Unknown Source)
+	at org.gradle.internal.concurrent.Exe
+cutorPolicy$CatchAndRecordFailures.onE
+xecute(ExecutorPolicy.java:64)
+	at org.gradle.internal.concurrent.Abs
+tractManagedExecutor$1.run(AbstractMan
+agedExecutor.java:47)
+	at java.base/java.util.concurrent.Thr
+eadPoolExecutor.runWorker(Unknown 
+Source)
+	at java.base/java.util.concurrent.Thr
+eadPoolExecutor$Worker.run(Unknown 
+Source)
+	at java.base/java.lang.Thread.run(Unk
+nown Source)
+Caused by: org.jetbrains.kotlin.com.in
+tellij.util.io.PersistentEnumeratorBas
+e$CorruptedException: 
+PersistentEnumerator storage 
+corrupted C:\tools\flutter\packages\fl
+utter_tools\gradle\build\kotlin\compil
+eKotlin\cacheable\caches-jvm\lookups\l
+ookups.tab
+	at org.jetbrains.kotlin.com.intellij.
+util.io.PersistentEnumeratorBase.<init
+>(PersistentEnumeratorBase.java:178)
+	at org.jetbrains.kotlin.com.intellij.
+util.io.PersistentBTreeEnumerator.<ini
+t>(PersistentBTreeEnumerator.java:93)
+	at org.jetbrains.kotlin.com.intellij.
+util.io.PersistentEnumerator.createDef
+aultEnumerator(PersistentEnumerator.ja
+va:66)
+	at org.jetbrains.kotlin.com.intellij.
+util.io.PersistentMapImpl.<init>(Persi
+stentMapImpl.java:136)
+	at org.jetbrains.kotlin.com.intellij.
+util.io.PersistentMapBuilder.buildImpl
+ementation(PersistentMapBuilder.java:6
+2)
+	at org.jetbrains.kotlin.com.intellij.
+util.io.PersistentMapBuilder.build(Per
+sistentMapBuilder.java:44)
+	at org.jetbrains.kotlin.com.intellij.
+util.io.PersistentHashMap.<init>(Persi
+stentHashMap.java:39)
+	at org.jetbrains.kotlin.com.intellij.
+util.io.PersistentHashMap.<init>(Persi
+stentHashMap.java:54)
+	at org.jetbrains.kotlin.incremental.s
+torage.CachingLazyStorage.createMap(Ca
+chingLazyStorage.kt:128)
+	at org.jetbrains.kotlin.incremental.s
+torage.CachingLazyStorage.getStorageOr
+CreateNew(CachingLazyStorage.kt:57)
+	at org.jetbrains.kotlin.incremental.s
+torage.CachingLazyStorage.append(Cachi
+ngLazyStorage.kt:91)
+	at org.jetbrains.kotlin.incremental.s
+torage.LookupMap.append(LookupMap.kt:4
+2)
+	at org.jetbrains.kotlin.incremental.T
+rackedLookupMap.append(LookupStorage.k
+t:317)
+	at org.jetbrains.kotlin.incremental.L
+ookupStorage.addAll(LookupStorage.kt:1
+24)
+	at org.jetbrains.kotlin.incremental.B
+uildUtilKt.update(buildUtil.kt:134)
+	at org.jetbrains.kotlin.incremental.I
+ncrementalCompilerRunner.doCompile(Inc
+rementalCompilerRunner.kt:516)
+	at org.jetbrains.kotlin.incremental.I
+ncrementalCompilerRunner.compileImpl(I
+ncrementalCompilerRunner.kt:400)
+	at org.jetbrains.kotlin.incremental.I
+ncrementalCompilerRunner.compileNonInc
+rementally(IncrementalCompilerRunner.k
+t:281)
+	at org.jetbrains.kotlin.incremental.I
+ncrementalCompilerRunner.compile(Incre
+mentalCompilerRunner.kt:125)
+	at org.jetbrains.kotlin.daemon.Compil
+eServiceImplBase.execIncrementalCompil
+er(CompileServiceImpl.kt:657)
+	at org.jetbrains.kotlin.daemon.Compil
+eServiceImplBase.access$execIncrementa
+lCompiler(CompileServiceImpl.kt:105)
+	at org.jetbrains.kotlin.daemon.Compil
+eServiceImpl.compile(CompileServiceImp
+l.kt:1624)
+	at java.base/jdk.internal.reflect.Dir
+ectMethodHandleAccessor.invoke(Unknown
+ Source)
+	at java.base/java.lang.reflect.Method
+.invoke(Unknown Source)
+	at java.rmi/sun.rmi.server.UnicastSer
+verRef.dispatch(Unknown Source)
+	at java.rmi/sun.rmi.transport.Transpo
+rt$1.run(Unknown Source)
+	at java.rmi/sun.rmi.transport.Transpo
+rt$1.run(Unknown Source)
+	at java.base/java.security.AccessCont
+roller.doPrivileged(Unknown Source)
+	at java.rmi/sun.rmi.transport.Transpo
+rt.serviceCall(Unknown Source)
+	at java.rmi/sun.rmi.transport.tcp.TCP
+Transport.handleMessages(Unknown 
+Source)
+	at java.rmi/sun.rmi.transport.tcp.TCP
+Transport$ConnectionHandler.run0(Unkno
+wn Source)
+	at java.rmi/sun.rmi.transport.tcp.TCP
+Transport$ConnectionHandler.lambda$run
+$0(Unknown Source)
+	at java.base/java.security.AccessCont
+roller.doPrivileged(Unknown Source)
+	at java.rmi/sun.rmi.transport.tcp.TCP
+Transport$ConnectionHandler.run(Unknow
+n Source)
+	... 3 more
+
+exception: warning: ATTENTION!
+exception: this build uses unsafe 
+internal compiler arguments:
+exception: 
+exception: 
+exception: this mode is not 
+recommended for production use,
+exception: as no 
+stability/compatibility guarantees 
+are given on
+exception: compiler or generated 
+code. Use it at your own risk!
+exception: 
+exception: c:\tools\flutter\packages\f
+lutter_tools\gradle\src\main\kotlin\De
+pendencyVersionChecker.kt:194:39: 
+warning: 'getter for minSdkVersion: 
+AndroidVersion' is deprecated. Will 
+be removed in v9.0
+exception:             
+MinSdkVersion(it.name, 
+it.minSdkVersion.apiLevel)
+exception:                            
+           ^
+
+FAILURE: Build failed with an 
+exception.
+
+* Where:
+Build file 'C:\Users\FergentiusRosales
+\Herd\truecabtt\mobileapp\user\android
+\app\build.gradle' line: 30
+
+* What went wrong:
+Could not compile build file 'C:\Users
+\FergentiusRosales\Herd\truecabtt\mobi
+leapp\user\android\app\build.gradle'.
+> startup failed:
+  build file 'C:\Users\FergentiusRosal
+es\Herd\truecabtt\mobileapp\user\andro
+id\app\build.gradle': 30: only 
+buildscript {}, pluginManagement {} 
+and other plugins {} script blocks 
+are allowed before plugins {} blocks, 
+no other statements are allowed
+
+  For more information on the plugins 
+{} block, please refer to https://docs
+.gradle.org/8.5/userguide/plugins.html
+#sec:plugins_block in the Gradle 
+documentation.
+
+   @ line 30, column 1.
+     plugins {
+     ^
+
+  1 error
+
+
+* Try:
+> Run with --stacktrace option to get 
+the stack trace.
+> Run with --info or --debug option 
+to get more log output.
+> Run with --scan to get full 
+insights.
+> Get more help at 
+https://help.gradle.org.
+
+BUILD FAILED in 10m 7s
+Running Gradle task 'assembleDebug'...                            615.3s
+Gradle task assembleDebug failed with 
+exit code 1

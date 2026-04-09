@@ -1,0 +1,83 @@
+﻿Running Gradle task 'assembleDebug'...                          
+flutter : Warning: Flutter support 
+for your project's Kotlin version 
+(1.9.24) will soon be dropped. Please 
+upgrade your Kotlin version to a 
+version of at least 2.1.0 soon.
+At line:1 char:1
++ flutter build apk --debug > 
+build_log_v15.txt 2>&1
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpec 
+   ified: (Warning: Flutte...ast 2.1  
+  .0 soon.:String) [], RemoteExcept   
+ ion
+    + FullyQualifiedErrorId : NativeC 
+   ommandError
+ 
+Alternatively, use the flag "--android
+-skip-build-dependency-validation" to 
+bypass this check.
+
+Potential fix: Your project's KGP 
+version is typically defined in the 
+plugins block of the 
+`settings.gradle` file (C:\Users\Ferge
+ntiusRosales\Herd\truecabtt\mobileapp\
+driver\android/settings.gradle), by a 
+plugin with the id of 
+org.jetbrains.kotlin.android. 
+If you don't see a plugins block, 
+your project was likely created with 
+an older template version, in which 
+case it is most likely defined in the 
+top-level build.gradle file (C:\Users\
+FergentiusRosales\Herd\truecabtt\mobil
+eapp\driver\android/build.gradle) by 
+the ext.kotlin_version property.
+
+
+FAILURE: Build failed with an 
+exception.
+
+* What went wrong:
+A problem occurred configuring 
+project ':bubble_head'.
+> Could not create an instance of 
+type com.android.build.api.variant.imp
+l.LibraryVariantBuilderImpl.
+   > Namespace not specified. Specify 
+a namespace in the module's build 
+file: C:\Users\FergentiusRosales\AppDa
+ta\Local\Pub\Cache\hosted\pub.dev\bubb
+le_head-0.0.4\android\build.gradle. 
+See https://d.android.com/r/tools/upgr
+ade-assistant/set-namespace for 
+information about setting the 
+namespace.
+
+     If you've specified the package 
+attribute in the source 
+AndroidManifest.xml, you can use the 
+AGP Upgrade Assistant to migrate to 
+the namespace value in the build 
+file. Refer to https://d.android.com/r
+/tools/upgrade-assistant/agp-upgrade-a
+ssistant for general information 
+about using the AGP Upgrade Assistant.
+
+* Try:
+> Run with --stacktrace option to get 
+the stack trace.
+> Run with --info or --debug option 
+to get more log output.
+> Run with --scan to get full 
+insights.
+> Get more help at 
+https://help.gradle.org.
+
+BUILD FAILED in 2m 57s
+Running Gradle task 'assembleDebug'...                            178.4s
+Gradle task assembleDebug failed with 
+exit code 1

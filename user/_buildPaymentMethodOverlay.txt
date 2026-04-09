@@ -1,0 +1,537 @@
+(_choosePayment == true)
+                                      ? Positioned(
+                                          top: 0,
+                                          child: Container(
+                                            height: media.height * 1,
+                                            width: media.width * 1,
+                                            color: Colors.transparent
+                                                .withOpacity(0.6),
+                                            child: Scaffold(
+                                              backgroundColor:
+                                                  Colors.transparent,
+                                              body: SingleChildScrollView(
+                                                physics:
+                                                    const BouncingScrollPhysics(),
+                                                child: SizedBox(
+                                                  height: media.height * 1,
+                                                  width: media.width * 1,
+                                                  child: Column(
+                                                    crossAxisAlignment:
+                                                        CrossAxisAlignment
+                                                            .center,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .center,
+                                                    children: [
+                                                      SizedBox(
+                                                        width:
+                                                            media.width * 0.9,
+                                                        child: Row(
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .end,
+                                                          children: [
+                                                            InkWell(
+                                                              onTap: () {
+                                                                setState(() {
+                                                                  _choosePayment =
+                                                                      false;
+                                                                  promoKey
+                                                                      .clear();
+                                                                });
+                                                              },
+                                                              child: Container(
+                                                                height: media
+                                                                        .width *
+                                                                    0.1,
+                                                                width: media
+                                                                        .width *
+                                                                    0.1,
+                                                                decoration: BoxDecoration(
+                                                                    shape: BoxShape
+                                                                        .circle,
+                                                                    color:
+                                                                        page),
+                                                                child: const Icon(
+                                                                    Icons
+                                                                        .cancel_outlined),
+                                                              ),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                      ),
+                                                      SizedBox(
+                                                        height:
+                                                            media.width * 0.05,
+                                                      ),
+                                                      Container(
+                                                        width:
+                                                            media.width * 0.9,
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          color: page,
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(12),
+                                                        ),
+                                                        padding: EdgeInsets.all(
+                                                            media.width * 0.05),
+                                                        child: Column(
+                                                          crossAxisAlignment:
+                                                              CrossAxisAlignment
+                                                                  .start,
+                                                          children: [
+                                                            Text(
+                                                              languages[
+                                                                      choosenLanguage]
+                                                                  [
+                                                                  'text_paymentmethod'],
+                                                              style: GoogleFonts.poppins(
+                                                                  fontSize: media
+                                                                          .width *
+                                                                      twenty,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w500,
+                                                                  color:
+                                                                      textColor),
+                                                            ),
+                                                            SizedBox(
+                                                              height:
+                                                                  media.height *
+                                                                      0.015,
+                                                            ),
+                                                            Text(
+                                                              languages[
+                                                                      choosenLanguage]
+                                                                  [
+                                                                  'text_choose_paynoworlater'],
+                                                              style: GoogleFonts.poppins(
+                                                                  fontSize: media
+                                                                          .width *
+                                                                      twelve,
+                                                                  fontWeight:
+                                                                      FontWeight
+                                                                          .w500,
+                                                                  color:
+                                                                      textColor),
+                                                            ),
+                                                            SizedBox(
+                                                              height:
+                                                                  media.height *
+                                                                      0.015,
+                                                            ),
+                                                            (widget.type != 1)
+                                                                ? Column(
+                                                                    children: etaDetails[choosenVehicle]
+                                                                            [
+                                                                            'payment_type']
+                                                                        .toString()
+                                                                        .split(
+                                                                            ',')
+                                                                        .toList()
+                                                                        .asMap()
+                                                                        .map((i,
+                                                                            value) {
+                                                                          return MapEntry(
+                                                                              i,
+                                                                              InkWell(
+                                                                                onTap: () {
+                                                                                  setState(() {
+                                                                                    payingVia = i;
+                                                                                  });
+                                                                                },
+                                                                                child: Container(
+                                                                                  padding: EdgeInsets.all(media.width * 0.02),
+                                                                                  width: media.width * 0.9,
+                                                                                  child: Column(
+                                                                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                                                                    children: [
+                                                                                      Row(
+                                                                                        children: [
+                                                                                          SizedBox(
+                                                                                            width: media.width * 0.06,
+                                                                                            child: (etaDetails[choosenVehicle]['payment_type'].toString().split(',').toList()[i] == 'cash')
+                                                                                                ? Image.asset(
+                                                                                                    'assets/images/cash.png',
+                                                                                                    fit: BoxFit.contain,
+                                                                                                  )
+                                                                                                : (etaDetails[choosenVehicle]['payment_type'].toString().split(',').toList()[i] == 'wallet')
+                                                                                                    ? Image.asset(
+                                                                                                        'assets/images/wallet.png',
+                                                                                                        fit: BoxFit.contain,
+                                                                                                      )
+                                                                                                    : (etaDetails[choosenVehicle]['payment_type'].toString().split(',').toList()[i] == 'card')
+                                                                                                        ? Image.asset(
+                                                                                                            'assets/images/card.png',
+                                                                                                            fit: BoxFit.contain,
+                                                                                                          )
+                                                                                                        : (etaDetails[choosenVehicle]['payment_type'].toString().split(',').toList()[i] == 'upi')
+                                                                                                            ? Image.asset(
+                                                                                                                'assets/images/upi.png',
+                                                                                                                fit: BoxFit.contain,
+                                                                                                              )
+                                                                                                            : Container(),
+                                                                                          ),
+                                                                                          SizedBox(
+                                                                                            width: media.width * 0.05,
+                                                                                          ),
+                                                                                          Column(
+                                                                                            crossAxisAlignment: CrossAxisAlignment.start,
+                                                                                            children: [
+                                                                                              Text(
+                                                                                                etaDetails[choosenVehicle]['payment_type'].toString().split(',').toList()[i].toString(),
+                                                                                                style: GoogleFonts.poppins(fontSize: media.width * fourteen, fontWeight: FontWeight.w500),
+                                                                                              ),
+                                                                                              Text(
+                                                                                                (etaDetails[choosenVehicle]['payment_type'].toString().split(',').toList()[i] == 'cash')
+                                                                                                    ? languages[choosenLanguage]['text_paycash']
+                                                                                                    : (etaDetails[choosenVehicle]['payment_type'].toString().split(',').toList()[i] == 'wallet')
+                                                                                                        ? languages[choosenLanguage]['text_paywallet']
+                                                                                                        : (etaDetails[choosenVehicle]['payment_type'].toString().split(',').toList()[i] == 'card')
+                                                                                                            ? languages[choosenLanguage]['text_paycard']
+                                                                                                            : (etaDetails[choosenVehicle]['payment_type'].toString().split(',').toList()[i] == 'upi')
+                                                                                                                ? languages[choosenLanguage]['text_payupi']
+                                                                                                                : '',
+                                                                                                style: GoogleFonts.poppins(
+                                                                                                  fontSize: media.width * ten,
+                                                                                                ),
+                                                                                              )
+                                                                                            ],
+                                                                                          ),
+                                                                                          Expanded(
+                                                                                              child: Row(
+                                                                                            mainAxisAlignment: MainAxisAlignment.end,
+                                                                                            children: [
+                                                                                              Container(
+                                                                                                height: media.width * 0.05,
+                                                                                                width: media.width * 0.05,
+                                                                                                decoration: BoxDecoration(shape: BoxShape.circle, color: page, border: Border.all(color: Colors.black, width: 1.2)),
+                                                                                                alignment: Alignment.center,
+                                                                                                child: (payingVia == i) ? Container(height: media.width * 0.03, width: media.width * 0.03, decoration: const BoxDecoration(color: Colors.black, shape: BoxShape.circle)) : Container(),
+                                                                                              )
+                                                                                            ],
+                                                                                          ))
+                                                                                        ],
+                                                                                      )
+                                                                                    ],
+                                                                                  ),
+                                                                                ),
+                                                                              ));
+                                                                        })
+                                                                        .values
+                                                                        .toList(),
+                                                                  )
+                                                                : Column(
+                                                                    children: rentalOption[choosenVehicle]
+                                                                            [
+                                                                            'payment_type']
+                                                                        .toString()
+                                                                        .split(
+                                                                            ',')
+                                                                        .toList()
+                                                                        .asMap()
+                                                                        .map((i,
+                                                                            value) {
+                                                                          return MapEntry(
+                                                                              i,
+                                                                              InkWell(
+                                                                                onTap: () {
+                                                                                  setState(() {
+                                                                                    payingVia = i;
+                                                                                  });
+                                                                                },
+                                                                                child: Container(
+                                                                                  padding: EdgeInsets.all(media.width * 0.02),
+                                                                                  width: media.width * 0.9,
+                                                                                  child: Column(
+                                                                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                                                                    children: [
+                                                                                      Row(
+                                                                                        children: [
+                                                                                          SizedBox(
+                                                                                            width: media.width * 0.06,
+                                                                                            child: (rentalOption[choosenVehicle]['payment_type'].toString().split(',').toList()[i] == 'cash')
+                                                                                                ? Image.asset(
+                                                                                                    'assets/images/cash.png',
+                                                                                                    fit: BoxFit.contain,
+                                                                                                  )
+                                                                                                : (rentalOption[choosenVehicle]['payment_type'].toString().split(',').toList()[i] == 'wallet')
+                                                                                                    ? Image.asset(
+                                                                                                        'assets/images/wallet.png',
+                                                                                                        fit: BoxFit.contain,
+                                                                                                      )
+                                                                                                    : (rentalOption[choosenVehicle]['payment_type'].toString().split(',').toList()[i] == 'card')
+                                                                                                        ? Image.asset(
+                                                                                                            'assets/images/card.png',
+                                                                                                            fit: BoxFit.contain,
+                                                                                                          )
+                                                                                                        : (rentalOption[choosenVehicle]['payment_type'].toString().split(',').toList()[i] == 'upi')
+                                                                                                            ? Image.asset(
+                                                                                                                'assets/images/upi.png',
+                                                                                                                fit: BoxFit.contain,
+                                                                                                              )
+                                                                                                            : Container(),
+                                                                                          ),
+                                                                                          SizedBox(
+                                                                                            width: media.width * 0.05,
+                                                                                          ),
+                                                                                          Column(
+                                                                                            crossAxisAlignment: CrossAxisAlignment.start,
+                                                                                            children: [
+                                                                                              Text(
+                                                                                                rentalOption[choosenVehicle]['payment_type'].toString().split(',').toList()[i].toString(),
+                                                                                                style: GoogleFonts.poppins(fontSize: media.width * fourteen, fontWeight: FontWeight.w500),
+                                                                                              ),
+                                                                                              Text(
+                                                                                                (rentalOption[choosenVehicle]['payment_type'].toString().split(',').toList()[i] == 'cash')
+                                                                                                    ? languages[choosenLanguage]['text_paycash']
+                                                                                                    : (rentalOption[choosenVehicle]['payment_type'].toString().split(',').toList()[i] == 'wallet')
+                                                                                                        ? languages[choosenLanguage]['text_paywallet']
+                                                                                                        : (rentalOption[choosenVehicle]['payment_type'].toString().split(',').toList()[i] == 'card')
+                                                                                                            ? languages[choosenLanguage]['text_paycard']
+                                                                                                            : (rentalOption[choosenVehicle]['payment_type'].toString().split(',').toList()[i] == 'upi')
+                                                                                                                ? languages[choosenLanguage]['text_payupi']
+                                                                                                                : '',
+                                                                                                style: GoogleFonts.poppins(
+                                                                                                  fontSize: media.width * ten,
+                                                                                                ),
+                                                                                              )
+                                                                                            ],
+                                                                                          ),
+                                                                                          Expanded(
+                                                                                              child: Row(
+                                                                                            mainAxisAlignment: MainAxisAlignment.end,
+                                                                                            children: [
+                                                                                              Container(
+                                                                                                height: media.width * 0.05,
+                                                                                                width: media.width * 0.05,
+                                                                                                decoration: BoxDecoration(shape: BoxShape.circle, color: page, border: Border.all(color: Colors.black, width: 1.2)),
+                                                                                                alignment: Alignment.center,
+                                                                                                child: (payingVia == i) ? Container(height: media.width * 0.03, width: media.width * 0.03, decoration: const BoxDecoration(color: Colors.black, shape: BoxShape.circle)) : Container(),
+                                                                                              )
+                                                                                            ],
+                                                                                          ))
+                                                                                        ],
+                                                                                      )
+                                                                                    ],
+                                                                                  ),
+                                                                                ),
+                                                                              ));
+                                                                        })
+                                                                        .values
+                                                                        .toList(),
+                                                                  ),
+                                                            SizedBox(
+                                                              height:
+                                                                  media.height *
+                                                                      0.02,
+                                                            ),
+                                                            Container(
+                                                              decoration:
+                                                                  BoxDecoration(
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            12),
+                                                                border: Border.all(
+                                                                    color:
+                                                                        borderLines,
+                                                                    width: 1.2),
+                                                              ),
+                                                              padding: EdgeInsets
+                                                                  .fromLTRB(
+                                                                      media.width *
+                                                                          0.025,
+                                                                      0,
+                                                                      media.width *
+                                                                          0.025,
+                                                                      0),
+                                                              width:
+                                                                  media.width *
+                                                                      0.9,
+                                                              child: Row(
+                                                                children: [
+                                                                  Icon(
+                                                                    Icons.discount,
+                                                                    size: media.width * 0.06,
+                                                                    color: textColor,
+                                                                  ),
+                                                                  SizedBox(
+                                                                    width: media
+                                                                            .width *
+                                                                        0.05,
+                                                                  ),
+                                                                  Expanded(
+                                                                    child: (promoStatus ==
+                                                                            null)
+                                                                        ? TextField(
+                                                                            controller:
+                                                                                promoKey,
+                                                                            onChanged:
+                                                                                (val) {
+                                                                              setState(() {
+                                                                                promoCode = val;
+                                                                              });
+                                                                            },
+                                                                            decoration: InputDecoration(
+                                                                                border: InputBorder.none,
+                                                                                hintText: languages[choosenLanguage]['text_enterpromo'],
+                                                                                hintStyle: GoogleFonts.poppins(fontSize: media.width * twelve, color: hintColor)),
+                                                                          )
+                                                                        : (promoStatus ==
+                                                                                1)
+                                                                            ? Container(
+                                                                                padding: EdgeInsets.fromLTRB(0, media.width * 0.045, 0, media.width * 0.045),
+                                                                                child: Row(
+                                                                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                                                  children: [
+                                                                                    Column(
+                                                                                      children: [
+                                                                                        Text(promoKey.text, style: GoogleFonts.poppins(fontSize: media.width * ten, color: const Color(0xff319900))),
+                                                                                        Text(languages[choosenLanguage]['text_promoaccepted'], style: GoogleFonts.poppins(fontSize: media.width * ten, color: const Color(0xff319900))),
+                                                                                      ],
+                                                                                    ),
+                                                                                    InkWell(
+                                                                                      onTap: () async {
+                                                                                        setState(() {
+                                                                                          isLoading = true;
+                                                                                        });
+                                                                                        dynamic result;
+                                                                                        if (widget.type != 1) {
+                                                                                          result = await etaRequest(outstation: isOutStation);
+                                                                                        } else {
+                                                                                          result = await rentalEta();
+                                                                                        }
+                                                                                        setState(() {
+                                                                                          isLoading = false;
+                                                                                          if (result == true) {
+                                                                                            promoStatus = null;
+                                                                                            promoCode = '';
+                                                                                          } else if (result == 'logout') {
+                                                                                            navigateLogout();
+                                                                                          }
+                                                                                        });
+                                                                                      },
+                                                                                      child: Text(languages[choosenLanguage]['text_remove'], style: GoogleFonts.poppins(fontSize: media.width * twelve, color: const Color(0xff319900))),
+                                                                                    )
+                                                                                  ],
+                                                                                ),
+                                                                              )
+                                                                            : (promoStatus == 2)
+                                                                                ? Container(
+                                                                                    padding: EdgeInsets.fromLTRB(0, media.width * 0.045, 0, media.width * 0.045),
+                                                                                    child: Row(
+                                                                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                                                      children: [
+                                                                                        Text(promoKey.text, style: GoogleFonts.poppins(fontSize: media.width * twelve, color: const Color(0xffFF0000))),
+                                                                                        InkWell(
+                                                                                          onTap: () async {
+                                                                                            setState(() {
+                                                                                              promoStatus = null;
+                                                                                              promoCode = '';
+                                                                                              promoKey.clear();
+                                                                                            });
+                                                                                            dynamic val;
+                                                                                            // promoKey.text = promoCode;
+                                                                                            if (widget.type != 1) {
+                                                                                              val = await etaRequest(outstation: isOutStation);
+                                                                                            } else {
+                                                                                              val = await rentalEta();
+                                                                                            }
+                                                                                            if (val == 'logout') {
+                                                                                              navigateLogout();
+                                                                                            }
+                                                                                            setState(() {});
+                                                                                          },
+                                                                                          child: Text(languages[choosenLanguage]['text_remove'], style: GoogleFonts.poppins(fontSize: media.width * twelve, color: const Color(0xffFF0000))),
+                                                                                        )
+                                                                                      ],
+                                                                                    ),
+                                                                                  )
+                                                                                : Container(),
+                                                                  )
+                                                                ],
+                                                              ),
+                                                            ),
+
+                                                            //promo code status
+                                                            (promoStatus == 2)
+                                                                ? Container(
+                                                                    width: media
+                                                                            .width *
+                                                                        0.9,
+                                                                    alignment:
+                                                                        Alignment
+                                                                            .center,
+                                                                    padding: EdgeInsets.only(
+                                                                        top: media.height *
+                                                                            0.02),
+                                                                    child: Text(
+                                                                        languages[choosenLanguage]
+                                                                            [
+                                                                            'text_promorejected'],
+                                                                        style: GoogleFonts.poppins(
+                                                                            fontSize: media.width *
+                                                                                ten,
+                                                                            color:
+                                                                                const Color(0xffFF0000))),
+                                                                  )
+                                                                : Container(),
+                                                            SizedBox(
+                                                              height:
+                                                                  media.height *
+                                                                      0.02,
+                                                            ),
+                                                            Button(
+                                                                onTap:
+                                                                    () async {
+                                                                  if (promoCode ==
+                                                                      '') {
+                                                                    setState(
+                                                                        () {
+                                                                      _choosePayment =
+                                                                          false;
+                                                                    });
+                                                                  } else {
+                                                                    setState(
+                                                                        () {
+                                                                      isLoading =
+                                                                          true;
+                                                                    });
+                                                                    dynamic val;
+                                                                    if (widget
+                                                                            .type !=
+                                                                        1) {
+                                                                      val = await etaRequestWithPromo(
+                                                                          outstation:
+                                                                              isOutStation);
+                                                                    } else {
+                                                                      val =
+                                                                          await rentalRequestWithPromo();
+                                                                    }
+                                                                    if (val ==
+                                                                        'logout') {
+                                                                      navigateLogout();
+                                                                    }
+                                                                    setState(
+                                                                        () {
+                                                                      isLoading =
+                                                                          false;
+                                                                    });
+                                                                  }
+                                                                },
+                                                                text: languages[
+                                                                        choosenLanguage]
+                                                                    [
+                                                                    'text_confirm'])
+                                                          ],
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          ))
+                                      : Container()

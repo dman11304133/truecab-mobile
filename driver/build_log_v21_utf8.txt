@@ -1,0 +1,88 @@
+﻿Running Gradle task 'assembleDebug'...                          
+flutter : 
+At line:1 char:1
++ flutter build apk --debug > 
+build_log_v21.txt 2>&1
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : Not 
+   Specified: (:String) [], Remo  
+  teException
+    + FullyQualifiedErrorId : Nat 
+   iveCommandError
+ 
+FAILURE: Build failed with an 
+exception.
+
+* What went wrong:
+Execution failed for task 
+':app:checkDebugAarMetadata'.
+> A failure occurred while 
+executing com.android.build.gradle
+.internal.tasks.CheckAarMetadataWo
+rkAction
+   > 6 issues were found when 
+checking AAR metadata:
+
+       1.  Dependency 
+'androidx.browser:browser:1.9.0' 
+requires Android Gradle plugin 
+8.9.1 or higher.
+
+           This build currently 
+uses Android Gradle plugin 8.6.0.
+
+       2.  Dependency 'androidx.ac
+tivity:activity-ktx:1.12.4' 
+requires Android Gradle plugin 
+8.9.1 or higher.
+
+           This build currently 
+uses Android Gradle plugin 8.6.0.
+
+       3.  Dependency 'androidx.ac
+tivity:activity:1.12.4' requires 
+Android Gradle plugin 8.9.1 or 
+higher.
+
+           This build currently 
+uses Android Gradle plugin 8.6.0.
+
+       4.  Dependency 'androidx.na
+vigationevent:navigationevent-andr
+oid:1.0.2' requires Android 
+Gradle plugin 8.9.1 or higher.
+
+           This build currently 
+uses Android Gradle plugin 8.6.0.
+
+       5.  Dependency 
+'androidx.core:core-ktx:1.17.0' 
+requires Android Gradle plugin 
+8.9.1 or higher.
+
+           This build currently 
+uses Android Gradle plugin 8.6.0.
+
+       6.  Dependency 
+'androidx.core:core:1.17.0' 
+requires Android Gradle plugin 
+8.9.1 or higher.
+
+           This build currently 
+uses Android Gradle plugin 8.6.0.
+
+* Try:
+> Run with --stacktrace option to 
+get the stack trace.
+> Run with --info or --debug 
+option to get more log output.
+> Run with --scan to get full 
+insights.
+> Get more help at 
+https://help.gradle.org.
+
+BUILD FAILED in 1m 21s
+Running Gradle task 'assembleDebug'...                             82.2s
+Gradle task assembleDebug failed 
+with exit code 1

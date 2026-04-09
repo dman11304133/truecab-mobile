@@ -1,0 +1,144 @@
+﻿Running Gradle task 'assembleDebug'...                          
+flutter : warning: [options] 
+source value 8 is obsolete and 
+will be removed in a future 
+release
+At line:1 char:1
++ flutter build apk --debug > 
+build_log_v18.txt 2>&1
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : Not 
+   Specified: (warning: [optio..  
+  . future release:String) [],    
+ RemoteException
+    + FullyQualifiedErrorId : Nat 
+   iveCommandError
+ 
+warning: [options] target value 8 
+is obsolete and will be removed 
+in a future release
+warning: [options] To suppress 
+warnings about obsolete options, 
+use -Xlint:-options.
+Note: C:\Users\FergentiusRosales\A
+ppData\Local\Pub\Cache\hosted\pub.
+dev\bubble_head-0.0.4\android\src\
+main\java\com\dsaved\bubblehead\bu
+bble\BubbleHeadService.java uses 
+or overrides a deprecated API.
+Note: Recompile with 
+-Xlint:deprecation for details.
+3 warnings
+warning: [options] source value 8 
+is obsolete and will be removed 
+in a future release
+warning: [options] target value 8 
+is obsolete and will be removed 
+in a future release
+warning: [options] To suppress 
+warnings about obsolete options, 
+use -Xlint:-options.
+C:\Users\FergentiusRosales\AppData
+\Local\Pub\Cache\hosted\pub.dev\co
+ntacts_service-0.6.3\android\src\m
+ain\java\flutter\plugins\contactss
+ervice\contactsservice\ContactsSer
+vicePlugin.java:44: error: cannot 
+find symbol
+import io.flutter.plugin.common.Pl
+uginRegistry.Registrar;
+                                  
+            ^
+  symbol:   class Registrar
+  location: interface 
+PluginRegistry
+C:\Users\FergentiusRosales\AppData
+\Local\Pub\Cache\hosted\pub.dev\co
+ntacts_service-0.6.3\android\src\m
+ain\java\flutter\plugins\contactss
+ervice\contactsservice\ContactsSer
+vicePlugin.java:69: error: cannot 
+find symbol
+  private void initDelegateWithReg
+ister(Registrar registrar) {
+                                  
+      ^
+  symbol:   class Registrar
+  location: class 
+ContactsServicePlugin
+C:\Users\FergentiusRosales\AppData
+\Local\Pub\Cache\hosted\pub.dev\co
+ntacts_service-0.6.3\android\src\m
+ain\java\flutter\plugins\contactss
+ervice\contactsservice\ContactsSer
+vicePlugin.java:73: error: cannot 
+find symbol
+  public static void 
+registerWith(Registrar registrar) 
+{
+                                  
+^
+  symbol:   class Registrar
+  location: class 
+ContactsServicePlugin
+C:\Users\FergentiusRosales\AppData
+\Local\Pub\Cache\hosted\pub.dev\co
+ntacts_service-0.6.3\android\src\m
+ain\java\flutter\plugins\contactss
+ervice\contactsservice\ContactsSer
+vicePlugin.java:378: error: 
+cannot find symbol
+    private final 
+PluginRegistry.Registrar 
+registrar;
+                                ^
+  symbol:   class Registrar
+  location: interface 
+PluginRegistry
+C:\Users\FergentiusRosales\AppData
+\Local\Pub\Cache\hosted\pub.dev\co
+ntacts_service-0.6.3\android\src\m
+ain\java\flutter\plugins\contactss
+ervice\contactsservice\ContactsSer
+vicePlugin.java:380: error: 
+cannot find symbol
+    ContactServiceDelegateOld(Plug
+inRegistry.Registrar registrar) {
+                                  
+          ^
+  symbol:   class Registrar
+  location: interface 
+PluginRegistry
+Note: C:\Users\FergentiusRosales\A
+ppData\Local\Pub\Cache\hosted\pub.
+dev\contacts_service-0.6.3\android
+\src\main\java\flutter\plugins\con
+tactsservice\contactsservice\Conta
+ctsServicePlugin.java uses or 
+overrides a deprecated API.
+Note: Recompile with 
+-Xlint:deprecation for details.
+5 errors
+3 warnings
+
+FAILURE: Build failed with an 
+exception.
+
+* What went wrong:
+Execution failed for task ':contac
+ts_service:compileDebugJavaWithJav
+ac'.
+> Compilation failed; see the 
+compiler error output for details.
+
+* Try:
+> Run with --info option to get 
+more log output.
+> Run with --scan to get full 
+insights.
+
+BUILD FAILED in 2m 3s
+Running Gradle task 'assembleDebug'...                            123.8s
+Gradle task assembleDebug failed 
+with exit code 1

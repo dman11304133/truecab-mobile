@@ -1,0 +1,108 @@
+Trucab tt
+
+Website:
+https://trucabtt.com
+
+------------------------------
+
+Admin login:
+https://trucabtt.com/login
+
+admin@trucabtt.com
+test@123
+
+------------------------------
+
+Dispatch login:
+https://trucabtt.com/dispatch-login
+
+dispatch@trucabtt.com
+test@123
+
+------------------------------
+
+User app
+
+https://play.google.com/store/apps/details?id=com.trucabtt.user
+
+https://apps.apple.com/app/trucabtt/id6670702226
+
+
+Number = +1868 1234567
+OTP = 123456
+
+-------------------------------
+
+Driver app
+
+https://play.google.com/store/apps/details?id=com.trucabtt.driver
+
+https://apps.apple.com/app/trucabtt-driver/id6463198285
+
+Number = +1868 1234567
+OTP = 123456
+
+--------------------------------
+
+Wipay Test
+
+4111 1111 1111 1111
+
+01/25 123
+
+--------------------------------------------
+
+
+Server Details
+
+Server ip = 162.0.238.72
+user = root
+pass = sH3k28BfVuua01J5BK
+
+
+
+Panel = server.trucabtt.com:8888
+User = trucabtt
+Pass = 1sEXhLaJLxlxbdRa
+
+
+Web Mail = server.trucabtt.com:8888/webmail
+
+User = cole@trucabtt.com
+Pass = Test@123
+
+DB = trucabtt
+User = trucabtt_usr
+Pass = JsfZWzzQXJLncM0K
+
+
+Emails
+User = info@trucabtt.com
+Pass = oLJHnw6oOq6QaLrL
+
+
+
+YT
+
+https://youtube.com/@trucabtt?si=DfGMAVVi-WiqZLpj
+
+https://www.facebook.com/trucabtt.com?mibextid=ZbWKwL
+
+https://www.instagram.com/trucabtt?igsh=ZTV6MThldWwyZ2x0
+
+https://www.tiktok.com/@trucabtt?_t=8pq1t4fra3K&_r=1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

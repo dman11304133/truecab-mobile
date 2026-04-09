@@ -1,0 +1,112 @@
+﻿Running Gradle task 'assembleDebug'...                          
+flutter : Note: Some input files 
+use or override a deprecated API.
+At line:1 char:1
++ flutter build apk --debug > 
+build_log_v23.txt 2>&1
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : 
+NotSpec    ified: (Note: Some 
+inpu...depreca    ted 
+API.:String) [], RemoteExcept    
+ion
+    + FullyQualifiedErrorId : 
+NativeC    ommandError
+ 
+Note: Recompile with 
+-Xlint:deprecation for details.
+e: file:///C:/Users/FergentiusRosa
+les/AppData/Local/Pub/Cache/hosted
+/pub.dev/flutter_google_places_sdk
+_android-0.2.2/android/src/main/ko
+tlin/com/msh/flutter_google_places
+_sdk/FlutterGooglePlacesSdkPlugin.
+kt:335:32 Unresolved reference 
+'address'.
+e: file:///C:/Users/FergentiusRosa
+les/AppData/Local/Pub/Cache/hosted
+/pub.dev/flutter_google_places_sdk
+_android-0.2.2/android/src/main/ko
+tlin/com/msh/flutter_google_places
+_sdk/FlutterGooglePlacesSdkPlugin.
+kt:340:43 Unresolved reference 
+'latLng'.
+e: file:///C:/Users/FergentiusRosa
+les/AppData/Local/Pub/Cache/hosted
+/pub.dev/flutter_google_places_sdk
+_android-0.2.2/android/src/main/ko
+tlin/com/msh/flutter_google_places
+_sdk/FlutterGooglePlacesSdkPlugin.
+kt:341:29 Unresolved reference 
+'name'.
+e: file:///C:/Users/FergentiusRosa
+les/AppData/Local/Pub/Cache/hosted
+/pub.dev/flutter_google_places_sdk
+_android-0.2.2/android/src/main/ko
+tlin/com/msh/flutter_google_places
+_sdk/FlutterGooglePlacesSdkPlugin.
+kt:342:41 Unresolved reference 
+'nameLanguageCode'.
+e: file:///C:/Users/FergentiusRosa
+les/AppData/Local/Pub/Cache/hosted
+/pub.dev/flutter_google_places_sdk
+_android-0.2.2/android/src/main/ko
+tlin/com/msh/flutter_google_places
+_sdk/FlutterGooglePlacesSdkPlugin.
+kt:344:36 Unresolved reference 
+'phoneNumber'.
+e: file:///C:/Users/FergentiusRosa
+les/AppData/Local/Pub/Cache/hosted
+/pub.dev/flutter_google_places_sdk
+_android-0.2.2/android/src/main/ko
+tlin/com/msh/flutter_google_places
+_sdk/FlutterGooglePlacesSdkPlugin.
+kt:350:41 Unresolved reference 
+'userRatingsTotal'.
+e: file:///C:/Users/FergentiusRosa
+les/AppData/Local/Pub/Cache/hosted
+/pub.dev/flutter_google_places_sdk
+_android-0.2.2/android/src/main/ko
+tlin/com/msh/flutter_google_places
+_sdk/FlutterGooglePlacesSdkPlugin.
+kt:507:36 Unresolved reference 
+'placeTypes'.
+e: file:///C:/Users/FergentiusRosa
+les/AppData/Local/Pub/Cache/hosted
+/pub.dev/flutter_google_places_sdk
+_android-0.2.2/android/src/main/ko
+tlin/com/msh/flutter_google_places
+_sdk/FlutterGooglePlacesSdkPlugin.
+kt:507:54 Unresolved reference 
+'it'.
+
+FAILURE: Build failed with an 
+exception.
+
+* What went wrong:
+Execution failed for task ':flutte
+r_google_places_sdk_android:compil
+eDebugKotlin'.
+> A failure occurred while 
+executing org.jetbrains.kotlin.com
+pilerRunner.GradleCompilerRunnerWi
+thWorkers$GradleKotlinCompilerWork
+Action
+   > Compilation error. See log 
+for more details
+
+* Try:
+> Run with --stacktrace option to 
+get the stack trace.
+> Run with --info or --debug 
+option to get more log output.
+> Run with --scan to get full 
+insights.
+> Get more help at 
+https://help.gradle.org.
+
+BUILD FAILED in 1m 9s
+Running Gradle task 'assembleDebug'...                             69.8s
+Gradle task assembleDebug failed 
+with exit code 1

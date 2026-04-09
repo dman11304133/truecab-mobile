@@ -1,0 +1,139 @@
+﻿flutter : warning: [options] source 
+value 8 is obsolete and will be 
+removed in a future release
+At line:1 char:1
++ flutter build apk --debug > 
+build_log_v24.txt 2>&1
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpec 
+   ified: (warning: [optio... future  
+   release:String) [], RemoteExcept   
+ ion
+    + FullyQualifiedErrorId : NativeC 
+   ommandError
+ 
+Running Gradle task 'assembleDebug'...                          
+warning: [options] target value 8 is 
+obsolete and will be removed in a 
+future release
+warning: [options] To suppress 
+warnings about obsolete options, use 
+-Xlint:-options.
+e: file:///C:/Users/FergentiusRosales/
+AppData/Local/Pub/Cache/hosted/pub.dev
+/flutter_google_places_sdk_android-0.2
+.2/android/src/main/kotlin/com/msh/flu
+tter_google_places_sdk/FlutterGooglePl
+acesSdkPlugin.kt:335:32 Unresolved 
+reference 'getAddress'.
+e: file:///C:/Users/FergentiusRosales/
+AppData/Local/Pub/Cache/hosted/pub.dev
+/flutter_google_places_sdk_android-0.2
+.2/android/src/main/kotlin/com/msh/flu
+tter_google_places_sdk/FlutterGooglePl
+acesSdkPlugin.kt:340:43 Unresolved 
+reference 'getLatLng'.
+e: file:///C:/Users/FergentiusRosales/
+AppData/Local/Pub/Cache/hosted/pub.dev
+/flutter_google_places_sdk_android-0.2
+.2/android/src/main/kotlin/com/msh/flu
+tter_google_places_sdk/FlutterGooglePl
+acesSdkPlugin.kt:341:29 Unresolved 
+reference 'getName'.
+e: file:///C:/Users/FergentiusRosales/
+AppData/Local/Pub/Cache/hosted/pub.dev
+/flutter_google_places_sdk_android-0.2
+.2/android/src/main/kotlin/com/msh/flu
+tter_google_places_sdk/FlutterGooglePl
+acesSdkPlugin.kt:342:41 Unresolved 
+reference 'getNameLanguageCode'.
+e: file:///C:/Users/FergentiusRosales/
+AppData/Local/Pub/Cache/hosted/pub.dev
+/flutter_google_places_sdk_android-0.2
+.2/android/src/main/kotlin/com/msh/flu
+tter_google_places_sdk/FlutterGooglePl
+acesSdkPlugin.kt:344:36 Unresolved 
+reference 'getPhoneNumber'.
+e: file:///C:/Users/FergentiusRosales/
+AppData/Local/Pub/Cache/hosted/pub.dev
+/flutter_google_places_sdk_android-0.2
+.2/android/src/main/kotlin/com/msh/flu
+tter_google_places_sdk/FlutterGooglePl
+acesSdkPlugin.kt:349:47 Cannot infer 
+type for this parameter. Please 
+specify it explicitly.
+e: file:///C:/Users/FergentiusRosales/
+AppData/Local/Pub/Cache/hosted/pub.dev
+/flutter_google_places_sdk_android-0.2
+.2/android/src/main/kotlin/com/msh/flu
+tter_google_places_sdk/FlutterGooglePl
+acesSdkPlugin.kt:349:47 Not enough 
+information to infer type argument 
+for 'R'.
+e: file:///C:/Users/FergentiusRosales/
+AppData/Local/Pub/Cache/hosted/pub.dev
+/flutter_google_places_sdk_android-0.2
+.2/android/src/main/kotlin/com/msh/flu
+tter_google_places_sdk/FlutterGooglePl
+acesSdkPlugin.kt:349:56 Unresolved 
+reference 'name'.
+e: file:///C:/Users/FergentiusRosales/
+AppData/Local/Pub/Cache/hosted/pub.dev
+/flutter_google_places_sdk_android-0.2
+.2/android/src/main/kotlin/com/msh/flu
+tter_google_places_sdk/FlutterGooglePl
+acesSdkPlugin.kt:350:41 Unresolved 
+reference 'getUserRatingsTotal'.
+e: file:///C:/Users/FergentiusRosales/
+AppData/Local/Pub/Cache/hosted/pub.dev
+/flutter_google_places_sdk_android-0.2
+.2/android/src/main/kotlin/com/msh/flu
+tter_google_places_sdk/FlutterGooglePl
+acesSdkPlugin.kt:507:36 Unresolved 
+reference 'getPlaceTypes'.
+e: file:///C:/Users/FergentiusRosales/
+AppData/Local/Pub/Cache/hosted/pub.dev
+/flutter_google_places_sdk_android-0.2
+.2/android/src/main/kotlin/com/msh/flu
+tter_google_places_sdk/FlutterGooglePl
+acesSdkPlugin.kt:507:59 Unresolved 
+reference 'it'.
+Note: Some input files use or 
+override a deprecated API.
+Note: Recompile with 
+-Xlint:deprecation for details.
+Note: Some input files use unchecked 
+or unsafe operations.
+Note: Recompile with -Xlint:unchecked 
+for details.
+3 warnings
+
+FAILURE: Build failed with an 
+exception.
+
+* What went wrong:
+Execution failed for task ':flutter_go
+ogle_places_sdk_android:compileDebugKo
+tlin'.
+> A failure occurred while executing o
+rg.jetbrains.kotlin.compilerRunner.Gra
+dleCompilerRunnerWithWorkers$GradleKot
+linCompilerWorkAction
+   > Compilation error. See log for 
+more details
+
+* Try:
+> Run with --stacktrace option to get 
+the stack trace.
+> Run with --info or --debug option 
+to get more log output.
+> Run with --scan to get full 
+insights.
+> Get more help at 
+https://help.gradle.org.
+
+BUILD FAILED in 33s
+Running Gradle task 'assembleDebug'...                             34.8s
+Gradle task assembleDebug failed with 
+exit code 1

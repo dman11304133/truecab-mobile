@@ -1,0 +1,59 @@
+(islowwalletbalance == true)
+                                      ? Positioned(
+                                          bottom: 0,
+                                          child: Container(
+                                            width: media.width * 1,
+                                            height: media.height * 1,
+                                            color:
+                                                Colors.black.withOpacity(0.4),
+                                            padding: EdgeInsets.all(
+                                                media.width * 0.05),
+                                            alignment: Alignment.center,
+                                            child: Container(
+                                              width: media.width * 0.9,
+                                              height: media.width * 0.4,
+                                              padding: EdgeInsets.all(
+                                                  media.width * 0.05),
+                                              decoration: BoxDecoration(
+                                                  color: page,
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          media.width * 0.04)),
+                                              child: Column(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceBetween,
+                                                children: [
+                                                  Text(
+                                                      languages[
+                                                              choosenLanguage]
+                                                          [
+                                                          'text_wallet_balance_low'],
+                                                      style: GoogleFonts
+                                                          .poppins(
+                                                              fontSize:
+                                                                  media.width *
+                                                                      sixteen,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w500,
+                                                              color: textColor),
+                                                      textAlign:
+                                                          TextAlign.center),
+                                                  Button(
+                                                      width: media.width * 0.4,
+                                                      height: media.width * 0.1,
+                                                      onTap: () {
+                                                        setState(() {
+                                                          islowwalletbalance =
+                                                              false;
+                                                        });
+                                                      },
+                                                      text: languages[
+                                                              choosenLanguage]
+                                                          ['text_ok'])
+                                                ],
+                                              ),
+                                            ),
+                                          ))
+                                      : Container()

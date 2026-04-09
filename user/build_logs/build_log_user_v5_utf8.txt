@@ -1,0 +1,48 @@
+﻿Running Gradle task 'assembleDebug'...                          
+Checking the license for package Android SDK Build-Tools 34 in C:\Users\FergentiusRosales\AppData\Local\Android\sdk\licenses
+License for package Android SDK Build-Tools 34 accepted.
+Preparing "Install Android SDK Build-Tools 34 v.34.0.0".
+Warning: Failed to download package!
+"Install Android SDK Build-Tools 34 v.34.0.0" failed.
+flutter : 
+At line:1 char:1
++ flutter build apk --debug > 
+build_log_user_v5.txt 2>&1
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : Not 
+   Specified: (:String) [], Remo  
+  teException
+    + FullyQualifiedErrorId : Nat 
+   iveCommandError
+ 
+FAILURE: Build failed with an 
+exception.
+
+* What went wrong:
+Could not determine the 
+dependencies of task 
+':app:compileDebugJavaWithJavac'.
+> Failed to install the following 
+SDK components:
+      build-tools;34.0.0 Android 
+SDK Build-Tools 34
+  Install the missing components 
+using the SDK manager in Android 
+Studio.
+
+
+* Try:
+> Run with --stacktrace option to 
+get the stack trace.
+> Run with --info or --debug 
+option to get more log output.
+> Run with --scan to get full 
+insights.
+> Get more help at 
+https://help.gradle.org.
+
+BUILD FAILED in 3m 57s
+Running Gradle task 'assembleDebug'...                            238.9s
+Gradle task assembleDebug failed 
+with exit code 1

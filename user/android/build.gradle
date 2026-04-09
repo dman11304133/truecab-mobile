@@ -1,0 +1,56 @@
+buildscript {
+    ext.kotlin_version = '2.3.0'
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+// Global hook to force SDK 36 on all projects after they are evaluated
+gradle.afterProject { project ->
+    if (project.hasProperty('android')) {
+        project.android {
+            compileSdk 36
+            defaultConfig {
+                targetSdk 36
+            }
+        }
+    }
+}
+
+rootProject.buildDir = '../build'
+subprojects {
+    project.buildDir = "${rootProject.buildDir}/${project.name}"
+}
+subprojects {
+    project.evaluationDependsOn(':app')
+}
+
+// Inject namespace into plugins that don't have it (required by AGP 8+)
+subprojects {
+    project.plugins.withType(com.android.build.gradle.BasePlugin) {
+        project.android {
+            if (namespace == null) {
+                def manifestFile = file("${project.projectDir}/src/main/AndroidManifest.xml")
+                if (manifestFile.exists()) {
+                    def manifestText = manifestFile.text
+                    def packageMatch = manifestText =~ /package="([^"]+)"/
+                    if (packageMatch) {
+                        namespace = packageMatch[0][1]
+                    }
+                }
+            }
+        }
+    }
+}
+
+tasks.register("clean", Delete) {
+    delete rootProject.buildDir
+}

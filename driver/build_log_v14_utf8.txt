@@ -1,0 +1,46 @@
+﻿Upgrading build.gradle
+Running Gradle task 'assembleDebug'...                          
+flutter : 
+At line:1 char:1
++ flutter build apk --debug > 
+build_log_v14.txt 2>&1
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~
+    + CategoryInfo          : Not    
+Specified: (:String) [], Remo    
+teException
+    + FullyQualifiedErrorId : Nat    
+iveCommandError
+ 
+FAILURE: Build failed with an exception.
+
+* Where:
+Script 'C:\tools\flutter\packages\flutte
+r_tools\gradle\app_plugin_loader.gradle'
+ line: 9
+
+* What went wrong:
+A problem occurred evaluating script.
+> You are applying Flutter's 
+app_plugin_loader Gradle plugin 
+imperatively using the apply script 
+method, which is not possible anymore. 
+Migrate to applying Gradle plugins with 
+the declarative plugins block: https://f
+lutter.dev/to/flutter-gradle-plugin-appl
+y
+
+
+* Try:
+> Run with --stacktrace option to get 
+the stack trace.
+> Run with --info or --debug option to 
+get more log output.
+> Run with --scan to get full insights.
+> Get more help at 
+https://help.gradle.org.
+
+BUILD FAILED in 9s
+Running Gradle task 'assembleDebug'...                             10.0s
+Gradle task assembleDebug failed with 
+exit code 1

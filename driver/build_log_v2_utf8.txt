@@ -1,0 +1,52 @@
+﻿Running Gradle task 'assembleDebug'...                          
+flutter : 
+At line:1 char:1
++ flutter build apk --debug > 
+build_log_v2.txt 2>&1
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~
+    + CategoryInfo          : Not    
+Specified: (:String) [], Remo    
+teException
+    + FullyQualifiedErrorId : Nat    
+iveCommandError
+ 
+FAILURE: Build failed with an 
+exception.
+
+* What went wrong:
+Execution failed for task 
+':gradle:compileKotlin'.
+> Cannot access output property 'taskB
+uildCacheableOutputDirectory$kotlin_gr
+adle_plugin_common' of task 
+':gradle:compileKotlin'. Accessing 
+unreadable inputs or outputs is not 
+supported. Declare the task as 
+untracked by using 
+Task.doNotTrackState(). For more 
+information, please refer to https://d
+ocs.gradle.org/8.5/userguide/increment
+al_build.html#disable-state-tracking 
+in the Gradle documentation.
+   > Failed to create MD5 hash for 
+file 'C:\tools\flutter\packages\flutte
+r_tools\gradle\build\kotlin\compileKot
+lin\cacheable\caches-jvm\jvm\kotlin\cl
+ass-attributes.tab.keystream' as it 
+does not exist.
+
+* Try:
+> Run with --stacktrace option to get 
+the stack trace.
+> Run with --info or --debug option 
+to get more log output.
+> Run with --scan to get full 
+insights.
+> Get more help at 
+https://help.gradle.org.
+
+BUILD FAILED in 11m 35s
+Running Gradle task 'assembleDebug'...                            710.6s
+Gradle task assembleDebug failed with 
+exit code 1

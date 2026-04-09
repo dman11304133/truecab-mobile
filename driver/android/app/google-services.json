@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "572663720476",
+    "firebase_url": "https://trucab-51f40-default-rtdb.firebaseio.com",
+    "project_id": "trucab-51f40",
+    "storage_bucket": "trucab-51f40.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:572663720476:android:175f5d66bd7be2c8b24dd9",
+        "android_client_info": {
+          "package_name": "com.trucabtt.driver"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCtMK8HRsKW2ZfDvWQBxNSB-ryQvRuUX9Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:572663720476:android:e3d2d23103cfd728b24dd9",
+        "android_client_info": {
+          "package_name": "com.trucabtt.user"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCtMK8HRsKW2ZfDvWQBxNSB-ryQvRuUX9Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

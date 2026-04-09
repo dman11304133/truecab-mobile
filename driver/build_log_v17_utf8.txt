@@ -1,0 +1,58 @@
+﻿Running Gradle task 'assembleDebug'...                          
+Checking the license for package Android SDK Platform 30 in C:\Users\FergentiusRosales\AppData\Local\Android\sdk\licenses
+License for package Android SDK Platform 30 accepted.
+Preparing "Install Android SDK Platform 30 (revision 3)".
+"Install Android SDK Platform 30 (revision 3)" ready.
+Installing Android SDK Platform 30 in C:\Users\FergentiusRosales\AppData\Local\Android\sdk\platforms\android-30
+"Install Android SDK Platform 30 (revision 3)" complete.
+"Install Android SDK Platform 30 (revision 3)" finished.
+flutter : 
+At line:1 char:1
++ flutter build apk --debug > 
+build_log_v17.txt 2>&1
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : Not 
+   Specified: (:String) [], Remo  
+  teException
+    + FullyQualifiedErrorId : Nat 
+   iveCommandError
+ 
+FAILURE: Build failed with an 
+exception.
+
+* What went wrong:
+Execution failed for task 
+':app:checkDebugAarMetadata'.
+> A failure occurred while 
+executing com.android.build.gradle
+.internal.tasks.CheckAarMetadataWo
+rkAction
+   > An issue was found when 
+checking AAR metadata:
+
+       1.  Dependency 
+':flutter_local_notifications' 
+requires core library desugaring 
+to be enabled
+           for :app.
+
+           See https://developer.a
+ndroid.com/studio/write/java8-supp
+ort.html for more
+           details.
+
+* Try:
+> Run with --stacktrace option to 
+get the stack trace.
+> Run with --info or --debug 
+option to get more log output.
+> Run with --scan to get full 
+insights.
+> Get more help at 
+https://help.gradle.org.
+
+BUILD FAILED in 8m 15s
+Running Gradle task 'assembleDebug'...                            496.1s
+Gradle task assembleDebug failed 
+with exit code 1

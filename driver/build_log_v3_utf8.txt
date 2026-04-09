@@ -1,0 +1,46 @@
+﻿Running Gradle task 'assembleDebug'...                          
+flutter : 
+At line:1 char:1
++ flutter build apk --debug > 
+build_log_v3.txt 2>&1
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpec 
+   ified: (:String) [], RemoteExcept  
+  ion
+    + FullyQualifiedErrorId : NativeC 
+   ommandError
+ 
+FAILURE: Build failed with an 
+exception.
+
+* Where:
+Build file 'C:\Users\FergentiusRosales
+\Herd\truecabtt\mobileapp\driver\andro
+id\app\build.gradle' line: 2
+
+* What went wrong:
+Plugin [id: 
+'com.android.application'] was not 
+found in any of the following sources:
+
+- Gradle Core Plugins (plugin is not 
+in 'org.gradle' namespace)
+- Plugin Repositories (plugin 
+dependency must include a version 
+number for this source)
+
+* Try:
+> Run with --stacktrace option to get 
+the stack trace.
+> Run with --info or --debug option 
+to get more log output.
+> Run with --scan to get full 
+insights.
+> Get more help at 
+https://help.gradle.org.
+
+BUILD FAILED in 12s
+Running Gradle task 'assembleDebug'...                             13.7s
+Gradle task assembleDebug failed with 
+exit code 1

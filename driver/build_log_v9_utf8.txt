@@ -1,0 +1,121 @@
+﻿Running Gradle task 'assembleDebug'...                          
+flutter : Warning: Flutter 
+support for your project's 
+Android Gradle Plugin version 
+(Android Gradle Plugin version 
+8.5.1) will soon be dropped. 
+Please upgrade your Android 
+Gradle Plugin version to a 
+version of at least Android 
+Gradle Plugin version 8.6.0 soon.
+At line:1 char:1
++ flutter build apk --debug > 
+build_log_v9.txt 2>&1
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : Not 
+   Specified: (Warning: Flutte..  
+  .ion 8.6.0 soon.:String) [],    
+ RemoteException
+    + FullyQualifiedErrorId : Nat 
+   iveCommandError
+ 
+Alternatively, use the flag "--and
+roid-skip-build-dependency-validat
+ion" to bypass this check.
+
+Potential fix: Your project's AGP 
+version is typically defined in 
+the plugins block of the 
+`settings.gradle` file (C:\Users\F
+ergentiusRosales\Herd\truecabtt\mo
+bileapp\driver\android/settings.gr
+adle), by a plugin with the id of 
+com.android.application. 
+If you don't see a plugins block, 
+your project was likely created 
+with an older template version. 
+In this case it is most likely 
+defined in the top-level 
+build.gradle file (C:\Users\Fergen
+tiusRosales\Herd\truecabtt\mobilea
+pp\driver\android/build.gradle) 
+by the following line in the 
+dependencies block of the 
+buildscript: "classpath 'com.andro
+id.tools.build:gradle:<version>'".
+
+Warning: Flutter support for your 
+project's Kotlin version (1.9.24) 
+will soon be dropped. Please 
+upgrade your Kotlin version to a 
+version of at least 2.1.0 soon.
+Alternatively, use the flag "--and
+roid-skip-build-dependency-validat
+ion" to bypass this check.
+
+Potential fix: Your project's KGP 
+version is typically defined in 
+the plugins block of the 
+`settings.gradle` file (C:\Users\F
+ergentiusRosales\Herd\truecabtt\mo
+bileapp\driver\android/settings.gr
+adle), by a plugin with the id of 
+org.jetbrains.kotlin.android. 
+If you don't see a plugins block, 
+your project was likely created 
+with an older template version, 
+in which case it is most likely 
+defined in the top-level 
+build.gradle file (C:\Users\Fergen
+tiusRosales\Herd\truecabtt\mobilea
+pp\driver\android/build.gradle) 
+by the ext.kotlin_version 
+property.
+
+
+FAILURE: Build failed with an 
+exception.
+
+* What went wrong:
+Execution failed for task 
+':app:checkDebugDuplicateClasses'.
+> Could not resolve all files for 
+configuration 
+':app:debugRuntimeClasspath'.
+   > Failed to transform armeabi_v
+7a_debug-1.0.0-1e9a811bf8e70466596
+bcf0ea3a8b5adb5f17f7f.jar (io.flut
+ter:armeabi_v7a_debug:1.0.0-1e9a81
+1bf8e70466596bcf0ea3a8b5adb5f17f7f
+) to match attributes {artifactTyp
+e=enumerated-runtime-classes, 
+org.gradle.category=library, 
+org.gradle.libraryelements=jar, 
+org.gradle.status=release, 
+org.gradle.usage=java-runtime}.
+      > Execution failed for 
+JetifyTransform: C:\Users\Fergenti
+usRosales\.gradle\caches\modules-2
+\files-2.1\io.flutter\armeabi_v7a_
+debug\1.0.0-1e9a811bf8e70466596bcf
+0ea3a8b5adb5f17f7f\fb11e891e732615
+b1e63e87abb01ecdf7d5dbb9a\armeabi_
+v7a_debug-1.0.0-1e9a811bf8e7046659
+6bcf0ea3a8b5adb5f17f7f.jar.
+         > Java heap space
+
+* Try:
+> Run with --stacktrace option to 
+get the stack trace.
+> Run with --info or --debug 
+option to get more log output.
+> Run with --scan to get full 
+insights.
+> Get more help at 
+https://help.gradle.org.
+
+BUILD FAILED in 1m 42s
+Running Gradle task 'assembleDebug'...                            104.1s
+Gradle task assembleDebug failed 
+with exit code 1

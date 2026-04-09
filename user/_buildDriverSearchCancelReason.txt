@@ -1,0 +1,338 @@
+(_cancelling == true)
+                                      ? Positioned(
+                                          child: Container(
+                                          height: media.height * 1,
+                                          width: media.width * 1,
+                                          color: Colors.transparent
+                                              .withOpacity(0.6),
+                                          alignment: Alignment.center,
+                                          child: Column(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              Container(
+                                                padding: EdgeInsets.all(
+                                                    media.width * 0.05),
+                                                width: media.width * 0.9,
+                                                decoration: BoxDecoration(
+                                                    color: page,
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            12)),
+                                                child: Column(children: [
+                                                  Container(
+                                                    height: media.width * 0.18,
+                                                    width: media.width * 0.18,
+                                                    decoration:
+                                                        const BoxDecoration(
+                                                            shape:
+                                                                BoxShape.circle,
+                                                            color: Color(
+                                                                0xffFEF2F2)),
+                                                    alignment: Alignment.center,
+                                                    child: Container(
+                                                      height:
+                                                          media.width * 0.14,
+                                                      width: media.width * 0.14,
+                                                      decoration:
+                                                          const BoxDecoration(
+                                                              shape: BoxShape
+                                                                  .circle,
+                                                              color: Color(
+                                                                  0xffFF0000)),
+                                                      child: const Center(
+                                                        child: Icon(
+                                                          Icons.cancel_outlined,
+                                                          color: Colors.white,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                  Column(
+                                                    children: cancelReasonsList
+                                                        .asMap()
+                                                        .map((i, value) {
+                                                          return MapEntry(
+                                                              i,
+                                                              InkWell(
+                                                                onTap: () {
+                                                                  setState(() {
+                                                                    _cancelReason =
+                                                                        cancelReasonsList[i]
+                                                                            [
+                                                                            'reason'];
+                                                                  });
+                                                                },
+                                                                child:
+                                                                    Container(
+                                                                  padding: EdgeInsets
+                                                                      .all(media
+                                                                              .width *
+                                                                          0.01),
+                                                                  child: Row(
+                                                                    children: [
+                                                                      Container(
+                                                                        height: media.height *
+                                                                            0.05,
+                                                                        width: media.width *
+                                                                            0.05,
+                                                                        decoration: BoxDecoration(
+                                                                            shape:
+                                                                                BoxShape.circle,
+                                                                            border: Border.all(color: textColor, width: 1.2)),
+                                                                        alignment:
+                                                                            Alignment.center,
+                                                                        child: (_cancelReason ==
+                                                                                cancelReasonsList[i]['reason'])
+                                                                            ? Container(
+                                                                                height: media.width * 0.03,
+                                                                                width: media.width * 0.03,
+                                                                                decoration: BoxDecoration(
+                                                                                  shape: BoxShape.circle,
+                                                                                  color: textColor,
+                                                                                ),
+                                                                              )
+                                                                            : Container(),
+                                                                      ),
+                                                                      SizedBox(
+                                                                        width: media.width *
+                                                                            0.05,
+                                                                      ),
+                                                                      SizedBox(
+                                                                          width: media.width *
+                                                                              0.65,
+                                                                          child:
+                                                                              MyText(
+                                                                            text:
+                                                                                cancelReasonsList[i]['reason'],
+                                                                            size:
+                                                                                media.width * twelve,
+                                                                          ))
+                                                                    ],
+                                                                  ),
+                                                                ),
+                                                              ));
+                                                        })
+                                                        .values
+                                                        .toList(),
+                                                  ),
+                                                  InkWell(
+                                                    onTap: () {
+                                                      setState(() {
+                                                        _cancelReason =
+                                                            'others';
+                                                      });
+                                                    },
+                                                    child: Container(
+                                                      padding: EdgeInsets.all(
+                                                          media.width * 0.01),
+                                                      child: Row(
+                                                        children: [
+                                                          Container(
+                                                            height:
+                                                                media.height *
+                                                                    0.05,
+                                                            width: media.width *
+                                                                0.05,
+                                                            decoration: BoxDecoration(
+                                                                shape: BoxShape
+                                                                    .circle,
+                                                                border: Border.all(
+                                                                    color:
+                                                                        textColor,
+                                                                    width:
+                                                                        1.2)),
+                                                            alignment: Alignment
+                                                                .center,
+                                                            child:
+                                                                (_cancelReason ==
+                                                                        'others')
+                                                                    ? Container(
+                                                                        height: media.width *
+                                                                            0.03,
+                                                                        width: media.width *
+                                                                            0.03,
+                                                                        decoration:
+                                                                            BoxDecoration(
+                                                                          shape:
+                                                                              BoxShape.circle,
+                                                                          color:
+                                                                              textColor,
+                                                                        ),
+                                                                      )
+                                                                    : Container(),
+                                                          ),
+                                                          SizedBox(
+                                                            width: media.width *
+                                                                0.05,
+                                                          ),
+                                                          MyText(
+                                                            text: languages[
+                                                                    choosenLanguage]
+                                                                ['text_others'],
+                                                            size: media.width *
+                                                                twelve,
+                                                          )
+                                                        ],
+                                                      ),
+                                                    ),
+                                                  ),
+                                                  (_cancelReason == 'others')
+                                                      ? Container(
+                                                          margin: EdgeInsets
+                                                              .fromLTRB(
+                                                                  0,
+                                                                  media.width *
+                                                                      0.025,
+                                                                  0,
+                                                                  media.width *
+                                                                      0.025),
+                                                          padding:
+                                                              EdgeInsets.all(
+                                                                  media.width *
+                                                                      0.05),
+                                                          // height: media.width*0.2,
+                                                          width:
+                                                              media.width * 0.9,
+                                                          decoration: BoxDecoration(
+                                                              border: Border.all(
+                                                                  color: borderLines,
+                                                                  width: 1.2),
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          12)),
+                                                          child: TextField(
+                                                            decoration: InputDecoration(
+                                                                border:
+                                                                    InputBorder
+                                                                        .none,
+                                                                hintText: languages[
+                                                                        choosenLanguage]
+                                                                    [
+                                                                    'text_cancelRideReason'],
+                                                                hintStyle: GoogleFonts.poppins(
+                                                                    color: textColor
+                                                                        .withOpacity(
+                                                                            0.4),
+                                                                    fontSize: media
+                                                                            .width *
+                                                                        twelve)),
+                                                            style: GoogleFonts
+                                                                .poppins(
+                                                                    color:
+                                                                        textColor),
+                                                            maxLines: 4,
+                                                            minLines: 2,
+                                                            onChanged: (val) {
+                                                              setState(() {
+                                                                _cancelCustomReason =
+                                                                    val;
+                                                              });
+                                                            },
+                                                          ),
+                                                        )
+                                                      : Container(),
+                                                  (_cancellingError != '')
+                                                      ? Container(
+                                                          padding: EdgeInsets.only(
+                                                              top: media.width *
+                                                                  0.02,
+                                                              bottom:
+                                                                  media.width *
+                                                                      0.02),
+                                                          width:
+                                                              media.width * 0.9,
+                                                          child: Text(
+                                                              _cancellingError,
+                                                              style: GoogleFonts.poppins(
+                                                                  fontSize: media
+                                                                          .width *
+                                                                      twelve,
+                                                                  color: Colors
+                                                                      .red)))
+                                                      : Container(),
+                                                  Row(
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .spaceBetween,
+                                                    children: [
+                                                      Button(
+                                                          color: Colors.red,
+                                                          width: media.width *
+                                                              0.39,
+                                                          onTap: () async {
+                                                            setState(() {
+                                                              isLoading = true;
+                                                            });
+                                                            if (_cancelReason !=
+                                                                '') {
+                                                              if (_cancelReason ==
+                                                                  'others') {
+                                                                if (_cancelCustomReason !=
+                                                                        '' &&
+                                                                    _cancelCustomReason
+                                                                        .isNotEmpty) {
+                                                                  _cancellingError =
+                                                                      '';
+                                                                  var val =
+                                                                      await cancelRequestWithReason(
+                                                                          _cancelCustomReason);
+                                                                  if (val ==
+                                                                      'logout') {
+                                                                    navigateLogout();
+                                                                  }
+                                                                  setState(() {
+                                                                    _cancelling =
+                                                                        false;
+                                                                  });
+                                                                } else {
+                                                                  setState(() {
+                                                                    _cancellingError =
+                                                                        languages[choosenLanguage]
+                                                                            [
+                                                                            'text_add_cancel_reason'];
+                                                                  });
+                                                                }
+                                                              } else {
+                                                                var val =
+                                                                    await cancelRequestWithReason(
+                                                                        _cancelReason);
+                                                                if (val ==
+                                                                    'logout') {
+                                                                  navigateLogout();
+                                                                }
+                                                                setState(() {
+                                                                  _cancelling =
+                                                                      false;
+                                                                });
+                                                              }
+                                                            } else {}
+                                                            setState(() {
+                                                              isLoading = false;
+                                                            });
+                                                          },
+                                                          text: languages[
+                                                                  choosenLanguage]
+                                                              ['text_cancel']),
+                                                      Button(
+                                                          width: media.width *
+                                                              0.39,
+                                                          onTap: () {
+                                                            setState(() {
+                                                              _cancelling =
+                                                                  false;
+                                                            });
+                                                          },
+                                                          text: languages[
+                                                                  choosenLanguage]
+                                                              [
+                                                              'tex_dontcancel'])
+                                                    ],
+                                                  )
+                                                ]),
+                                              ),
+                                            ],
+                                          ),
+                                        ))
+                                      : Container()

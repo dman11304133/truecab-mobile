@@ -1,0 +1,64 @@
+﻿Upgrading build.gradle
+Running Gradle task 'assembleDebug'...                          
+flutter : 
+At line:1 char:1
++ flutter build apk --debug > 
+build_log_v13.txt 2>&1
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpec 
+   ified: (:String) [], RemoteExcept  
+  ion
+    + FullyQualifiedErrorId : NativeC 
+   ommandError
+ 
+FAILURE: Build failed with an 
+exception.
+
+* Where:
+Build file 'C:\Users\FergentiusRosales
+\Herd\truecabtt\mobileapp\driver\andro
+id\app\build.gradle' line: 55
+
+* What went wrong:
+A problem occurred evaluating project 
+':app'.
+> Could not get unknown property 
+'flutter' for DefaultConfig$AgpDecorat
+ed_Decorated{name=main, 
+dimension=null, minSdkVersion=null, 
+targetSdkVersion=null, 
+renderscriptTargetApi=null, 
+renderscriptSupportModeEnabled=null, r
+enderscriptSupportModeBlasEnabled=null
+, renderscriptNdkModeEnabled=null, 
+versionCode=null, versionName=null, 
+applicationId=com.trucabtt.driver, 
+testApplicationId=null, 
+testInstrumentationRunner=null, testIn
+strumentationRunnerArguments={}, 
+testHandleProfiling=null, 
+testFunctionalTest=null, 
+signingConfig=null, resConfig=[], 
+buildConfigFields={}, resValues={}, 
+proguardFiles=[], 
+consumerProguardFiles=[], 
+manifestPlaceholders={}, 
+wearAppUnbundled=null} of type com.and
+roid.build.gradle.internal.dsl.Default
+Config$AgpDecorated.
+
+* Try:
+> Run with --stacktrace option to get 
+the stack trace.
+> Run with --info or --debug option 
+to get more log output.
+> Run with --scan to get full 
+insights.
+> Get more help at 
+https://help.gradle.org.
+
+BUILD FAILED in 16s
+Running Gradle task 'assembleDebug'...                             18.1s
+Gradle task assembleDebug failed with 
+exit code 1

@@ -1,0 +1,105 @@
+﻿Running Gradle task 'assembleDebug'...                          
+flutter : warning: [options] 
+source value 8 is obsolete and 
+will be removed in a future 
+release
+At line:1 char:1
++ flutter build apk --debug > 
+build_log_v22.txt 2>&1
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : Not 
+   Specified: (warning: [optio..  
+  . future release:String) [],    
+ RemoteException
+    + FullyQualifiedErrorId : Nat 
+   iveCommandError
+ 
+warning: [options] target value 8 
+is obsolete and will be removed 
+in a future release
+warning: [options] To suppress 
+warnings about obsolete options, 
+use -Xlint:-options.
+Note: C:\Users\FergentiusRosales\A
+ppData\Local\Pub\Cache\hosted\pub.
+dev\bubble_head-0.0.4\android\src\
+main\java\com\dsaved\bubblehead\bu
+bble\BubbleHeadService.java uses 
+or overrides a deprecated API.
+Note: Recompile with 
+-Xlint:deprecation for details.
+3 warnings
+warning: [options] source value 8 
+is obsolete and will be removed 
+in a future release
+warning: [options] target value 8 
+is obsolete and will be removed 
+in a future release
+warning: [options] To suppress 
+warnings about obsolete options, 
+use -Xlint:-options.
+Note: C:\Users\FergentiusRosales\A
+ppData\Local\Pub\Cache\hosted\pub.
+dev\contacts_service-0.6.3\android
+\src\main\java\flutter\plugins\con
+tactsservice\contactsservice\Conta
+ctsServicePlugin.java uses or 
+overrides a deprecated API.
+Note: Recompile with 
+-Xlint:deprecation for details.
+3 warnings
+warning: [options] source value 8 
+is obsolete and will be removed 
+in a future release
+warning: [options] target value 8 
+is obsolete and will be removed 
+in a future release
+warning: [options] To suppress 
+warnings about obsolete options, 
+use -Xlint:-options.
+e: file:///C:/Users/FergentiusRosa
+les/AppData/Local/Pub/Cache/hosted
+/pub.dev/dash_bubble-2.0.0/android
+/src/main/kotlin/dev/moaz/dash_bub
+ble/src/BubbleService.kt:65:24 
+Unresolved reference 
+'ic_close_bubble'.
+Note: C:\Users\FergentiusRosales\A
+ppData\Local\Pub\Cache\hosted\pub.
+dev\device_apps-2.2.0\android\src\
+main\java\fr\g123k\deviceapps\Devi
+ceAppsPlugin.java uses or 
+overrides a deprecated API.
+Note: Recompile with 
+-Xlint:deprecation for details.
+3 warnings
+
+FAILURE: Build failed with an 
+exception.
+
+* What went wrong:
+Execution failed for task 
+':dash_bubble:compileDebugKotlin'.
+> A failure occurred while 
+executing org.jetbrains.kotlin.com
+pilerRunner.GradleCompilerRunnerWi
+thWorkers$GradleKotlinCompilerWork
+Action
+   > Compilation error. See log 
+for more details
+
+* Try:
+> Run with --stacktrace option to 
+get the stack trace.
+> Run with --info or --debug 
+option to get more log output.
+> Run with --scan to get full 
+insights.
+> Get more help at 
+https://help.gradle.org.
+
+BUILD FAILED in 7m 4s
+Running Gradle task 'assembleDebug'...                            426.4s
+Gradle task assembleDebug failed 
+with exit code 1

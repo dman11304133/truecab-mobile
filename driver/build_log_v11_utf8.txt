@@ -1,0 +1,46 @@
+﻿Running Gradle task 'assembleDebug'...                          
+flutter : 
+At line:1 char:1
++ flutter build apk --debug > 
+build_log_v11.txt 2>&1
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : 
+NotSpec    ified: (:String) [], 
+RemoteExcept    ion
+    + FullyQualifiedErrorId : 
+NativeC    ommandError
+ 
+FAILURE: Build failed with an 
+exception.
+
+* Where:
+Build file 'C:\Users\FergentiusRos
+ales\Herd\truecabtt\mobileapp\driv
+er\android\app\build.gradle' 
+line: 2
+
+* What went wrong:
+An exception occurred applying 
+plugin request [id: 'dev.flutter.f
+lutter-gradle-plugin']
+> Failed to apply plugin 'dev.flut
+ter.flutter-gradle-plugin'.
+   > 
+java.lang.NullPointerException 
+(no error message)
+
+* Try:
+> Run with --stacktrace option to 
+get the stack trace.
+> Run with --info or --debug 
+option to get more log output.
+> Run with --scan to get full 
+insights.
+> Get more help at 
+https://help.gradle.org.
+
+BUILD FAILED in 10s
+Running Gradle task 'assembleDebug'...                             10.9s
+Gradle task assembleDebug failed 
+with exit code 1

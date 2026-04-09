@@ -1,0 +1,203 @@
+                                  Container(
+                                      alignment: Alignment.topCenter,
+                                      height: media.height * 1,
+                                      width: media.width * 1,
+                                      //get drivers location updates
+                                      child: (mapType == 'google')
+                                          ? StreamBuilder<List<Marker>>(
+                                              stream: mapMarkerStream,
+                                              builder: (context, snapshot) {
+                                                return GoogleMap(
+                                                  padding: EdgeInsets.only(
+                                                      bottom: mapPadding,
+                                                      top: media.height * 0.1 +
+                                                          MediaQuery.of(context)
+                                                              .padding
+                                                              .top),
+                                                  onMapCreated: _onMapCreated,
+                                                  compassEnabled: false,
+                                                  initialCameraPosition:
+                                                      CameraPosition(
+                                                    target: center,
+                                                    zoom: 11.0,
+                                                  ),
+                                                  markers: Set<Marker>.from(
+                                                      myMarker),
+                                                  polylines: polyline,
+                                                  minMaxZoomPreference:
+                                                      const MinMaxZoomPreference(
+                                                          0.0, 20.0),
+                                                  myLocationButtonEnabled:
+                                                      false,
+                                                  buildingsEnabled: false,
+                                                  zoomControlsEnabled: false,
+                                                  myLocationEnabled: true,
+                                                );
+                                              })
+                                          : StreamBuilder<List<Marker>>(
+                                              stream: mapMarkerStream,
+                                              builder: (context, snapshot) {
+                                                return SizedBox(
+                                                  height: (userRequestData
+                                                          .isEmpty)
+                                                      ? media.height -
+                                                          media.width * 0.5
+                                                      : ((media.height * 1.1) -
+                                                          media.width),
+                                                  child: fm.FlutterMap(
+                                                    mapController:
+                                                        _fmController,
+                                                    options: fm.MapOptions(
+                                                        initialCenter:
+                                                            fmlt.LatLng(
+                                                                center
+                                                                    .latitude,
+                                                                center
+                                                                    .longitude),
+                                                        initialZoom: 13,
+                                                        onTap: (P, L) {
+                                                          setState(() {});
+                                                        }),
+                                                    children: [
+                                                      fm.TileLayer(
+                                                        // minZoom: 10,
+                                                        urlTemplate:
+                                                            'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+                                                        userAgentPackageName:
+                                                            'com.example.app',
+                                                      ),
+
+                                                      fm.PolylineLayer(
+                                                        polylines: [
+                                                          fm.Polyline(
+                                                              points: fmpoly.cast<fmlt.LatLng>(),
+                                                              color:
+                                                                  Colors.blue,
+                                                              strokeWidth: 4),
+                                                        ],
+                                                      ),
+
+                                                      fm.MarkerLayer(
+                                                        markers: [
+                                                          for (var k = 0;
+                                                              k <
+                                                                  addressList
+                                                                      .length;
+                                                              k++)
+                                                            fm.Marker(
+                                                                alignment: Alignment
+                                                                    .topCenter,
+                                                                point: fmlt.LatLng(
+                                                                    addressList[k]
+                                                                        .latlng
+                                                                        .latitude,
+                                                                    addressList[k]
+                                                                        .latlng
+                                                                        .longitude),
+                                                                width: (k == 0 ||
+                                                                        k ==
+                                                                            addressList.length -
+                                                                                1)
+                                                                    ? media.width *
+                                                                        0.7
+                                                                    : 10,
+                                                                height: (k == 0 ||
+                                                                        k ==
+                                                                            addressList.length -
+                                                                                1)
+                                                                    ? media.width * 0.15 +
+                                                                        10
+                                                                    : 18,
+                                                                child:
+                                                                    (k == 0 ||
+                                                                            k ==
+                                                                                addressList.length - 1)
+                                                                        ? Column(
+                                                                            children: [
+                                                                              Container(
+                                                                                  decoration: BoxDecoration(
+                                                                                      color: buttonColor,
+                                                                                      borderRadius: BorderRadius.circular(5)),
+                                                                                  width: (platform == TargetPlatform.android) ? media.width * 0.7 : media.width * 0.9,
+                                                                                  padding: const EdgeInsets.all(5),
+                                                                                  child: (userRequestData.isNotEmpty)
+                                                                                      ? Text(
+                                                                                          addressList[k].address,
+                                                                                          maxLines: 1,
+                                                                                          overflow: TextOverflow.fade,
+                                                                                          softWrap: false,
+                                                                                          style: GoogleFonts.poppins(color: buttonText, fontSize: (platform == TargetPlatform.android) ? media.width * twelve : media.width * sixteen),
+                                                                                        )
+                                                                                      : (addressList.where((element) => element.type == 'pickup').isNotEmpty)
+                                                                                          ? Text(
+                                                                                              addressList[k].address,
+                                                                                              maxLines: 1,
+                                                                                              overflow: TextOverflow.fade,
+                                                                                              softWrap: false,
+                                                                                              style: GoogleFonts.poppins(color: buttonText, fontSize: (platform == TargetPlatform.android) ? media.width * twelve : media.width * sixteen),
+                                                                                            )
+                                                                                          : Container()),
+                                                                              const SizedBox(
+                                                                                height: 10,
+                                                                              ),
+                                                                              Container(
+                                                                                decoration: BoxDecoration(shape: BoxShape.circle, image: DecorationImage(image: AssetImage((addressList[k].type == 'pickup') ? 'assets/images/pick_icon.png' : 'assets/images/drop_icon.png'), fit: BoxFit.contain)),
+                                                                                height: (platform == TargetPlatform.android) ? media.width * 0.07 : media.width * 0.12,
+                                                                                width: (platform == TargetPlatform.android) ? media.width * 0.07 : media.width * 0.12,
+                                                                              ),
+                                                                            ],
+                                                                          )
+                                                                        : MyText(
+                                                                            text:
+                                                                                k.toString(),
+                                                                            size:
+                                                                                16,
+                                                                            fontweight:
+                                                                                FontWeight.w500,
+                                                                            color:
+                                                                                Colors.red,
+                                                                          )),
+                                                          for (var i = 0;
+                                                              i <
+                                                                  myMarker
+                                                                      .length;
+                                                              i++)
+                                                            fm.Marker(
+                                                                alignment:
+                                                                    Alignment
+                                                                        .topCenter,
+                                                                point: fmlt.LatLng(
+                                                                    myMarker[i]
+                                                                        .position
+                                                                        .latitude,
+                                                                    myMarker[i]
+                                                                        .position
+                                                                        .longitude),
+                                                                width: media
+                                                                        .width *
+                                                                    0.7,
+                                                                height: 50,
+                                                                child: RotationTransition(
+                                                                    turns: AlwaysStoppedAnimation(myMarker[i].rotation / 360),
+                                                                    child: (myMarker[i].markerId.toString().contains('car#') == true)
+                                                                        ? Image.asset(
+                                                                            (myMarker[i].markerId.toString().replaceAll('MarkerId(', '').replaceAll(')', '').split('#')[2].toString() == 'taxi')
+                                                                                ? 'assets/images/top-taxi.png'
+                                                                                : (myMarker[i].markerId.toString().replaceAll('MarkerId(', '').replaceAll(')', '').split('#')[2].toString() == 'truck')
+                                                                                    ? 'assets/images/top-taxi.png'
+                                                                                    : 'assets/images/bike.png',
+                                                                          )
+                                                                        : Container()))
+                                                        ],
+                                                      ),
+
+                                                      // fm.MarkerLayer()
+
+                                                      const fm
+                                                          .RichAttributionWidget(
+                                                        attributions: [],
+                                                      ),
+                                                    ],
+                                                  ),
+                                                );
+                                              })),

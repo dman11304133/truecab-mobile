@@ -1,0 +1,45 @@
+﻿Running Gradle task 'assembleDebug'...                          
+flutter : 
+At line:1 char:1
++ flutter build apk --debug > 
+build_log_v4.txt 2>&1
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpec 
+   ified: (:String) [], RemoteExcept  
+  ion
+    + FullyQualifiedErrorId : NativeC 
+   ommandError
+ 
+FAILURE: Build failed with an 
+exception.
+
+* Where:
+Build file 'C:\Users\FergentiusRosales
+\Herd\truecabtt\mobileapp\driver\andro
+id\build.gradle' line: 3
+
+* What went wrong:
+Error resolving plugin [id: 
+'org.jetbrains.kotlin.android', 
+version: '1.9.10', apply: false]
+> The request for this plugin could 
+not be satisfied because the plugin 
+is already on the classpath with an 
+unknown version, so compatibility 
+cannot be checked.
+
+* Try:
+> Run with --stacktrace option to get 
+the stack trace.
+> Run with --info or --debug option 
+to get more log output.
+> Run with --scan to get full 
+insights.
+> Get more help at 
+https://help.gradle.org.
+
+BUILD FAILED in 9s
+Running Gradle task 'assembleDebug'...                             10.5s
+Gradle task assembleDebug failed with 
+exit code 1

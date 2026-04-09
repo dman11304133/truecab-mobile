@@ -1,0 +1,58 @@
+warning - Unused import: 'package:audioplayers/audioplayers.dart' - lib\pages\ontrippage\booking_confirmation.dart:6:8 - unused_import
+   info - The import of 'package:flutter/cupertino.dart' is unnecessary because all of the used elements are also provided by the import of 'package:flutter/material.dart' - lib\pages\ontrippage\booking_confirmation.dart:8:8 - unnecessary_import
+warning - Unused import: 'package:intl/intl.dart' - lib\pages\ontrippage\booking_confirmation.dart:19:8 - unused_import
+warning - Unused import: 'package:permission_handler/permission_handler.dart' - lib\pages\ontrippage\booking_confirmation.dart:20:8 - unused_import
+warning - Unused import: 'package:geolocator/geolocator.dart' - lib\pages\ontrippage\booking_confirmation.dart:21:8 - unused_import
+warning - Unused import: 'package:share_plus/share_plus.dart' - lib\pages\ontrippage\booking_confirmation.dart:23:8 - unused_import
+warning - Unused import: '../NavigatorPages/pickcontacts.dart' - lib\pages\ontrippage\booking_confirmation.dart:29:8 - unused_import
+warning - Unused import: '../chatPage/chat_page.dart' - lib\pages\ontrippage\booking_confirmation.dart:30:8 - unused_import
+warning - Unused import: '../loadingPage/loading.dart' - lib\pages\ontrippage\booking_confirmation.dart:31:8 - unused_import
+warning - Unused import: '../noInternet/noInternet.dart' - lib\pages\ontrippage\booking_confirmation.dart:33:8 - unused_import
+warning - Unused import: 'drop_loc_select.dart' - lib\pages\ontrippage\booking_confirmation.dart:35:8 - unused_import
+warning - Unused import: 'invoice.dart' - lib\pages\ontrippage\booking_confirmation.dart:36:8 - unused_import
+warning - The value of the field '_cont' isn't used - lib\pages\ontrippage\booking_confirmation.dart:85:26 - unused_field
+warning - The value of the field '_addressBottom' isn't used - lib\pages\ontrippage\booking_confirmation.dart:88:11 - unused_field
+   info - The private field _cancelReason could be 'final' - lib\pages\ontrippage\booking_confirmation.dart:91:10 - prefer_final_fields
+warning - The value of the field '_cancelReason' isn't used - lib\pages\ontrippage\booking_confirmation.dart:91:10 - unused_field
+   info - The private field _locationDenied could be 'final' - lib\pages\ontrippage\booking_confirmation.dart:105:8 - prefer_final_fields
+   info - The private field _ontripBottom could be 'final' - lib\pages\ontrippage\booking_confirmation.dart:109:8 - prefer_final_fields
+warning - The value of the field '_ontripBottom' isn't used - lib\pages\ontrippage\booking_confirmation.dart:109:8 - unused_field
+   info - The private field _cancelling could be 'final' - lib\pages\ontrippage\booking_confirmation.dart:110:8 - prefer_final_fields
+warning - The value of the field '_cancelling' isn't used - lib\pages\ontrippage\booking_confirmation.dart:110:8 - unused_field
+   info - The private field _choosePayment could be 'final' - lib\pages\ontrippage\booking_confirmation.dart:111:8 - prefer_final_fields
+warning - The value of the field '_choosePayment' isn't used - lib\pages\ontrippage\booking_confirmation.dart:111:8 - unused_field
+   info - The private field _cancelCustomReason could be 'final' - lib\pages\ontrippage\booking_confirmation.dart:112:10 - prefer_final_fields
+warning - The value of the field '_cancelCustomReason' isn't used - lib\pages\ontrippage\booking_confirmation.dart:112:10 - unused_field
+   info - The private field _dateTimePicker could be 'final' - lib\pages\ontrippage\booking_confirmation.dart:114:8 - prefer_final_fields
+   info - The private field _chooseGoodsType could be 'final' - lib\pages\ontrippage\booking_confirmation.dart:117:8 - prefer_final_fields
+warning - The value of the field '_chooseGoodsType' isn't used - lib\pages\ontrippage\booking_confirmation.dart:117:8 - unused_field
+warning - The value of the field '_showInfoInt' isn't used - lib\pages\ontrippage\booking_confirmation.dart:118:11 - unused_field
+warning - The value of the field '_dist' isn't used - lib\pages\ontrippage\booking_confirmation.dart:119:11 - unused_field
+   info - The private field _editUserDetails could be 'final' - lib\pages\ontrippage\booking_confirmation.dart:120:8 - prefer_final_fields
+   info - The private field _cancellingError could be 'final' - lib\pages\ontrippage\booking_confirmation.dart:121:10 - prefer_final_fields
+warning - The value of the field '_cancellingError' isn't used - lib\pages\ontrippage\booking_confirmation.dart:121:10 - unused_field
+warning - The declaration '_mapMarkerSink' isn't referenced - lib\pages\ontrippage\booking_confirmation.dart:130:32 - unused_element
+warning - The value of the field '_cachedDriversStream' isn't used - lib\pages\ontrippage\booking_confirmation.dart:136:26 - unused_field
+   info - The private field _isDateTimebottom could be 'final' - lib\pages\ontrippage\booking_confirmation.dart:145:10 - prefer_final_fields
+warning - The value of the field '_isDateTimebottom' isn't used - lib\pages\ontrippage\booking_confirmation.dart:145:10 - unused_field
+   info - The private field _dateTimeHeight could be 'final' - lib\pages\ontrippage\booking_confirmation.dart:146:11 - prefer_final_fields
+warning - The value of the field '_dateTimeHeight' isn't used - lib\pages\ontrippage\booking_confirmation.dart:146:11 - unused_field
+   info - Missing type annotation - lib\pages\ontrippage\booking_confirmation.dart:247:3 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\ontrippage\booking_confirmation.dart:296:3 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\ontrippage\booking_confirmation.dart:333:3 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\ontrippage\booking_confirmation.dart:435:3 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\ontrippage\booking_confirmation.dart:459:3 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\ontrippage\booking_confirmation.dart:459:11 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\ontrippage\booking_confirmation.dart:459:19 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\ontrippage\booking_confirmation.dart:459:24 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\ontrippage\booking_confirmation.dart:510:3 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\ontrippage\booking_confirmation.dart:510:21 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\ontrippage\booking_confirmation.dart:525:3 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\ontrippage\booking_confirmation.dart:533:3 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\ontrippage\booking_confirmation.dart:631:3 - strict_top_level_inference
+warning - The method doesn't override an inherited method - lib\pages\ontrippage\booking_confirmation.dart:738:8 - override_on_non_overriding_member
+  error - The method 'SearchingOverlay' isn't defined for the type '_BookingConfirmationState' - lib\pages\ontrippage\booking_confirmation.dart:815:15 - undefined_method
+  error - The argument type 'List<dynamic>' can't be assigned to the parameter type 'List<LatLng>'.  - lib\pages\ontrippage\booking_confirmation.dart:858:37 - argument_type_not_assignable
+  error - The method 'bookRental' isn't defined for the type '_BookingConfirmationState' - lib\pages\ontrippage\booking_confirmation.dart:1049:63 - undefined_method
+  error - The method 'bookRide' isn't defined for the type '_BookingConfirmationState' - lib\pages\ontrippage\booking_confirmation.dart:1049:78 - undefined_method
+   info - Missing type annotation - lib\pages\ontrippage\booking_confirmation.dart:1107:3 - strict_top_level_inference

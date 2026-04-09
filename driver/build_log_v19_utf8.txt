@@ -1,0 +1,134 @@
+﻿Running Gradle task 'assembleDebug'...                          
+Checking the license for package Android SDK Platform 35 in C:\Users\FergentiusRosales\AppData\Local\Android\sdk\licenses
+License for package Android SDK Platform 35 accepted.
+Preparing "Install Android SDK Platform 35 (revision 2)".
+"Install Android SDK Platform 35 (revision 2)" ready.
+Installing Android SDK Platform 35 in C:\Users\FergentiusRosales\AppData\Local\Android\sdk\platforms\android-35
+"Install Android SDK Platform 35 (revision 2)" complete.
+"Install Android SDK Platform 35 (revision 2)" finished.
+flutter : lib/functions/notifications.
+dart:52:35: Error: Too many 
+positional arguments: 0 allowed, but 
+1 found.
+At line:1 char:1
++ flutter build apk --debug > 
+build_log_v19.txt 2>&1
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpec 
+   ified: (lib/functions/n...d, but   
+  1 found.:String) [], RemoteExcept   
+ ion
+    + FullyQualifiedErrorId : NativeC 
+   ommandError
+ 
+Try removing the extra positional 
+arguments.
+  await fltNotification.initialize(ini
+tSetting);
+                                  ^
+lib/functions/notifications.dart:130:3
+1: Error: Too many positional 
+arguments: 0 allowed, but 1 found.
+Try removing the extra positional 
+arguments.
+    fltNotification.initialize(initSet
+ting,
+                              ^
+lib/functions/notifications.dart:133:3
+1: Error: Too many positional 
+arguments: 0 allowed, but 4 found.
+Try removing the extra positional 
+arguments.
+    await fltNotification.show(
+                              ^
+lib/functions/notifications.dart:150:3
+1: Error: Too many positional 
+arguments: 0 allowed, but 1 found.
+Try removing the extra positional 
+arguments.
+    fltNotification.initialize(initSet
+ting,
+                              ^
+lib/functions/notifications.dart:153:3
+1: Error: Too many positional 
+arguments: 0 allowed, but 4 found.
+Try removing the extra positional 
+arguments.
+    await fltNotification.show(
+                              ^
+lib/functions/notifications.dart:177:2
+9: Error: Too many positional 
+arguments: 0 allowed, but 1 found.
+Try removing the extra positional 
+arguments.
+  fltNotification.initialize(initSetti
+ng,
+                            ^
+lib/functions/notifications.dart:180:2
+9: Error: Too many positional 
+arguments: 0 allowed, but 4 found.
+Try removing the extra positional 
+arguments.
+  await fltNotification.show(
+                            ^
+lib/functions/notifications.dart:205:3
+0: Error: Too many positional 
+arguments: 0 allowed, but 1 found.
+Try removing the extra positional 
+arguments.
+  rideNotification.initialize(initSett
+ing);
+                             ^
+lib/functions/notifications.dart:206:3
+0: Error: Too many positional 
+arguments: 0 allowed, but 4 found.
+Try removing the extra positional 
+arguments.
+  await rideNotification.show(id++, 
+message.title.toString(),
+                             ^
+lib/functions/notifications.dart:231:3
+0: Error: Too many positional 
+arguments: 0 allowed, but 1 found.
+Try removing the extra positional 
+arguments.
+  rideNotification.initialize(initSett
+ing);
+                             ^
+lib/functions/notifications.dart:232:3
+0: Error: Too many positional 
+arguments: 0 allowed, but 4 found.
+Try removing the extra positional 
+arguments.
+  await rideNotification.show(id++, 
+message.title.toString(),
+                             ^
+Target kernel_snapshot_program 
+failed: Exception
+
+
+FAILURE: Build failed with an 
+exception.
+
+* What went wrong:
+Execution failed for task 
+':app:compileFlutterBuildDebug'.
+> Process 'command 
+'C:\tools\flutter\bin\flutter.bat'' 
+finished with non-zero exit value 1
+
+* Try:
+> Run with --stacktrace option to get 
+the stack trace.
+> Run with --info or --debug option 
+to get more log output.
+> Run with --scan to get full 
+insights.
+> Get more help at 
+https://help.gradle.org.
+
+BUILD FAILED in 4m 4s
+Running Gradle task 'assembleDebug'...                            245.2s
+Gradle task assembleDebug failed with 
+exit code 1

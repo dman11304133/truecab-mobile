@@ -1,0 +1,118 @@
+﻿Running Gradle task 'assembleDebug'...                          
+flutter : warning: [options] 
+source value 8 is obsolete and 
+will be removed in a future 
+release
+At line:1 char:1
++ flutter build apk --debug > 
+build_log_v26.txt 2>&1
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : 
+NotSpec    ified: (warning: 
+[optio... future     
+release:String) [], RemoteExcept  
+  ion
+    + FullyQualifiedErrorId : 
+NativeC    ommandError
+ 
+warning: [options] target value 8 
+is obsolete and will be removed 
+in a future release
+warning: [options] To suppress 
+warnings about obsolete options, 
+use -Xlint:-options.
+Note: C:\Users\FergentiusRosales\A
+ppData\Local\Pub\Cache\hosted\pub.
+dev\bubble_head-0.0.4\android\src\
+main\java\com\dsaved\bubblehead\bu
+bble\BubbleHeadService.java uses 
+or overrides a deprecated API.
+Note: Recompile with 
+-Xlint:deprecation for details.
+3 warnings
+warning: [options] source value 8 
+is obsolete and will be removed 
+in a future release
+warning: [options] target value 8 
+is obsolete and will be removed 
+in a future release
+warning: [options] To suppress 
+warnings about obsolete options, 
+use -Xlint:-options.
+Note: C:\Users\FergentiusRosales\A
+ppData\Local\Pub\Cache\hosted\pub.
+dev\contacts_service-0.6.3\android
+\src\main\java\flutter\plugins\con
+tactsservice\contactsservice\Conta
+ctsServicePlugin.java uses or 
+overrides a deprecated API.
+Note: Recompile with 
+-Xlint:deprecation for details.
+3 warnings
+warning: [options] source value 8 
+is obsolete and will be removed 
+in a future release
+warning: [options] target value 8 
+is obsolete and will be removed 
+in a future release
+warning: [options] To suppress 
+warnings about obsolete options, 
+use -Xlint:-options.
+Note: C:\Users\FergentiusRosales\A
+ppData\Local\Pub\Cache\hosted\pub.
+dev\device_apps-2.2.0\android\src\
+main\java\fr\g123k\deviceapps\Devi
+ceAppsPlugin.java uses or 
+overrides a deprecated API.
+Note: Recompile with 
+-Xlint:deprecation for details.
+3 warnings
+Note: Some input files use or 
+override a deprecated API.
+Note: Recompile with 
+-Xlint:deprecation for details.
+warning: [options] source value 8 
+is obsolete and will be removed 
+in a future release
+warning: [options] target value 8 
+is obsolete and will be removed 
+in a future release
+warning: [options] To suppress 
+warnings about obsolete options, 
+use -Xlint:-options.
+Note: Some input files use or 
+override a deprecated API.
+Note: Recompile with 
+-Xlint:deprecation for details.
+Note: Some input files use 
+unchecked or unsafe operations.
+Note: Recompile with 
+-Xlint:unchecked for details.
+3 warnings
+warning: [options] source value 8 
+is obsolete and will be removed 
+in a future release
+warning: [options] target value 8 
+is obsolete and will be removed 
+in a future release
+warning: [options] To suppress 
+warnings about obsolete options, 
+use -Xlint:-options.
+3 warnings
+warning: [options] source value 8 
+is obsolete and will be removed 
+in a future release
+warning: [options] target value 8 
+is obsolete and will be removed 
+in a future release
+warning: [options] To suppress 
+warnings about obsolete options, 
+use -Xlint:-options.
+3 warnings
+Note: Some input files use or 
+override a deprecated API.
+Note: Recompile with 
+-Xlint:deprecation for details.
+Running Gradle task 'assembleDebug'...                            517.1s
+ΓêÜ Built build\app\outputs\flutter-apk\app-debug.apk

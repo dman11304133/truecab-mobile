@@ -1,0 +1,43 @@
+﻿Running Gradle task 'assembleDebug'...                          
+flutter : 
+At line:1 char:1
++ flutter build apk --debug > 
+build_log_v16.txt 2>&1
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : Not 
+   Specified: (:String) [], Remo  
+  teException
+    + FullyQualifiedErrorId : Nat 
+   iveCommandError
+ 
+FAILURE: Build failed with an 
+exception.
+
+* Where:
+Build file 'C:\Users\FergentiusRos
+ales\Herd\truecabtt\mobileapp\driv
+er\android\build.gradle' line: 18
+
+* What went wrong:
+A problem occurred evaluating 
+root project 'android'.
+> Cannot run 
+Project.afterEvaluate(Closure) 
+when the project is already 
+evaluated.
+
+* Try:
+> Run with --stacktrace option to 
+get the stack trace.
+> Run with --info or --debug 
+option to get more log output.
+> Run with --scan to get full 
+insights.
+> Get more help at 
+https://help.gradle.org.
+
+BUILD FAILED in 3m 48s
+Running Gradle task 'assembleDebug'...                            229.4s
+Gradle task assembleDebug failed 
+with exit code 1

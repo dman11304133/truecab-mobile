@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyCFJxVaMHLUjl8Y-GyPOyinBIjVUmwPih8</string>
+	<key>GCM_SENDER_ID</key>
+	<string>572663720476</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.trucabtt.user</string>
+	<key>PROJECT_ID</key>
+	<string>trucab-51f40</string>
+	<key>STORAGE_BUCKET</key>
+	<string>trucab-51f40.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:572663720476:ios:78e72c4000fbd2dfb24dd9</string>
+	<key>DATABASE_URL</key>
+	<string>https://trucab-51f40-default-rtdb.firebaseio.com</string>
+</dict>
+</plist>

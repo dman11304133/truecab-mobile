@@ -1,0 +1,904 @@
+﻿Analyzing driver...                                             
+
+warning - The declaration '_getAuthOnlyHeaders' isn't referenced - lib\functions\api_service.dart:20:30 - unused_element
+  error - The argument type 'String' can't be assigned to the parameter type 'int'.  - lib\functions\auth_service.dart:226:30 - argument_type_not_assignable
+  error - The argument type 'String' can't be assigned to the parameter type 'int'.  - lib\functions\auth_service.dart:305:30 - argument_type_not_assignable
+  error - The name 'phcode' is already defined - lib\functions\functions.dart:110:8 - duplicate_definition
+   info - Missing type annotation - lib\functions\functions.dart:126:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:142:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:142:15 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:187:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:291:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:340:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:340:17 - strict_top_level_inference
+  error - The name 'countries' is already defined - lib\functions\functions.dart:393:6 - duplicate_definition
+   info - Missing type annotation - lib\functions\functions.dart:394:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:429:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:463:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:531:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:560:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:600:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:600:17 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:600:32 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:637:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:673:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:750:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:796:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:867:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:867:21 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:901:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:901:14 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:901:24 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:948:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:979:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:979:22 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:1015:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:1015:20 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:1045:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:1045:17 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:1045:25 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:1045:31 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:1078:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:1123:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:1123:16 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:1161:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:1193:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:1193:25 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:1225:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:1245:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:1287:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:1287:16 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:1287:23 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:1287:33 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:1322:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:1389:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:1660:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:1711:1 - strict_top_level_inference
+   info - 'desiredAccuracy' is deprecated and shouldn't be used. use settings parameter with AndroidSettings, AppleSettings, WebSettings, or LocationSettings - lib\functions\functions.dart:1815:13 - deprecated_member_use
+   info - Missing type annotation - lib\functions\functions.dart:1897:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:1968:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:1968:19 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:1968:25 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:1968:31 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:1968:37 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:1977:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:1984:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:1994:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:1994:23 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:1994:29 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:1994:35 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:1994:41 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:2007:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:2050:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:2103:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:2110:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:2147:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:2189:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:2189:14 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:2218:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:2218:9 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:2218:14 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:2236:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:2236:13 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:2236:18 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:2255:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:2266:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:2266:15 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:2301:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:2362:1 - strict_top_level_inference
+  error - Undefined name 'promoDetails' - lib\functions\functions.dart:2378:24 - undefined_identifier
+  error - Undefined name 'promoDetails' - lib\functions\functions.dart:2378:51 - undefined_identifier
+   info - Missing type annotation - lib\functions\functions.dart:2406:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:2406:20 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:2406:24 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:2437:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:2437:15 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:2437:21 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:2487:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:2487:23 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:2487:29 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:2542:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:2571:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:2571:17 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:2571:24 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:2571:38 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:2571:43 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:2633:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:2638:1 - strict_top_level_inference
+  error - The final variable 'result' can only be set once - lib\functions\functions.dart:2689:7 - assignment_to_final_local
+  error - Undefined name 'response' - lib\functions\functions.dart:2690:18 - undefined_identifier
+   info - Missing type annotation - lib\functions\functions.dart:2693:5 - strict_top_level_inference
+  error - 'catch' can't be used as an identifier because it's a keyword - lib\functions\functions.dart:2693:5 - expected_identifier_but_got_keyword
+   info - Missing type annotation - lib\functions\functions.dart:2693:12 - strict_top_level_inference
+  error - Expected a method, getter, setter or operator declaration - lib\functions\functions.dart:2698:1 - expected_executable
+   info - Missing type annotation - lib\functions\functions.dart:2702:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:2743:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:2743:14 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:2816:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:2853:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:2853:17 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:2866:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:2866:21 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:2913:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:2953:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:2953:13 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:2984:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:3000:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:3000:14 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:3032:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:3032:13 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:3052:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:3081:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:3081:19 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:3114:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:3157:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:3157:15 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:3157:21 - strict_top_level_inference
+  error - Too many positional arguments: 2 expected, but 3 found - lib\functions\functions.dart:3157:82 - extra_positional_arguments
+   info - Missing type annotation - lib\functions\functions.dart:3159:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:3159:27 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:3159:33 - strict_top_level_inference
+  error - The method 'updateProfileWithoutImage' isn't defined for the type 'UserService' - lib\functions\functions.dart:3159:67 - undefined_method
+   info - Missing type annotation - lib\functions\functions.dart:3165:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:3165:12 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:3165:17 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:3167:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:3167:13 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:3173:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:3205:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:3205:17 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:3246:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:3248:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:3248:22 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:3252:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:3252:8 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:3252:14 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:3256:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:3256:11 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:3261:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:3267:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:3267:18 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:3271:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:3271:16 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:3271:24 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:3276:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:3276:20 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:3280:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:3280:21 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:3280:29 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:3284:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:3284:18 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:3284:26 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:3290:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:3290:12 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:3290:19 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:3294:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:3298:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:3302:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:3318:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:3330:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:3359:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:3389:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:3389:21 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:3389:31 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:3420:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:3420:17 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:3454:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:3485:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:3485:22 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:3523:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:3525:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:3525:13 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:3525:22 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:3525:29 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:3525:39 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:3529:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:3553:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:3553:21 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:3555:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:3555:22 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:3557:1 - strict_top_level_inference
+  error - 1 positional argument expected by 'makeRequestComplaint', but 0 found - lib\functions\functions.dart:3557:76 - not_enough_positional_arguments
+   info - Missing type annotation - lib\functions\functions.dart:3567:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:3614:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:3686:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:3720:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:3720:11 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:3736:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:3784:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:3813:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:3849:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:3849:18 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:3894:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:3946:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:3946:20 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:3979:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:3979:22 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:4014:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:4024:1 - strict_top_level_inference
+  error - The method 'userDelete' isn't defined for the type 'AuthService' - lib\functions\functions.dart:4024:41 - undefined_method
+   info - Missing type annotation - lib\functions\functions.dart:4026:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:4026:16 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:4026:21 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:4026:26 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:4066:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:4066:23 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:4066:28 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:4112:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:4225:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:4261:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:4292:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:4329:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:4356:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:4392:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:4425:1 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\functions.dart:4457:1 - strict_top_level_inference
+   info - Angle brackets will be interpreted as HTML - lib\functions\geohash.dart:34:22 - unintended_html_in_doc_comment
+   info - Angle brackets will be interpreted as HTML - lib\functions\geohash.dart:53:62 - unintended_html_in_doc_comment
+   info - Angle brackets will be interpreted as HTML - lib\functions\geohash.dart:77:22 - unintended_html_in_doc_comment
+   info - Angle brackets will be interpreted as HTML - lib\functions\geohash.dart:101:42 - unintended_html_in_doc_comment
+   info - Angle brackets will be interpreted as HTML - lib\functions\geohash.dart:172:41 - unintended_html_in_doc_comment
+   info - Angle brackets will be interpreted as HTML - lib\functions\geohash.dart:251:20 - unintended_html_in_doc_comment
+   info - Angle brackets will be interpreted as HTML - lib\functions\geohash.dart:329:20 - unintended_html_in_doc_comment
+   info - 'desiredAccuracy' is deprecated and shouldn't be used. use settings parameter with AndroidSettings, AppleSettings, WebSettings, or LocationSettings - lib\functions\location_service.dart:33:9 - deprecated_member_use
+  error - Undefined name 'TargetPlatform' - lib\functions\location_service.dart:57:54 - undefined_identifier
+  error - Undefined name 'addressList' - lib\functions\map_service.dart:25:29 - undefined_identifier
+  error - Undefined name 'addressList' - lib\functions\map_service.dart:26:21 - undefined_identifier
+  error - Undefined name 'addressList' - lib\functions\map_service.dart:27:21 - undefined_identifier
+  error - Undefined name 'addressList' - lib\functions\map_service.dart:28:21 - undefined_identifier
+  error - Undefined name 'addressList' - lib\functions\map_service.dart:29:21 - undefined_identifier
+  error - Undefined name 'center' - lib\functions\map_service.dart:37:19 - undefined_identifier
+  error - Undefined name 'center' - lib\functions\map_service.dart:38:19 - undefined_identifier
+  error - Undefined name 'addressList' - lib\functions\map_service.dart:39:19 - undefined_identifier
+  error - Undefined name 'addressList' - lib\functions\map_service.dart:40:19 - undefined_identifier
+   info - Missing type annotation - lib\functions\notifications.dart:108:52 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\notifications.dart:167:39 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\notifications.dart:197:34 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\notifications.dart:226:35 - strict_top_level_inference
+warning - Unused import: 'dart:convert' - lib\functions\ride_service.dart:1:8 - unused_import
+warning - Unused import: 'package:firebase_database/firebase_database.dart' - lib\functions\ride_service.dart:3:8 - unused_import
+   info - Missing type annotation - lib\functions\settings_service.dart:35:35 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\settings_service.dart:57:36 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\settings_service.dart:57:41 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\settings_service.dart:81:37 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\settings_service.dart:108:45 - strict_top_level_inference
+  error - Undefined name 'complaintType' - lib\functions\settings_service.dart:136:52 - undefined_identifier
+  error - Undefined name 'complaintType' - lib\functions\settings_service.dart:160:52 - undefined_identifier
+  error - Undefined name 'languages' - lib\functions\user_service.dart:43:16 - undefined_identifier
+warning - Unused import: 'package:http/http.dart' - lib\functions\wallet_service.dart:4:8 - unused_import
+   info - Missing type annotation - lib\functions\wallet_service.dart:94:40 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\wallet_service.dart:94:48 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\wallet_service.dart:121:45 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\wallet_service.dart:148:45 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\wallet_service.dart:148:53 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\wallet_service.dart:175:42 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\wallet_service.dart:175:50 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\wallet_service.dart:202:36 - strict_top_level_inference
+   info - Missing type annotation - lib\functions\wallet_service.dart:202:43 - strict_top_level_inference
+  error - The function 'Workmanager' isn't defined - lib\main.dart:24:3 - undefined_function
+  error - The function 'Workmanager' isn't defined - lib\main.dart:67:3 - undefined_function
+  error - The method 'Workmanager' isn't defined for the type '_MyAppState' - lib\main.dart:86:5 - undefined_method
+  error - The method 'Workmanager' isn't defined for the type '_MyAppState' - lib\main.dart:121:7 - undefined_method
+   info - Missing type annotation - lib\main.dart:155:21 - strict_top_level_inference
+  error - The function 'Workmanager' isn't defined - lib\main.dart:157:5 - undefined_function
+  error - The function 'Constraints' isn't defined - lib\main.dart:160:22 - undefined_function
+  error - Undefined name 'NetworkType' - lib\main.dart:161:26 - undefined_identifier
+   info - Missing type annotation - lib\pages\NavigatorPages\adddriver.dart:35:3 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\NavigatorPages\adddriver.dart:39:3 - strict_top_level_inference
+   info - Don't use 'BuildContext's across async gaps - lib\pages\NavigatorPages\adddriver.dart:43:13 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\pages\NavigatorPages\adddriver.dart:51:13 - use_build_context_synchronously
+   info - Missing type annotation - lib\pages\NavigatorPages\adddriver.dart:58:3 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\NavigatorPages\adddriver.dart:71:3 - strict_top_level_inference
+  error - A value of type 'int' can't be assigned to a variable of type 'String' - lib\pages\NavigatorPages\adddriver.dart:255:102 - invalid_assignment
+  error - A value of type 'int' can't be assigned to a variable of type 'String' - lib\pages\NavigatorPages\adddriver.dart:288:106 - invalid_assignment
+  error - The argument type 'String' can't be assigned to the parameter type 'int'.  - lib\pages\NavigatorPages\adddriver.dart:343:57 - argument_type_not_assignable
+  error - The argument type 'String' can't be assigned to the parameter type 'int'.  - lib\pages\NavigatorPages\adddriver.dart:374:62 - argument_type_not_assignable
+  error - The argument type 'String' can't be assigned to the parameter type 'int'.  - lib\pages\NavigatorPages\adddriver.dart:387:65 - argument_type_not_assignable
+  error - The argument type 'String' can't be assigned to the parameter type 'int'.  - lib\pages\NavigatorPages\adddriver.dart:446:55 - argument_type_not_assignable
+  error - The argument type 'String' can't be assigned to the parameter type 'int'.  - lib\pages\NavigatorPages\adddriver.dart:449:55 - argument_type_not_assignable
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\adddriver.dart:539:57 - deprecated_member_use
+   info - Missing type annotation - lib\pages\NavigatorPages\adminchatpage.dart:33:3 - strict_top_level_inference
+   info - 'onPopInvoked' is deprecated and shouldn't be used. Use onPopInvokedWithResult instead. This feature was deprecated after v3.22.0-12.0.pre - lib\pages\NavigatorPages\adminchatpage.dart:51:9 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\adminchatpage.dart:271:62 - deprecated_member_use
+   info - Missing type annotation - lib\pages\NavigatorPages\assigndriver.dart:34:3 - strict_top_level_inference
+   info - Don't use 'BuildContext's across async gaps - lib\pages\NavigatorPages\assigndriver.dart:38:13 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\pages\NavigatorPages\assigndriver.dart:46:13 - use_build_context_synchronously
+   info - Missing type annotation - lib\pages\NavigatorPages\assigndriver.dart:53:3 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\NavigatorPages\assigndriver.dart:73:3 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\NavigatorPages\assigndriver.dart:87:3 - strict_top_level_inference
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\assigndriver.dart:645:55 - deprecated_member_use
+   info - Missing type annotation - lib\pages\NavigatorPages\bankdetails.dart:38:3 - strict_top_level_inference
+   info - Don't use 'BuildContext's across async gaps - lib\pages\NavigatorPages\bankdetails.dart:42:13 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\pages\NavigatorPages\bankdetails.dart:50:13 - use_build_context_synchronously
+   info - Missing type annotation - lib\pages\NavigatorPages\bankdetails.dart:57:3 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\NavigatorPages\bankdetails.dart:70:3 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\NavigatorPages\bankdetails.dart:79:3 - strict_top_level_inference
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\bankdetails.dart:416:51 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\contactus.dart:81:43 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\contactus.dart:123:43 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\contactus.dart:165:43 - deprecated_member_use
+   info - Missing type annotation - lib\pages\NavigatorPages\driverdetails.dart:39:3 - strict_top_level_inference
+   info - Don't use 'BuildContext's across async gaps - lib\pages\NavigatorPages\driverdetails.dart:43:13 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\pages\NavigatorPages\driverdetails.dart:51:13 - use_build_context_synchronously
+   info - Missing type annotation - lib\pages\NavigatorPages\driverdetails.dart:58:3 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\NavigatorPages\driverdetails.dart:75:3 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\NavigatorPages\driverdetails.dart:75:21 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\NavigatorPages\driverdetails.dart:75:28 - strict_top_level_inference
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\driverdetails.dart:229:70 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\driverdetails.dart:240:70 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\driverdetails.dart:263:70 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\driverdetails.dart:274:70 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\driverdetails.dart:311:74 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\driverdetails.dart:326:72 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\driverdetails.dart:354:74 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\driverdetails.dart:369:72 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\driverdetails.dart:523:124 - deprecated_member_use
+   info - Missing type annotation - lib\pages\NavigatorPages\driverearnings.dart:36:3 - strict_top_level_inference
+   info - Don't use 'BuildContext's across async gaps - lib\pages\NavigatorPages\driverearnings.dart:40:13 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\pages\NavigatorPages\driverearnings.dart:48:13 - use_build_context_synchronously
+   info - Missing type annotation - lib\pages\NavigatorPages\driverearnings.dart:56:3 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\NavigatorPages\driverearnings.dart:69:3 - strict_top_level_inference
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\driverearnings.dart:147:50 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\driverearnings.dart:264:48 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\driverearnings.dart:277:50 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\driverearnings.dart:279:50 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\driverearnings.dart:445:48 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\driverearnings.dart:456:48 - deprecated_member_use
+   info - Use interpolation to compose strings and values - lib\pages\NavigatorPages\driverearnings.dart:516:43 - prefer_interpolation_to_compose_strings
+   info - Use interpolation to compose strings and values - lib\pages\NavigatorPages\driverearnings.dart:546:39 - prefer_interpolation_to_compose_strings
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\driverearnings.dart:562:52 - deprecated_member_use
+   info - Use interpolation to compose strings and values - lib\pages\NavigatorPages\driverearnings.dart:577:41 - prefer_interpolation_to_compose_strings
+   info - Use interpolation to compose strings and values - lib\pages\NavigatorPages\driverearnings.dart:593:39 - prefer_interpolation_to_compose_strings
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\driverearnings.dart:682:58 - deprecated_member_use
+   info - Use interpolation to compose strings and values - lib\pages\NavigatorPages\driverearnings.dart:816:47 - prefer_interpolation_to_compose_strings
+   info - Use interpolation to compose strings and values - lib\pages\NavigatorPages\driverearnings.dart:847:47 - prefer_interpolation_to_compose_strings
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\driverearnings.dart:869:56 - deprecated_member_use
+   info - Use interpolation to compose strings and values - lib\pages\NavigatorPages\driverearnings.dart:884:45 - prefer_interpolation_to_compose_strings
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\driverearnings.dart:946:63 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\driverearnings.dart:999:63 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\driverearnings.dart:1027:62 - deprecated_member_use
+   info - Use interpolation to compose strings and values - lib\pages\NavigatorPages\driverearnings.dart:1084:55 - prefer_interpolation_to_compose_strings
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\driverearnings.dart:1132:60 - deprecated_member_use
+   info - Use interpolation to compose strings and values - lib\pages\NavigatorPages\driverearnings.dart:1340:63 - prefer_interpolation_to_compose_strings
+   info - Use interpolation to compose strings and values - lib\pages\NavigatorPages\driverearnings.dart:1390:63 - prefer_interpolation_to_compose_strings
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\driverearnings.dart:1423:58 - deprecated_member_use
+   info - Use interpolation to compose strings and values - lib\pages\NavigatorPages\driverearnings.dart:1446:61 - prefer_interpolation_to_compose_strings
+warning - Unused import: 'package:flutter_driver/pages/login/carinformation.dart' - lib\pages\NavigatorPages\editprofile.dart:5:8 - unused_import
+warning - Unused import: 'package:google_fonts/google_fonts.dart' - lib\pages\NavigatorPages\editprofile.dart:8:8 - unused_import
+   info - Missing type annotation - lib\pages\NavigatorPages\editprofile.dart:43:3 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\NavigatorPages\editprofile.dart:71:3 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\NavigatorPages\editprofile.dart:84:3 - strict_top_level_inference
+   info - Don't use 'BuildContext's across async gaps - lib\pages\NavigatorPages\editprofile.dart:88:13 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\pages\NavigatorPages\editprofile.dart:96:13 - use_build_context_synchronously
+   info - Missing type annotation - lib\pages\NavigatorPages\editprofile.dart:104:3 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\NavigatorPages\editprofile.dart:113:3 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\NavigatorPages\editprofile.dart:130:3 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\NavigatorPages\editprofile.dart:161:3 - strict_top_level_inference
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\editprofile.dart:542:49 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\editprofile.dart:605:60 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\editprofile.dart:638:60 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\editprofile.dart:659:45 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\editprofile.dart:700:55 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\editprofile.dart:766:45 - deprecated_member_use
+   info - Missing type annotation - lib\pages\NavigatorPages\faq.dart:25:3 - strict_top_level_inference
+   info - Don't use 'BuildContext's across async gaps - lib\pages\NavigatorPages\faq.dart:29:13 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\pages\NavigatorPages\faq.dart:37:13 - use_build_context_synchronously
+   info - Missing type annotation - lib\pages\NavigatorPages\faq.dart:52:3 - strict_top_level_inference
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\fleetdetails.dart:74:59 - deprecated_member_use
+   info - Missing type annotation - lib\pages\NavigatorPages\fleetdocuments.dart:37:3 - strict_top_level_inference
+   info - Don't use 'BuildContext's across async gaps - lib\pages\NavigatorPages\fleetdocuments.dart:41:13 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\pages\NavigatorPages\fleetdocuments.dart:49:13 - use_build_context_synchronously
+   info - Missing type annotation - lib\pages\NavigatorPages\fleetdocuments.dart:56:3 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\NavigatorPages\fleetdocuments.dart:360:3 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\NavigatorPages\fleetdocuments.dart:375:3 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\NavigatorPages\fleetdocuments.dart:402:3 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\NavigatorPages\fleetdocuments.dart:406:3 - strict_top_level_inference
+   info - Don't use 'BuildContext's across async gaps - lib\pages\NavigatorPages\fleetdocuments.dart:410:13 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\pages\NavigatorPages\fleetdocuments.dart:418:13 - use_build_context_synchronously
+   info - Missing type annotation - lib\pages\NavigatorPages\fleetdocuments.dart:426:3 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\NavigatorPages\fleetdocuments.dart:435:3 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\NavigatorPages\fleetdocuments.dart:452:3 - strict_top_level_inference
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\fleetdocuments.dart:567:59 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\fleetdocuments.dart:769:53 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\fleetdocuments.dart:886:49 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\fleetdocuments.dart:929:59 - deprecated_member_use
+   info - Missing type annotation - lib\pages\NavigatorPages\history.dart:41:3 - strict_top_level_inference
+   info - Don't use 'BuildContext's across async gaps - lib\pages\NavigatorPages\history.dart:45:13 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\pages\NavigatorPages\history.dart:53:13 - use_build_context_synchronously
+   info - Missing type annotation - lib\pages\NavigatorPages\history.dart:61:3 - strict_top_level_inference
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\history.dart:183:37 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\history.dart:258:74 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\history.dart:269:74 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\history.dart:292:74 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\history.dart:303:74 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\history.dart:340:78 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\history.dart:354:76 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\history.dart:382:78 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\history.dart:396:76 - deprecated_member_use
+   info - Use interpolation to compose strings and values - lib\pages\NavigatorPages\history.dart:554:81 - prefer_interpolation_to_compose_strings
+   info - Use interpolation to compose strings and values - lib\pages\NavigatorPages\history.dart:557:150 - prefer_interpolation_to_compose_strings
+   info - Use interpolation to compose strings and values - lib\pages\NavigatorPages\history.dart:558:127 - prefer_interpolation_to_compose_strings
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\history.dart:596:76 - deprecated_member_use
+warning - Unused import: 'history.dart' - lib\pages\NavigatorPages\historydetails.dart:8:8 - unused_import
+   info - Missing type annotation - lib\pages\NavigatorPages\historydetails.dart:37:3 - strict_top_level_inference
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\historydetails.dart:106:42 - deprecated_member_use
+   info - Use interpolation to compose strings and values - lib\pages\NavigatorPages\historydetails.dart:181:67 - prefer_interpolation_to_compose_strings
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\historydetails.dart:331:52 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\historydetails.dart:385:74 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\historydetails.dart:442:58 - deprecated_member_use
+   info - Use interpolation to compose strings and values - lib\pages\NavigatorPages\historydetails.dart:505:59 - prefer_interpolation_to_compose_strings
+   info - Use interpolation to compose strings and values - lib\pages\NavigatorPages\historydetails.dart:684:65 - prefer_interpolation_to_compose_strings
+   info - Use interpolation to compose strings and values - lib\pages\NavigatorPages\historydetails.dart:732:65 - prefer_interpolation_to_compose_strings
+   info - Use interpolation to compose strings and values - lib\pages\NavigatorPages\historydetails.dart:780:65 - prefer_interpolation_to_compose_strings
+   info - Use interpolation to compose strings and values - lib\pages\NavigatorPages\historydetails.dart:833:71 - prefer_interpolation_to_compose_strings
+   info - Use interpolation to compose strings and values - lib\pages\NavigatorPages\historydetails.dart:887:71 - prefer_interpolation_to_compose_strings
+   info - Use interpolation to compose strings and values - lib\pages\NavigatorPages\historydetails.dart:924:65 - prefer_interpolation_to_compose_strings
+   info - Use interpolation to compose strings and values - lib\pages\NavigatorPages\historydetails.dart:928:65 - prefer_interpolation_to_compose_strings
+   info - Use interpolation to compose strings and values - lib\pages\NavigatorPages\historydetails.dart:931:65 - prefer_interpolation_to_compose_strings
+   info - Use interpolation to compose strings and values - lib\pages\NavigatorPages\historydetails.dart:937:65 - prefer_interpolation_to_compose_strings
+   info - Use interpolation to compose strings and values - lib\pages\NavigatorPages\historydetails.dart:952:65 - prefer_interpolation_to_compose_strings
+   info - Use interpolation to compose strings and values - lib\pages\NavigatorPages\historydetails.dart:1000:65 - prefer_interpolation_to_compose_strings
+   info - Use interpolation to compose strings and values - lib\pages\NavigatorPages\historydetails.dart:1055:71 - prefer_interpolation_to_compose_strings
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\historydetails.dart:1224:47 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\historydetails.dart:1238:52 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\historydetails.dart:1307:63 - deprecated_member_use
+   info - Use interpolation to compose strings and values - lib\pages\NavigatorPages\historydetails.dart:1445:55 - prefer_interpolation_to_compose_strings
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\historydetails.dart:1495:66 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\historydetails.dart:1530:58 - deprecated_member_use
+   info - Missing type annotation - lib\pages\NavigatorPages\historyoutstationdetails.dart:26:3 - strict_top_level_inference
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\historyoutstationdetails.dart:84:38 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\historyoutstationdetails.dart:249:61 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\historyoutstationdetails.dart:299:68 - deprecated_member_use
+   info - Use interpolation to compose strings and values - lib\pages\NavigatorPages\historyoutstationdetails.dart:419:41 - prefer_interpolation_to_compose_strings
+   info - Missing type annotation - lib\pages\NavigatorPages\makecomplaint.dart:30:3 - strict_top_level_inference
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\makecomplaint.dart:109:52 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\makecomplaint.dart:149:62 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\makecomplaint.dart:253:70 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\makecomplaintdetails.dart:91:58 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\makecomplaintdetails.dart:101:54 - deprecated_member_use
+   info - Use interpolation to compose strings and values - lib\pages\NavigatorPages\makecomplaintdetails.dart:106:39 - prefer_interpolation_to_compose_strings
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\makecomplaintdetails.dart:176:51 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\makecomplaintdetails.dart:227:60 - deprecated_member_use
+   info - Missing type annotation - lib\pages\NavigatorPages\managevehicles.dart:42:3 - strict_top_level_inference
+   info - Don't use 'BuildContext's across async gaps - lib\pages\NavigatorPages\managevehicles.dart:46:13 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\pages\NavigatorPages\managevehicles.dart:54:13 - use_build_context_synchronously
+   info - Missing type annotation - lib\pages\NavigatorPages\managevehicles.dart:61:3 - strict_top_level_inference
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\managevehicles.dart:190:68 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\managevehicles.dart:201:68 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\managevehicles.dart:223:68 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\managevehicles.dart:234:68 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\managevehicles.dart:269:72 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\managevehicles.dart:283:70 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\managevehicles.dart:310:72 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\managevehicles.dart:324:70 - deprecated_member_use
+   info - Don't invoke 'print' in production code - lib\pages\NavigatorPages\mercadopago.dart:24:5 - avoid_print
+   info - Don't invoke 'print' in production code - lib\pages\NavigatorPages\mercadopago.dart:49:15 - avoid_print
+   info - Don't invoke 'print' in production code - lib\pages\NavigatorPages\mercadopago.dart:50:15 - avoid_print
+   info - Missing type annotation - lib\pages\NavigatorPages\myroutebookings.dart:33:3 - strict_top_level_inference
+   info - Don't use 'BuildContext's across async gaps - lib\pages\NavigatorPages\myroutebookings.dart:37:13 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\pages\NavigatorPages\myroutebookings.dart:45:13 - use_build_context_synchronously
+   info - Missing type annotation - lib\pages\NavigatorPages\myroutebookings.dart:301:3 - strict_top_level_inference
+   info - Don't use 'BuildContext's across async gaps - lib\pages\NavigatorPages\myroutebookings.dart:305:13 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\pages\NavigatorPages\myroutebookings.dart:313:13 - use_build_context_synchronously
+   info - Missing type annotation - lib\pages\NavigatorPages\myroutebookings.dart:320:3 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\NavigatorPages\myroutebookings.dart:1136:3 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\NavigatorPages\notification.dart:38:3 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\NavigatorPages\notification.dart:38:11 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\NavigatorPages\notification.dart:56:3 - strict_top_level_inference
+   info - Don't use 'BuildContext's across async gaps - lib\pages\NavigatorPages\notification.dart:60:13 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\pages\NavigatorPages\notification.dart:68:13 - use_build_context_synchronously
+   info - Missing type annotation - lib\pages\NavigatorPages\notification.dart:80:3 - strict_top_level_inference
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\notification.dart:208:146 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\notification.dart:216:98 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\notification.dart:225:146 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\notification.dart:240:146 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\notification.dart:248:98 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\notification.dart:303:110 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\notification.dart:520:55 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\notification.dart:535:56 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\notification.dart:555:62 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\notification.dart:605:55 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\notification.dart:614:62 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\notification.dart:696:59 - deprecated_member_use
+   info - Missing type annotation - lib\pages\NavigatorPages\outstation.dart:38:3 - strict_top_level_inference
+   info - Don't use 'BuildContext's across async gaps - lib\pages\NavigatorPages\outstation.dart:42:13 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\pages\NavigatorPages\outstation.dart:50:13 - use_build_context_synchronously
+   info - Missing type annotation - lib\pages\NavigatorPages\outstation.dart:58:3 - strict_top_level_inference
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\outstation.dart:121:36 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\outstation.dart:191:72 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\outstation.dart:202:72 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\outstation.dart:225:72 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\outstation.dart:236:72 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\outstation.dart:268:76 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\outstation.dart:283:74 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\outstation.dart:310:76 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\outstation.dart:325:74 - deprecated_member_use
+   info - Use interpolation to compose strings and values - lib\pages\NavigatorPages\outstation.dart:500:75 - prefer_interpolation_to_compose_strings
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\outstation.dart:544:74 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\paymentgateways.dart:121:49 - deprecated_member_use
+   info - Missing type annotation - lib\pages\NavigatorPages\pickcontacts.dart:40:3 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\NavigatorPages\pickcontacts.dart:49:3 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\NavigatorPages\pickcontacts.dart:86:3 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\NavigatorPages\pickcontacts.dart:90:3 - strict_top_level_inference
+   info - Don't use 'BuildContext's across async gaps - lib\pages\NavigatorPages\pickcontacts.dart:94:13 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\pages\NavigatorPages\pickcontacts.dart:102:13 - use_build_context_synchronously
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\pickcontacts.dart:357:72 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\pickcontacts.dart:373:72 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\pickcontacts.dart:395:70 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\pickcontacts.dart:479:51 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\pickcontacts.dart:535:49 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\pickcontacts.dart:557:61 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\pickcontacts.dart:575:56 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\pickcontacts.dart:582:59 - deprecated_member_use
+   info - Missing type annotation - lib\pages\NavigatorPages\referral.dart:35:3 - strict_top_level_inference
+   info - Don't use 'BuildContext's across async gaps - lib\pages\NavigatorPages\referral.dart:39:13 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\pages\NavigatorPages\referral.dart:47:13 - use_build_context_synchronously
+   info - Missing type annotation - lib\pages\NavigatorPages\referral.dart:55:3 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\NavigatorPages\referral.dart:75:3 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\NavigatorPages\referral.dart:99:3 - strict_top_level_inference
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\referral.dart:199:64 - deprecated_member_use
+   info - 'Share' is deprecated and shouldn't be used. Use SharePlus instead - lib\pages\NavigatorPages\referral.dart:224:45 - deprecated_member_use
+   info - 'share' is deprecated and shouldn't be used. Use SharePlus.instance.share() instead - lib\pages\NavigatorPages\referral.dart:224:51 - deprecated_member_use
+   info - Use interpolation to compose strings and values - lib\pages\NavigatorPages\referral.dart:233:47 - prefer_interpolation_to_compose_strings
+   info - Use interpolation to compose strings and values - lib\pages\NavigatorPages\referral.dart:236:47 - prefer_interpolation_to_compose_strings
+   info - Use interpolation to compose strings and values - lib\pages\NavigatorPages\referral.dart:238:47 - prefer_interpolation_to_compose_strings
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\referral.dart:275:59 - deprecated_member_use
+   info - Missing type annotation - lib\pages\NavigatorPages\selectlanguage.dart:20:3 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\NavigatorPages\selectlanguage.dart:24:3 - strict_top_level_inference
+   info - Don't use 'BuildContext's across async gaps - lib\pages\NavigatorPages\selectlanguage.dart:28:13 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\pages\NavigatorPages\selectlanguage.dart:36:13 - use_build_context_synchronously
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\selectlanguage.dart:58:42 - deprecated_member_use
+warning - Unused import: 'walletpage.dart' - lib\pages\NavigatorPages\selectwallet.dart:9:8 - unused_import
+   info - Parameter 'key' could be a super parameter - lib\pages\NavigatorPages\selectwallet.dart:12:9 - use_super_parameters
+   info - Missing type annotation - lib\pages\NavigatorPages\selectwallet.dart:24:3 - strict_top_level_inference
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\selectwallet.dart:92:57 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\selectwallet.dart:138:57 - deprecated_member_use
+   info - Missing type annotation - lib\pages\NavigatorPages\settings.dart:22:3 - strict_top_level_inference
+   info - Don't use 'BuildContext's across async gaps - lib\pages\NavigatorPages\settings.dart:26:13 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\pages\NavigatorPages\settings.dart:34:13 - use_build_context_synchronously
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\settings.dart:127:53 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\settings.dart:142:54 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\settings.dart:163:60 - deprecated_member_use
+   info - Missing type annotation - lib\pages\NavigatorPages\sos.dart:23:3 - strict_top_level_inference
+   info - Don't use 'BuildContext's across async gaps - lib\pages\NavigatorPages\sos.dart:27:13 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\pages\NavigatorPages\sos.dart:35:13 - use_build_context_synchronously
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\sos.dart:166:74 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\sos.dart:304:62 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\sos.dart:410:57 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\sos.dart:425:58 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\sos.dart:446:61 - deprecated_member_use
+   info - Parameter 'key' could be a super parameter - lib\pages\NavigatorPages\walletpage.dart:14:9 - use_super_parameters
+   info - Missing type annotation - lib\pages\NavigatorPages\walletpage.dart:40:3 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\NavigatorPages\walletpage.dart:54:3 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\NavigatorPages\walletpage.dart:65:3 - strict_top_level_inference
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\walletpage.dart:158:60 - deprecated_member_use
+   info - Use interpolation to compose strings and values - lib\pages\NavigatorPages\walletpage.dart:162:45 - prefer_interpolation_to_compose_strings
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\walletpage.dart:212:62 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\walletpage.dart:278:70 - deprecated_member_use
+   info - Use interpolation to compose strings and values - lib\pages\NavigatorPages\walletpage.dart:295:71 - prefer_interpolation_to_compose_strings
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\walletpage.dart:327:63 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\walletpage.dart:409:52 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\walletpage.dart:420:52 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\walletpage.dart:476:62 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\walletpage.dart:519:62 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\walletpage.dart:576:57 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\walletpage.dart:796:55 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\walletpage.dart:922:57 - deprecated_member_use
+   info - 'value' is deprecated and shouldn't be used. Use initialValue instead. This will set the initial value for the form field. This feature was deprecated after v3.33.0-1.0.pre - lib\pages\NavigatorPages\walletpage.dart:947:45 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\walletpage.dart:992:60 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\walletpage.dart:998:60 - deprecated_member_use
+  error - The argument type 'String' can't be assigned to the parameter type 'int'.  - lib\pages\NavigatorPages\walletpage.dart:1020:61 - argument_type_not_assignable
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\walletpage.dart:1053:60 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\walletpage.dart:1059:60 - deprecated_member_use
+   info - Missing type annotation - lib\pages\NavigatorPages\withdraw.dart:36:3 - strict_top_level_inference
+   info - Don't use 'BuildContext's across async gaps - lib\pages\NavigatorPages\withdraw.dart:40:13 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\pages\NavigatorPages\withdraw.dart:48:13 - use_build_context_synchronously
+   info - Missing type annotation - lib\pages\NavigatorPages\withdraw.dart:56:3 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\NavigatorPages\withdraw.dart:69:3 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\NavigatorPages\withdraw.dart:79:3 - strict_top_level_inference
+   info - Use interpolation to compose strings and values - lib\pages\NavigatorPages\withdraw.dart:252:69 - prefer_interpolation_to_compose_strings
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\withdraw.dart:725:51 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\withdraw.dart:1015:51 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\withdraw.dart:1026:60 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\NavigatorPages\withdraw.dart:1029:63 - deprecated_member_use
+   info - Missing type annotation - lib\pages\chatPage\chat_page.dart:30:3 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\chatPage\chat_page.dart:37:3 - strict_top_level_inference
+   info - Don't use 'BuildContext's across async gaps - lib\pages\chatPage\chat_page.dart:41:13 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\pages\chatPage\chat_page.dart:49:13 - use_build_context_synchronously
+   info - Missing type annotation - lib\pages\language\languages.dart:24:3 - strict_top_level_inference
+   info - Don't use 'BuildContext's across async gaps - lib\pages\language\languages.dart:27:35 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\pages\language\languages.dart:34:13 - use_build_context_synchronously
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\loadingPage\loading.dart:55:33 - deprecated_member_use
+warning - Unused import: '../login/login.dart' - lib\pages\loadingPage\loadingpage.dart:13:8 - unused_import
+   info - Missing type annotation - lib\pages\loadingPage\loadingpage.dart:39:3 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\loadingPage\loadingpage.dart:75:3 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\loadingPage\loadingpage.dart:82:3 - strict_top_level_inference
+   info - Don't use 'BuildContext's across async gaps - lib\pages\loadingPage\loadingpage.dart:148:21 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\pages\loadingPage\loadingpage.dart:154:23 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\pages\loadingPage\loadingpage.dart:163:41 - use_build_context_synchronously
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\loadingPage\loadingpage.dart:222:45 - deprecated_member_use
+   info - Parameter 'key' could be a super parameter - lib\pages\login\agreement.dart:11:9 - use_super_parameters
+   info - Missing type annotation - lib\pages\login\agreement.dart:19:3 - strict_top_level_inference
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\login\agreement.dart:166:40 - deprecated_member_use
+   info - Parameter 'key' could be a super parameter - lib\pages\login\carinformation.dart:18:3 - use_super_parameters
+   info - Missing type annotation - lib\pages\login\carinformation.dart:53:3 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\login\carinformation.dart:61:3 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\login\carinformation.dart:65:3 - strict_top_level_inference
+   info - Don't use 'BuildContext's across async gaps - lib\pages\login\carinformation.dart:69:13 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\pages\login\carinformation.dart:77:13 - use_build_context_synchronously
+   info - Missing type annotation - lib\pages\login\carinformation.dart:91:3 - strict_top_level_inference
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\login\carinformation.dart:165:62 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\login\carinformation.dart:189:60 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\login\carinformation.dart:224:58 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\login\carinformation.dart:690:58 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\login\carinformation.dart:938:52 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\login\carinformation.dart:1314:52 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\login\carinformation.dart:1462:72 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\login\carinformation.dart:1651:52 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\login\carinformation.dart:1743:50 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\login\carinformation.dart:1808:50 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\login\carinformation.dart:1870:50 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\login\carinformation.dart:1974:63 - deprecated_member_use
+   info - The import of 'dart:ui' is unnecessary because all of the used elements are also provided by the import of 'package:flutter/material.dart' - lib\pages\login\landingpage.dart:1:8 - unnecessary_import
+warning - Unused import: '../../widgets/widgets.dart' - lib\pages\login\landingpage.dart:8:8 - unused_import
+   info - Parameter 'key' could be a super parameter - lib\pages\login\landingpage.dart:12:9 - use_super_parameters
+   info - Missing type annotation - lib\pages\login\landingpage.dart:55:3 - strict_top_level_inference
+   info - Don't use 'BuildContext's across async gaps - lib\pages\login\landingpage.dart:60:13 - use_build_context_synchronously
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\login\landingpage.dart:87:26 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\login\landingpage.dart:88:33 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\login\landingpage.dart:108:46 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\login\landingpage.dart:140:53 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\login\landingpage.dart:230:40 - deprecated_member_use
+warning - Unused import: 'dart:async' - lib\pages\login\login.dart:1:8 - unused_import
+warning - Unused import: 'package:device_info_plus/device_info_plus.dart' - lib\pages\login\login.dart:3:8 - unused_import
+warning - Unused import: 'package:image_picker/image_picker.dart' - lib\pages\login\login.dart:6:8 - unused_import
+warning - Unused import: 'package:permission_handler/permission_handler.dart' - lib\pages\login\login.dart:7:8 - unused_import
+warning - Unused import: '../../widgets/widgets.dart' - lib\pages\login\login.dart:11:8 - unused_import
+   info - Parameter 'key' could be a super parameter - lib\pages\login\login.dart:20:9 - use_super_parameters
+warning - The declaration '_permission' isn't referenced - lib\pages\login\login.dart:34:8 - unused_element
+   info - Missing type annotation - lib\pages\login\login.dart:81:3 - strict_top_level_inference
+warning - The value of the local variable 'result' isn't used - lib\pages\login\login.dart:85:9 - unused_local_variable
+   info - Missing type annotation - lib\pages\login\login.dart:94:3 - strict_top_level_inference
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\login\login.dart:158:56 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\login\login.dart:199:61 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\login\login.dart:230:59 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\login\login.dart:272:62 - deprecated_member_use
+  error - The argument type 'String' can't be assigned to the parameter type 'int'.  - lib\pages\login\login.dart:308:77 - argument_type_not_assignable
+  error - The argument type 'String' can't be assigned to the parameter type 'int'.  - lib\pages\login\login.dart:358:75 - argument_type_not_assignable
+  error - The argument type 'String' can't be assigned to the parameter type 'int'.  - lib\pages\login\login.dart:368:67 - argument_type_not_assignable
+  error - The argument type 'String' can't be assigned to the parameter type 'int'.  - lib\pages\login\login.dart:386:78 - argument_type_not_assignable
+  error - The argument type 'String' can't be assigned to the parameter type 'int'.  - lib\pages\login\login.dart:437:63 - argument_type_not_assignable
+  error - The argument type 'String' can't be assigned to the parameter type 'int'.  - lib\pages\login\login.dart:451:69 - argument_type_not_assignable
+  error - The argument type 'String' can't be assigned to the parameter type 'int'.  - lib\pages\login\login.dart:461:73 - argument_type_not_assignable
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\login\login.dart:504:66 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\login\login.dart:522:68 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\login\login.dart:712:34 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\login\login.dart:751:30 - deprecated_member_use
+   info - Missing type annotation - lib\pages\login\login.dart:805:3 - strict_top_level_inference
+  error - A value of type 'int' can't be assigned to a variable of type 'String' - lib\pages\login\login.dart:880:60 - invalid_assignment
+  error - Undefined name 'isLoginemail' - lib\pages\login\namepage.dart:35:9 - undefined_identifier
+   info - Missing type annotation - lib\pages\login\namepage.dart:41:3 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\login\namepage.dart:54:3 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\login\namepage.dart:63:3 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\login\namepage.dart:72:3 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\login\namepage.dart:88:3 - strict_top_level_inference
+  error - Undefined name 'isfromomobile' - lib\pages\login\namepage.dart:183:34 - undefined_identifier
+  error - Undefined name 'isfromomobile' - lib\pages\login\namepage.dart:208:34 - undefined_identifier
+  error - Undefined name 'isfromomobile' - lib\pages\login\namepage.dart:233:38 - undefined_identifier
+  error - Undefined name 'isfromomobile' - lib\pages\login\namepage.dart:244:28 - undefined_identifier
+  error - A value of type 'int' can't be assigned to a variable of type 'String' - lib\pages\login\namepage.dart:361:102 - invalid_assignment
+  error - A value of type 'int' can't be assigned to a variable of type 'String' - lib\pages\login\namepage.dart:394:106 - invalid_assignment
+  error - The argument type 'String' can't be assigned to the parameter type 'int'.  - lib\pages\login\namepage.dart:449:61 - argument_type_not_assignable
+  error - The argument type 'String' can't be assigned to the parameter type 'int'.  - lib\pages\login\namepage.dart:484:61 - argument_type_not_assignable
+  error - The argument type 'String' can't be assigned to the parameter type 'int'.  - lib\pages\login\namepage.dart:491:66 - argument_type_not_assignable
+  error - The argument type 'String' can't be assigned to the parameter type 'int'.  - lib\pages\login\namepage.dart:504:67 - argument_type_not_assignable
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\login\namepage.dart:513:63 - deprecated_member_use
+  error - Undefined name 'isfromomobile' - lib\pages\login\namepage.dart:550:18 - undefined_identifier
+  error - Undefined name 'loginLoading' - lib\pages\login\namepage.dart:560:35 - undefined_identifier
+  error - Undefined name 'isfromomobile' - lib\pages\login\namepage.dart:583:39 - undefined_identifier
+  error - Undefined name 'currentPage' - lib\pages\login\namepage.dart:586:39 - undefined_identifier
+  error - Undefined name 'loginLoading' - lib\pages\login\namepage.dart:601:35 - undefined_identifier
+  error - The argument type 'String' can't be assigned to the parameter type 'int'.  - lib\pages\login\namepage.dart:619:47 - argument_type_not_assignable
+  error - Undefined name 'loginLoading' - lib\pages\login\namepage.dart:626:31 - undefined_identifier
+  error - The argument type 'String' can't be assigned to the parameter type 'int'.  - lib\pages\login\namepage.dart:636:63 - argument_type_not_assignable
+  error - Undefined name 'currentPage' - lib\pages\login\namepage.dart:639:37 - undefined_identifier
+  error - Undefined name 'isfromomobile' - lib\pages\login\namepage.dart:641:37 - undefined_identifier
+  error - The argument type 'String' can't be assigned to the parameter type 'int'.  - lib\pages\login\namepage.dart:644:95 - argument_type_not_assignable
+  error - Undefined name 'isfromomobile' - lib\pages\login\namepage.dart:647:39 - undefined_identifier
+  error - Undefined name 'currentPage' - lib\pages\login\namepage.dart:648:39 - undefined_identifier
+  error - Undefined name 'loginLoading' - lib\pages\login\namepage.dart:667:31 - undefined_identifier
+  error - The argument type 'String' can't be assigned to the parameter type 'int'.  - lib\pages\login\namepage.dart:673:49 - argument_type_not_assignable
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\login\namepage.dart:697:47 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\login\namepage.dart:816:45 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\login\namepage.dart:856:55 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\login\namepage.dart:933:53 - deprecated_member_use
+warning - Unused import: '../../widgets/widgets.dart' - lib\pages\login\otp_page.dart:12:8 - unused_import
+   info - Parameter 'key' could be a super parameter - lib\pages\login\otp_page.dart:21:9 - use_super_parameters
+   info - Missing type annotation - lib\pages\login\otp_page.dart:91:3 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\login\otp_page.dart:91:12 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\login\otp_page.dart:129:3 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\login\otp_page.dart:141:3 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\login\otp_page.dart:148:3 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\login\otp_page.dart:165:3 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\login\otp_page.dart:184:3 - strict_top_level_inference
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\login\otp_page.dart:216:33 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\login\otp_page.dart:228:30 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\login\otp_page.dart:236:26 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\login\otp_page.dart:270:44 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\login\otp_page.dart:284:47 - deprecated_member_use
+  error - The argument type 'String' can't be assigned to the parameter type 'int'.  - lib\pages\login\otp_page.dart:308:74 - argument_type_not_assignable
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\login\otp_page.dart:314:49 - deprecated_member_use
+  error - The argument type 'String' can't be assigned to the parameter type 'int'.  - lib\pages\login\otp_page.dart:445:57 - argument_type_not_assignable
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\login\otp_page.dart:473:59 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\login\otp_page.dart:589:43 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\login\otp_page.dart:625:34 - deprecated_member_use
+warning - Unused import: 'package:flutter_driver/pages/login/login.dart' - lib\pages\login\ownerregister.dart:4:8 - unused_import
+warning - Unused import: 'carinformation.dart' - lib\pages\login\ownerregister.dart:13:8 - unused_import
+warning - Unused import: 'namepage.dart' - lib\pages\login\ownerregister.dart:14:8 - unused_import
+   info - Missing type annotation - lib\pages\login\ownerregister.dart:52:3 - strict_top_level_inference
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\login\ownerregister.dart:181:58 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\login\ownerregister.dart:585:56 - deprecated_member_use
+warning - Unused import: 'carinformation.dart' - lib\pages\login\profileinformation.dart:7:8 - unused_import
+warning - Unused import: 'login.dart' - lib\pages\login\profileinformation.dart:8:8 - unused_import
+warning - Unused import: 'namepage.dart' - lib\pages\login\profileinformation.dart:9:8 - unused_import
+   info - Parameter 'key' could be a super parameter - lib\pages\login\profileinformation.dart:15:3 - use_super_parameters
+   info - Missing type annotation - lib\pages\login\profileinformation.dart:41:3 - strict_top_level_inference
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\login\profileinformation.dart:152:63 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\login\profileinformation.dart:179:63 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\login\profileinformation.dart:218:55 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\login\profileinformation.dart:254:57 - deprecated_member_use
+warning - Unused import: 'namepage.dart' - lib\pages\login\requiredinformation.dart:8:8 - unused_import
+   info - Parameter 'key' could be a super parameter - lib\pages\login\requiredinformation.dart:14:9 - use_super_parameters
+   info - Don't use 'BuildContext's across async gaps - lib\pages\login\requiredinformation.dart:47:23 - use_build_context_synchronously
+   info - Parameter 'key' could be a super parameter - lib\pages\login\uploaddocument.dart:18:3 - use_super_parameters
+   info - Missing type annotation - lib\pages\login\uploaddocument.dart:42:3 - strict_top_level_inference
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\login\uploaddocument.dart:151:56 - deprecated_member_use
+   info - Parameter 'key' could be a super parameter - lib\pages\login\uploaddocument.dart:374:3 - use_super_parameters
+   info - Missing type annotation - lib\pages\login\uploaddocument.dart:391:3 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\login\uploaddocument.dart:407:3 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\login\uploaddocument.dart:434:3 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\login\uploaddocument.dart:443:3 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\login\uploaddocument.dart:460:3 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\login\uploaddocument.dart:485:3 - strict_top_level_inference
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\login\uploaddocument.dart:594:58 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\login\uploaddocument.dart:649:60 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\login\uploaddocument.dart:716:66 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\login\uploaddocument.dart:774:70 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\login\uploaddocument.dart:943:55 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\login\uploaddocument.dart:1006:67 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\login\uploaddocument.dart:1039:67 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\login\uploaddocument.dart:1060:51 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\login\uploaddocument.dart:1101:61 - deprecated_member_use
+   info - Missing type annotation - lib\pages\navDrawer\nav_drawer.dart:40:3 - strict_top_level_inference
+   info - Don't use 'BuildContext's across async gaps - lib\pages\navDrawer\nav_drawer.dart:44:13 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\pages\navDrawer\nav_drawer.dart:52:13 - use_build_context_synchronously
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\navDrawer\nav_drawer.dart:231:58 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\navDrawer\nav_drawer.dart:233:58 - deprecated_member_use
+   info - Missing type annotation - lib\pages\onTripPage\choosegoods.dart:33:3 - strict_top_level_inference
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\onTripPage\choosegoods.dart:330:66 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\onTripPage\choosegoods.dart:354:56 - deprecated_member_use
+   info - Missing type annotation - lib\pages\onTripPage\digitalsignature.dart:33:3 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\onTripPage\digitalsignature.dart:40:3 - strict_top_level_inference
+   info - Don't use 'BuildContext's across async gaps - lib\pages\onTripPage\digitalsignature.dart:44:13 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\pages\onTripPage\digitalsignature.dart:52:13 - use_build_context_synchronously
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\onTripPage\digitalsignature.dart:274:51 - deprecated_member_use
+   info - Missing type annotation - lib\pages\onTripPage\droplocation.dart:72:3 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\onTripPage\droplocation.dart:76:3 - strict_top_level_inference
+   info - Don't use 'BuildContext's across async gaps - lib\pages\onTripPage\droplocation.dart:80:13 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\pages\onTripPage\droplocation.dart:88:13 - use_build_context_synchronously
+   info - Missing type annotation - lib\pages\onTripPage\droplocation.dart:116:3 - strict_top_level_inference
+   info - Use interpolation to compose strings and values - lib\pages\onTripPage\droplocation.dart:1137:67 - prefer_interpolation_to_compose_strings
+   info - Missing type annotation - lib\pages\onTripPage\droplocation.dart:1473:3 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\onTripPage\invoice.dart:32:3 - strict_top_level_inference
+   info - Don't use 'BuildContext's across async gaps - lib\pages\onTripPage\invoice.dart:36:13 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\pages\onTripPage\invoice.dart:44:13 - use_build_context_synchronously
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\onTripPage\invoice.dart:128:61 - deprecated_member_use
+   info - Use interpolation to compose strings and values - lib\pages\onTripPage\invoice.dart:213:59 - prefer_interpolation_to_compose_strings
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\onTripPage\invoice.dart:270:56 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\onTripPage\invoice.dart:327:80 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\onTripPage\invoice.dart:378:54 - deprecated_member_use
+   info - Use interpolation to compose strings and values - lib\pages\onTripPage\invoice.dart:434:55 - prefer_interpolation_to_compose_strings
+   info - Use interpolation to compose strings and values - lib\pages\onTripPage\invoice.dart:512:63 - prefer_interpolation_to_compose_strings
+   info - Use interpolation to compose strings and values - lib\pages\onTripPage\invoice.dart:556:63 - prefer_interpolation_to_compose_strings
+   info - Use interpolation to compose strings and values - lib\pages\onTripPage\invoice.dart:600:63 - prefer_interpolation_to_compose_strings
+   info - Use interpolation to compose strings and values - lib\pages\onTripPage\invoice.dart:651:69 - prefer_interpolation_to_compose_strings
+   info - Use interpolation to compose strings and values - lib\pages\onTripPage\invoice.dart:704:69 - prefer_interpolation_to_compose_strings
+   info - Use interpolation to compose strings and values - lib\pages\onTripPage\invoice.dart:742:63 - prefer_interpolation_to_compose_strings
+   info - Use interpolation to compose strings and values - lib\pages\onTripPage\invoice.dart:746:63 - prefer_interpolation_to_compose_strings
+   info - Use interpolation to compose strings and values - lib\pages\onTripPage\invoice.dart:752:63 - prefer_interpolation_to_compose_strings
+   info - Use interpolation to compose strings and values - lib\pages\onTripPage\invoice.dart:758:63 - prefer_interpolation_to_compose_strings
+   info - Use interpolation to compose strings and values - lib\pages\onTripPage\invoice.dart:770:63 - prefer_interpolation_to_compose_strings
+   info - Use interpolation to compose strings and values - lib\pages\onTripPage\invoice.dart:821:69 - prefer_interpolation_to_compose_strings
+   info - Use interpolation to compose strings and values - lib\pages\onTripPage\invoice.dart:876:69 - prefer_interpolation_to_compose_strings
+   info - Missing type annotation - lib\pages\onTripPage\map_page.dart:179:3 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\onTripPage\map_page.dart:230:3 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\onTripPage\map_page.dart:235:3 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\onTripPage\map_page.dart:254:3 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\onTripPage\map_page.dart:273:3 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\onTripPage\map_page.dart:291:3 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\onTripPage\map_page.dart:291:11 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\onTripPage\map_page.dart:339:3 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\onTripPage\map_page.dart:352:3 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\onTripPage\map_page.dart:444:3 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\onTripPage\map_page.dart:462:3 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\onTripPage\map_page.dart:472:3 - strict_top_level_inference
+  error - The getter 'heading' isn't defined for the type 'LatLng' - lib\pages\onTripPage\map_page.dart:562:28 - undefined_getter
+  error - The getter 'heading' isn't defined for the type 'LatLng' - lib\pages\onTripPage\map_page.dart:569:29 - undefined_getter
+   info - Missing type annotation - lib\pages\onTripPage\map_page.dart:625:3 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\onTripPage\map_page.dart:632:3 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\onTripPage\map_page.dart:680:3 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\onTripPage\map_page.dart:7942:3 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\onTripPage\review_page.dart:34:3 - strict_top_level_inference
+   info - Don't use 'BuildContext's across async gaps - lib\pages\onTripPage\review_page.dart:38:13 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\pages\onTripPage\review_page.dart:46:13 - use_build_context_synchronously
+   info - Missing type annotation - lib\pages\onTripPage\review_page.dart:54:3 - strict_top_level_inference
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\onTripPage\review_page.dart:218:60 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\onTripPage\review_page.dart:231:62 - deprecated_member_use
+   info - Missing type annotation - lib\pages\onTripPage\rides.dart:93:3 - strict_top_level_inference
+   info - Don't use 'BuildContext's across async gaps - lib\pages\onTripPage\rides.dart:97:13 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\pages\onTripPage\rides.dart:105:13 - use_build_context_synchronously
+   info - Missing type annotation - lib\pages\onTripPage\rides.dart:113:3 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\onTripPage\rides.dart:182:3 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\onTripPage\rides.dart:210:3 - strict_top_level_inference
+   info - 'desiredAccuracy' is deprecated and shouldn't be used. use settings parameter with AndroidSettings, AppleSettings, WebSettings, or LocationSettings - lib\pages\onTripPage\rides.dart:223:13 - deprecated_member_use
+   info - 'desiredAccuracy' is deprecated and shouldn't be used. use settings parameter with AndroidSettings, AppleSettings, WebSettings, or LocationSettings - lib\pages\onTripPage\rides.dart:228:11 - deprecated_member_use
+   info - Missing type annotation - lib\pages\onTripPage\rides.dart:237:3 - strict_top_level_inference
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\onTripPage\rides.dart:326:56 - deprecated_member_use
+   info - 'desiredAccuracy' is deprecated and shouldn't be used. use settings parameter with AndroidSettings, AppleSettings, WebSettings, or LocationSettings - lib\pages\onTripPage\rides.dart:410:65 - deprecated_member_use
+   info - 'desiredAccuracy' is deprecated and shouldn't be used. use settings parameter with AndroidSettings, AppleSettings, WebSettings, or LocationSettings - lib\pages\onTripPage\rides.dart:441:67 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\onTripPage\rides.dart:475:85 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\onTripPage\rides.dart:476:85 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\onTripPage\rides.dart:481:87 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\onTripPage\rides.dart:482:87 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\onTripPage\rides.dart:487:79 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\onTripPage\rides.dart:831:72 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\onTripPage\rides.dart:849:72 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\onTripPage\rides.dart:1061:105 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\onTripPage\rides.dart:1098:93 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\onTripPage\rides.dart:1169:169 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\onTripPage\rides.dart:1562:62 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\onTripPage\rides.dart:1657:61 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\onTripPage\rides.dart:1677:64 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\onTripPage\rides.dart:1791:74 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\onTripPage\rides.dart:2137:48 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\onTripPage\rides.dart:2155:66 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\onTripPage\rides.dart:2301:147 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\onTripPage\rides.dart:2401:55 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\onTripPage\rides.dart:2557:59 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\onTripPage\rides.dart:2660:62 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\onTripPage\rides.dart:2677:66 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\onTripPage\rides.dart:2702:58 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\onTripPage\rides.dart:2839:62 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\onTripPage\rides.dart:2921:57 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\onTripPage\rides.dart:2935:54 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\onTripPage\rides.dart:3034:53 - deprecated_member_use
+   info - Don't use 'BuildContext's across async gaps - lib\pages\vehicleInformations\docs_onprocess.dart:35:25 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\pages\vehicleInformations\docs_onprocess.dart:42:25 - use_build_context_synchronously
+   info - Don't use 'BuildContext's across async gaps - lib\pages\vehicleInformations\docs_onprocess.dart:47:25 - use_build_context_synchronously
+   info - Missing type annotation - lib\pages\vehicleInformations\upload_docs.dart:35:3 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\vehicleInformations\upload_docs.dart:43:3 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\vehicleInformations\upload_docs.dart:421:3 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\vehicleInformations\upload_docs.dart:436:3 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\vehicleInformations\upload_docs.dart:463:3 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\vehicleInformations\upload_docs.dart:472:3 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\vehicleInformations\upload_docs.dart:489:3 - strict_top_level_inference
+   info - Missing type annotation - lib\pages\vehicleInformations\upload_docs.dart:506:3 - strict_top_level_inference
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\vehicleInformations\upload_docs.dart:623:60 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\vehicleInformations\upload_docs.dart:723:51 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\vehicleInformations\upload_docs.dart:839:47 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\pages\vehicleInformations\upload_docs.dart:880:57 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\styles\styles.dart:23:43 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\styles\styles.dart:24:43 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\styles\styles.dart:25:48 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\styles\styles.dart:47:36 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\styles\styles.dart:49:43 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\styles\styles.dart:68:27 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\styles\styles.dart:69:27 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\styles\styles.dart:70:27 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\styles\styles.dart:83:37 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\widgets\glassmorphism.dart:77:60 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\widgets\glassmorphism.dart:101:56 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\widgets\glassmorphism.dart:136:50 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\widgets\widgets.dart:621:40 - deprecated_member_use
+   info - 'withOpacity' is deprecated and shouldn't be used. Use .withValues() to avoid precision loss - lib\widgets\widgets.dart:675:58 - deprecated_member_use
+

@@ -1,0 +1,52 @@
+﻿Running Gradle task 'assembleDebug'...                          
+flutter : 
+At line:1 char:1
++ flutter build apk --debug > 
+build_log_v8.txt 2>&1
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : Not 
+   Specified: (:String) [], Remo  
+  teException
+    + FullyQualifiedErrorId : Nat 
+   iveCommandError
+ 
+FAILURE: Build failed with an 
+exception.
+
+* Where:
+Build file 'C:\Users\FergentiusRos
+ales\Herd\truecabtt\mobileapp\driv
+er\android\app\build.gradle' 
+line: 2
+
+* What went wrong:
+An exception occurred applying 
+plugin request [id: 
+'com.android.application']
+> Failed to apply plugin 'com.andr
+oid.internal.version-check'.
+   > Minimum supported Gradle 
+version is 8.7. Current version 
+is 8.5. If using the gradle 
+wrapper, try editing the 
+distributionUrl in C:\Users\Fergen
+tiusRosales\Herd\truecabtt\mobilea
+pp\driver\android\gradle\wrapper\g
+radle-wrapper.properties to 
+gradle-8.7-all.zip
+
+* Try:
+> Run with --stacktrace option to 
+get the stack trace.
+> Run with --info or --debug 
+option to get more log output.
+> Run with --scan to get full 
+insights.
+> Get more help at 
+https://help.gradle.org.
+
+BUILD FAILED in 1m 1s
+Running Gradle task 'assembleDebug'...                             63.0s
+Gradle task assembleDebug failed 
+with exit code 1

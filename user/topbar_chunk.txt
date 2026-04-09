@@ -1,0 +1,130 @@
+                                  Positioned(
+                                    top: MediaQuery.of(context).padding.top +
+                                        12.5,
+                                    child: SizedBox(
+                                      width: media.width * 0.9,
+                                      child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.start,
+                                        children: [
+                                          Container(
+                                            decoration: BoxDecoration(
+                                              shape: BoxShape.circle,
+                                              boxShadow: [
+                                                BoxShadow(
+                                                    color: (userRequestData
+                                                                .isNotEmpty &&
+                                                            userRequestData[
+                                                                    'accepted_at'] ==
+                                                                null)
+                                                        ? Colors.transparent
+                                                        : Colors.black
+                                                            .withOpacity(0.2),
+                                                    spreadRadius: 2,
+                                                    blurRadius: 2)
+                                              ],
+                                            ),
+                                            child: Material(
+                                              color: (userRequestData
+                                                          .isNotEmpty &&
+                                                      userRequestData[
+                                                              'accepted_at'] ==
+                                                          null)
+                                                  ? Colors.transparent
+                                                  : page,
+                                              borderRadius:
+                                                  BorderRadius.circular(
+                                                      media.width * 0.05),
+                                              // color: page,
+                                              child: InkWell(
+                                                borderRadius:
+                                                    BorderRadius.circular(
+                                                        media.width * 0.05),
+                                                onTap: () {
+                                                  noDriverFound = false;
+                                                  tripReqError = false;
+                                                  serviceNotAvailable = false;
+                                                  if (userRequestData
+                                                          .isNotEmpty &&
+                                                      userRequestData[
+                                                              'accepted_at'] ==
+                                                          null) {
+                                                  } else {
+                                                    if (widget.type == null) {
+                                                      if (dropConfirmed) {
+                                                        setState(() {
+                                                          dropConfirmed = false;
+                                                          promoStatus = false;
+                                                          addCoupon = false;
+                                                          promoKey.clear();
+                                                        });
+                                                      } else {
+                                                        Navigator.pushAndRemoveUntil(
+                                                            context,
+                                                            MaterialPageRoute(
+                                                                builder:
+                                                                    (context) =>
+                                                                        const Maps()),
+                                                            (route) => false);
+                                                        ismulitipleride = false;
+                                                        isOutStation = false;
+                                                        etaDetails.clear();
+                                                        promoKey.clear();
+                                                        promoStatus = null;
+                                                        promoStatus = false;
+                                                        addCoupon = false;
+
+                                                        rentalOption.clear();
+                                                        myMarker.clear();
+                                                        dropStopList.clear();
+                                                        addressList.removeWhere(
+                                                            (element) =>
+                                                                element.id ==
+                                                                'drop');
+                                                      }
+                                                    } else {
+                                                      Navigator.pushAndRemoveUntil(
+                                                          context,
+                                                          MaterialPageRoute(
+                                                              builder: (context) =>
+                                                                  const Maps()),
+                                                          (route) => false);
+                                                      isRentalRide = false;
+                                                      ismulitipleride = false;
+                                                      isOutStation = false;
+                                                      etaDetails.clear();
+                                                      promoKey.clear();
+                                                      promoStatus = null;
+                                                      promoStatus = false;
+                                                      addCoupon = false;
+                                                      rentalOption.clear();
+                                                      myMarker.clear();
+                                                      dropStopList.clear();
+                                                      addressList.removeWhere(
+                                                          (element) =>
+                                                              element.id ==
+                                                              'drop');
+                                                    }
+                                                  }
+                                                },
+                                                child: SizedBox(
+                                                  height: media.width * 0.1,
+                                                  width: media.width * 0.1,
+                                                  child: Icon(
+                                                    Icons.arrow_back,
+                                                    color: (userRequestData
+                                                                .isNotEmpty &&
+                                                            userRequestData[
+                                                                    'accepted_at'] ==
+                                                                null)
+                                                        ? Colors.transparent
+                                                        : textColor,
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),

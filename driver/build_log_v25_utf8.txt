@@ -1,0 +1,396 @@
+﻿Running Gradle task 'assembleDebug'...                          
+flutter : warning: [options] 
+source value 8 is obsolete and 
+will be removed in a future 
+release
+At line:1 char:1
++ flutter build apk --debug > 
+build_log_v25.txt 2>&1
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : Not 
+   Specified: (warning: [optio..  
+  . future release:String) [],    
+ RemoteException
+    + FullyQualifiedErrorId : Nat 
+   iveCommandError
+ 
+warning: [options] target value 8 
+is obsolete and will be removed 
+in a future release
+warning: [options] To suppress 
+warnings about obsolete options, 
+use -Xlint:-options.
+3 warnings
+warning: [options] source value 8 
+is obsolete and will be removed 
+in a future release
+warning: [options] target value 8 
+is obsolete and will be removed 
+in a future release
+warning: [options] To suppress 
+warnings about obsolete options, 
+use -Xlint:-options.
+3 warnings
+Note: Some input files use or 
+override a deprecated API.
+Note: Recompile with 
+-Xlint:deprecation for details.
+e: org.jetbrains.kotlin.util.FileA
+nalysisException: While analysing 
+C:/Users/FergentiusRosales/Herd/tr
+uecabtt/mobileapp/driver/android/a
+pp/src/main/kotlin/com/trucabtt/dr
+iver/MainActivity.kt:17:5: java.la
+ng.IllegalArgumentException: 
+source must not be null
+	at org.jetbrains.kotlin.util.Anal
+ysisExceptionsKt.wrapIntoFileAnaly
+sisExceptionIfNeeded(AnalysisExcep
+tions.kt:57)
+	at org.jetbrains.kotlin.fir.FirCl
+iExceptionHandler.handleExceptionO
+nFileAnalysis(Utils.kt:249)
+	at org.jetbrains.kotlin.fir.pipel
+ine.AnalyseKt.runCheckers(analyse.
+kt:68)
+	at org.jetbrains.kotlin.fir.pipel
+ine.FirUtilsKt.resolveAndCheckFir(
+firUtils.kt:77)
+	at org.jetbrains.kotlin.fir.pipel
+ine.FirUtilsKt.buildResolveAndChec
+kFirViaLightTree(firUtils.kt:88)
+	at org.jetbrains.kotlin.cli.jvm.c
+ompiler.pipeline.JvmCompilerPipeli
+neLightTreeKt.compileModuleToAnaly
+zedFirViaLightTreeIncrementally(jv
+mCompilerPipelineLightTree.kt:347)
+	at org.jetbrains.kotlin.cli.jvm.c
+ompiler.pipeline.JvmCompilerPipeli
+neLightTreeKt.compileModuleToAnaly
+zedFirViaLightTree(jvmCompilerPipe
+lineLightTree.kt:272)
+	at org.jetbrains.kotlin.cli.jvm.c
+ompiler.pipeline.JvmCompilerPipeli
+neLightTreeKt.compileModule(jvmCom
+pilerPipelineLightTree.kt:250)
+	at org.jetbrains.kotlin.cli.jvm.c
+ompiler.pipeline.JvmCompilerPipeli
+neLightTreeKt.compileSingleModuleU
+singFrontendIrAndLightTree(jvmComp
+ilerPipelineLightTree.kt:231)
+	at org.jetbrains.kotlin.cli.jvm.c
+ompiler.pipeline.JvmCompilerPipeli
+neLightTreeKt.compileModulesUsingF
+rontendIrAndLightTree(jvmCompilerP
+ipelineLightTree.kt:86)
+	at org.jetbrains.kotlin.cli.jvm.K
+2JVMCompiler.doExecute(K2JVMCompil
+er.kt:146)
+	at org.jetbrains.kotlin.cli.jvm.K
+2JVMCompiler.doExecute(K2JVMCompil
+er.kt:43)
+	at org.jetbrains.kotlin.cli.commo
+n.CLICompiler.execImpl(CLICompiler
+.kt:102)
+	at org.jetbrains.kotlin.cli.commo
+n.CLICompiler.exec(CLICompiler.kt:
+316)
+	at org.jetbrains.kotlin.increment
+al.IncrementalJvmCompilerRunner.ru
+nCompiler(IncrementalJvmCompilerRu
+nner.kt:464)
+	at org.jetbrains.kotlin.increment
+al.IncrementalJvmCompilerRunner.ru
+nCompiler(IncrementalJvmCompilerRu
+nner.kt:73)
+	at org.jetbrains.kotlin.increment
+al.IncrementalCompilerRunner.doCom
+pile(IncrementalCompilerRunner.kt:
+506)
+	at org.jetbrains.kotlin.increment
+al.IncrementalCompilerRunner.compi
+leImpl(IncrementalCompilerRunner.k
+t:423)
+	at org.jetbrains.kotlin.increment
+al.IncrementalCompilerRunner.compi
+leNonIncrementally(IncrementalComp
+ilerRunner.kt:301)
+	at org.jetbrains.kotlin.increment
+al.IncrementalCompilerRunner.compi
+le(IncrementalCompilerRunner.kt:12
+9)
+	at org.jetbrains.kotlin.daemon.Co
+mpileServiceImplBase.execIncrement
+alCompiler(CompileServiceImpl.kt:6
+74)
+	at org.jetbrains.kotlin.daemon.Co
+mpileServiceImplBase.access$execIn
+crementalCompiler(CompileServiceIm
+pl.kt:91)
+	at org.jetbrains.kotlin.daemon.Co
+mpileServiceImpl.compile(CompileSe
+rviceImpl.kt:1659)
+	at java.base/jdk.internal.reflect
+.DirectMethodHandleAccessor.invoke
+(Unknown Source)
+	at java.base/java.lang.reflect.Me
+thod.invoke(Unknown Source)
+	at java.rmi/sun.rmi.server.Unicas
+tServerRef.dispatch(Unknown 
+Source)
+	at java.rmi/sun.rmi.transport.Tra
+nsport$1.run(Unknown Source)
+	at java.rmi/sun.rmi.transport.Tra
+nsport$1.run(Unknown Source)
+	at java.base/java.security.Access
+Controller.doPrivileged(Unknown 
+Source)
+	at java.rmi/sun.rmi.transport.Tra
+nsport.serviceCall(Unknown Source)
+	at java.rmi/sun.rmi.transport.tcp
+.TCPTransport.handleMessages(Unkno
+wn Source)
+	at java.rmi/sun.rmi.transport.tcp
+.TCPTransport$ConnectionHandler.ru
+n0(Unknown Source)
+	at java.rmi/sun.rmi.transport.tcp
+.TCPTransport$ConnectionHandler.la
+mbda$run$0(Unknown Source)
+	at java.base/java.security.Access
+Controller.doPrivileged(Unknown 
+Source)
+	at java.rmi/sun.rmi.transport.tcp
+.TCPTransport$ConnectionHandler.ru
+n(Unknown Source)
+	at java.base/java.util.concurrent
+.ThreadPoolExecutor.runWorker(Unkn
+own Source)
+	at java.base/java.util.concurrent
+.ThreadPoolExecutor$Worker.run(Unk
+nown Source)
+	at java.base/java.lang.Thread.run
+(Unknown Source)
+Caused by: java.lang.IllegalArgume
+ntException: source must not be 
+null
+	at org.jetbrains.kotlin.diagnosti
+cs.KtDiagnosticReportHelpersKt.req
+uireNotNull(KtDiagnosticReportHelp
+ers.kt:68)
+	at org.jetbrains.kotlin.diagnosti
+cs.KtDiagnosticReportHelpersKt.rep
+ortOn(KtDiagnosticReportHelpers.kt
+:39)
+	at org.jetbrains.kotlin.diagnosti
+cs.KtDiagnosticReportHelpersKt.rep
+ortOn$default(KtDiagnosticReportHe
+lpers.kt:31)
+	at org.jetbrains.kotlin.fir.analy
+sis.checkers.expression.FirIncompa
+tibleClassExpressionChecker.checkS
+ourceElement(FirIncompatibleClassE
+xpressionChecker.kt:50)
+	at org.jetbrains.kotlin.fir.analy
+sis.checkers.expression.FirIncompa
+tibleClassExpressionChecker.checkT
+ype$checkers(FirIncompatibleClassE
+xpressionChecker.kt:42)
+	at org.jetbrains.kotlin.fir.analy
+sis.checkers.type.FirIncompatibleC
+lassTypeChecker.check(FirIncompati
+bleClassTypeChecker.kt:17)
+	at org.jetbrains.kotlin.fir.analy
+sis.checkers.type.FirIncompatibleC
+lassTypeChecker.check(FirIncompati
+bleClassTypeChecker.kt:15)
+	at org.jetbrains.kotlin.fir.analy
+sis.collectors.components.TypeChec
+kersDiagnosticComponent.visitResol
+vedTypeRef(TypeCheckersDiagnosticC
+omponent.kt:99)
+	at org.jetbrains.kotlin.fir.analy
+sis.collectors.components.TypeChec
+kersDiagnosticComponent.visitResol
+vedTypeRef(TypeCheckersDiagnosticC
+omponent.kt:19)
+	at org.jetbrains.kotlin.fir.types
+.FirResolvedTypeRef.accept(FirReso
+lvedTypeRef.kt:28)
+	at org.jetbrains.kotlin.fir.analy
+sis.collectors.CheckerRunningDiagn
+osticCollectorVisitor.checkElement
+(CheckerRunningDiagnosticCollector
+Visitor.kt:24)
+	at org.jetbrains.kotlin.fir.analy
+sis.collectors.AbstractDiagnosticC
+ollectorVisitor.visitResolvedTypeR
+ef(AbstractDiagnosticCollectorVisi
+tor.kt:248)
+	at org.jetbrains.kotlin.fir.analy
+sis.collectors.AbstractDiagnosticC
+ollectorVisitor.visitResolvedTypeR
+ef(AbstractDiagnosticCollectorVisi
+tor.kt:30)
+	at org.jetbrains.kotlin.fir.types
+.FirResolvedTypeRef.accept(FirReso
+lvedTypeRef.kt:28)
+	at org.jetbrains.kotlin.fir.decla
+rations.impl.FirSimpleFunctionImpl
+.acceptChildren(FirSimpleFunctionI
+mpl.kt:63)
+	at org.jetbrains.kotlin.fir.analy
+sis.collectors.AbstractDiagnosticC
+ollectorVisitor.visitNestedElement
+s(AbstractDiagnosticCollectorVisit
+or.kt:38)
+	at org.jetbrains.kotlin.fir.analy
+sis.collectors.AbstractDiagnosticC
+ollectorVisitor.visitWithDeclarati
+onAndReceiver(AbstractDiagnosticCo
+llectorVisitor.kt:311)
+	at org.jetbrains.kotlin.fir.analy
+sis.collectors.AbstractDiagnosticC
+ollectorVisitor.visitSimpleFunctio
+n(AbstractDiagnosticCollectorVisit
+or.kt:118)
+	at org.jetbrains.kotlin.fir.analy
+sis.collectors.AbstractDiagnosticC
+ollectorVisitor.visitSimpleFunctio
+n(AbstractDiagnosticCollectorVisit
+or.kt:30)
+	at org.jetbrains.kotlin.fir.decla
+rations.FirSimpleFunction.accept(F
+irSimpleFunction.kt:51)
+	at org.jetbrains.kotlin.fir.decla
+rations.impl.FirRegularClassImpl.a
+cceptChildren(FirRegularClassImpl.
+kt:63)
+	at org.jetbrains.kotlin.fir.analy
+sis.collectors.AbstractDiagnosticC
+ollectorVisitor.visitNestedElement
+s(AbstractDiagnosticCollectorVisit
+or.kt:38)
+	at org.jetbrains.kotlin.fir.analy
+sis.collectors.AbstractDiagnosticC
+ollectorVisitor.visitWithDeclarati
+onAndReceiver(AbstractDiagnosticCo
+llectorVisitor.kt:311)
+	at org.jetbrains.kotlin.fir.analy
+sis.collectors.AbstractDiagnosticC
+ollectorVisitor.visitClassAndChild
+ren(AbstractDiagnosticCollectorVis
+itor.kt:87)
+	at org.jetbrains.kotlin.fir.analy
+sis.collectors.AbstractDiagnosticC
+ollectorVisitor.visitRegularClass(
+AbstractDiagnosticCollectorVisitor
+.kt:92)
+	at org.jetbrains.kotlin.fir.analy
+sis.collectors.AbstractDiagnosticC
+ollectorVisitor.visitRegularClass(
+AbstractDiagnosticCollectorVisitor
+.kt:30)
+	at org.jetbrains.kotlin.fir.decla
+rations.FirRegularClass.accept(Fir
+RegularClass.kt:48)
+	at org.jetbrains.kotlin.fir.decla
+rations.impl.FirFileImpl.acceptChi
+ldren(FirFileImpl.kt:57)
+	at org.jetbrains.kotlin.fir.analy
+sis.collectors.AbstractDiagnosticC
+ollectorVisitor.visitNestedElement
+s(AbstractDiagnosticCollectorVisit
+or.kt:38)
+	at org.jetbrains.kotlin.fir.analy
+sis.collectors.AbstractDiagnosticC
+ollectorVisitor.visitFile(Abstract
+DiagnosticCollectorVisitor.kt:1151
+)
+	at org.jetbrains.kotlin.fir.analy
+sis.collectors.AbstractDiagnosticC
+ollectorVisitor.visitFile(Abstract
+DiagnosticCollectorVisitor.kt:30)
+	at org.jetbrains.kotlin.fir.decla
+rations.FirFile.accept(FirFile.kt:
+42)
+	at org.jetbrains.kotlin.fir.analy
+sis.collectors.AbstractDiagnosticC
+ollector.collectDiagnostics(Abstra
+ctDiagnosticCollector.kt:36)
+	at org.jetbrains.kotlin.fir.pipel
+ine.AnalyseKt.runCheckers(analyse.
+kt:37)
+	... 35 more
+
+e: file:///C:/Users/FergentiusRosa
+les/.gradle/caches/8.12/transforms
+/6fba779ff8a45d6c00efb78485c14838/
+transformed/jetified-kotlin-stdlib
+-2.3.10.jar!/META-INF/kotlin-stdli
+b-jdk7.kotlin_module Module was 
+compiled with an incompatible 
+version of Kotlin. The binary 
+version of its metadata is 2.3.0, 
+expected version is 2.1.0.
+e: file:///C:/Users/FergentiusRosa
+les/.gradle/caches/8.12/transforms
+/6fba779ff8a45d6c00efb78485c14838/
+transformed/jetified-kotlin-stdlib
+-2.3.10.jar!/META-INF/kotlin-stdli
+b-jdk8.kotlin_module Module was 
+compiled with an incompatible 
+version of Kotlin. The binary 
+version of its metadata is 2.3.0, 
+expected version is 2.1.0.
+e: file:///C:/Users/FergentiusRosa
+les/.gradle/caches/8.12/transforms
+/6fba779ff8a45d6c00efb78485c14838/
+transformed/jetified-kotlin-stdlib
+-2.3.10.jar!/META-INF/kotlin-stdli
+b.kotlin_module Module was 
+compiled with an incompatible 
+version of Kotlin. The binary 
+version of its metadata is 2.3.0, 
+expected version is 2.1.0.
+
+FAILURE: Build failed with an 
+exception.
+
+* What went wrong:
+Execution failed for task 
+':app:compileDebugKotlin'.
+> A failure occurred while 
+executing org.jetbrains.kotlin.com
+pilerRunner.GradleCompilerRunnerWi
+thWorkers$GradleKotlinCompilerWork
+Action
+   > Internal compiler error. See 
+log for more details
+
+* Try:
+> Run with --stacktrace option to 
+get the stack trace.
+> Run with --info or --debug 
+option to get more log output.
+> Run with --scan to get full 
+insights.
+> Get more help at 
+https://help.gradle.org.
+
+BUILD FAILED in 3m 28s
+Running Gradle task 'assembleDebug'...                            209.6s
+
+ΓöîΓöÇ Flutter Fix ΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÉ
+Γöé [!] Your project requires a newer version of the Kotlin Gradle plugin.                       Γöé
+Γöé Find the latest version on https://kotlinlang.org/docs/releases.html#release-details, then   Γöé
+Γöé update the                                                                                   Γöé
+Γöé version number of the plugin with id "org.jetbrains.kotlin.android" in the plugins block of  Γöé
+Γöé C:\Users\FergentiusRosales\Herd\truecabtt\mobileapp\driver\android\settings.gradle.          Γöé
+Γöé                                                                                              Γöé
+Γöé Alternatively (if your project was created before Flutter 3.19), update                      Γöé
+Γöé C:\Users\FergentiusRosales\Herd\truecabtt\mobileapp\driver\android\build.gradle              Γöé
+Γöé ext.kotlin_version = '<latest-version>'                                                      Γöé
+ΓööΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÇΓöÿ
+Gradle task assembleDebug failed 
+with exit code 1

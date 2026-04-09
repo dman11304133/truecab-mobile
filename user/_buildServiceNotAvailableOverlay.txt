@@ -1,0 +1,98 @@
+(serviceNotAvailable)
+                                      ? Positioned(
+                                          bottom: 0,
+                                          child: Container(
+                                            width: media.width * 1,
+                                            padding: EdgeInsets.all(
+                                                media.width * 0.05),
+                                            decoration: BoxDecoration(
+                                                color: page,
+                                                borderRadius:
+                                                    const BorderRadius.only(
+                                                        topLeft:
+                                                            Radius.circular(12),
+                                                        topRight:
+                                                            Radius.circular(
+                                                                12))),
+                                            child: Column(
+                                              children: [
+                                                Container(
+                                                  height: media.width * 0.18,
+                                                  width: media.width * 0.18,
+                                                  decoration:
+                                                      const BoxDecoration(
+                                                          shape:
+                                                              BoxShape.circle,
+                                                          color: Color(
+                                                              0xffFEF2F2)),
+                                                  alignment: Alignment.center,
+                                                  child: Container(
+                                                    height: media.width * 0.14,
+                                                    width: media.width * 0.14,
+                                                    decoration:
+                                                        const BoxDecoration(
+                                                            shape:
+                                                                BoxShape.circle,
+                                                            color: Color(
+                                                                0xffFF0000)),
+                                                    child: const Center(
+                                                      child: Icon(
+                                                        Icons.error,
+                                                        color: Colors.white,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ),
+                                                SizedBox(
+                                                  height: media.width * 0.05,
+                                                ),
+                                                SizedBox(
+                                                  width: media.width * 0.8,
+                                                  child: Text(
+                                                      languages[choosenLanguage]
+                                                          ['text_no_service'],
+                                                      style: GoogleFonts
+                                                          .poppins(
+                                                              fontSize:
+                                                                  media.width *
+                                                                      eighteen,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w500,
+                                                              color: textColor),
+                                                      textAlign:
+                                                          TextAlign.center),
+                                                ),
+                                                SizedBox(
+                                                  height: media.width * 0.05,
+                                                ),
+                                                Button(
+                                                    onTap: () async {
+                                                      setState(() {
+                                                        serviceNotAvailable =
+                                                            false;
+                                                      });
+                                                      if (widget.type != 1) {
+                                                        var val =
+                                                            await etaRequest(
+                                                                outstation:
+                                                                    isOutStation);
+                                                        if (val == 'logout') {
+                                                          navigateLogout();
+                                                        }
+                                                      } else {
+                                                        var val =
+                                                            await rentalEta();
+                                                        if (val == 'logout') {
+                                                          navigateLogout();
+                                                        }
+                                                      }
+                                                      setState(() {});
+                                                    },
+                                                    text: languages[
+                                                            choosenLanguage]
+                                                        ['text_tryagain'])
+                                              ],
+                                            ),
+                                          ))
+                                      : Container()

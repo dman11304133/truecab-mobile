@@ -1,0 +1,69 @@
+﻿Running Gradle task 'assembleDebug'...                          
+flutter : warning: [options] source 
+value 8 is obsolete and will be 
+removed in a future release
+At line:1 char:1
++ flutter build apk --debug > 
+build_log_user_v1.txt 2>&1
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpec 
+   ified: (warning: [optio... future  
+   release:String) [], RemoteExcept   
+ ion
+    + FullyQualifiedErrorId : NativeC 
+   ommandError
+ 
+warning: [options] target value 8 is 
+obsolete and will be removed in a 
+future release
+warning: [options] To suppress 
+warnings about obsolete options, use 
+-Xlint:-options.
+Note: C:\Users\FergentiusRosales\AppDa
+ta\Local\Pub\Cache\hosted\pub.dev\cont
+acts_service-0.6.3\android\src\main\ja
+va\flutter\plugins\contactsservice\con
+tactsservice\ContactsServicePlugin.jav
+a uses or overrides a deprecated API.
+Note: Recompile with 
+-Xlint:deprecation for details.
+3 warnings
+Note: Some input files use or 
+override a deprecated API.
+Note: Recompile with 
+-Xlint:deprecation for details.
+warning: [options] source value 8 is 
+obsolete and will be removed in a 
+future release
+warning: [options] target value 8 is 
+obsolete and will be removed in a 
+future release
+warning: [options] To suppress 
+warnings about obsolete options, use 
+-Xlint:-options.
+Note: Some input files use or 
+override a deprecated API.
+Note: Recompile with 
+-Xlint:deprecation for details.
+Note: Some input files use unchecked 
+or unsafe operations.
+Note: Recompile with -Xlint:unchecked 
+for details.
+3 warnings
+warning: [options] source value 8 is 
+obsolete and will be removed in a 
+future release
+warning: [options] target value 8 is 
+obsolete and will be removed in a 
+future release
+warning: [options] To suppress 
+warnings about obsolete options, use 
+-Xlint:-options.
+3 warnings
+Note: Some input files use or 
+override a deprecated API.
+Note: Recompile with 
+-Xlint:deprecation for details.
+Running Gradle task 'assembleDebug'...                            414.8s
+ΓêÜ Built build\app\outputs\flutter-apk\app-debug.apk
