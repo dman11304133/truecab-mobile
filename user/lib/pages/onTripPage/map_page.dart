@@ -48,7 +48,6 @@ String dropAddressConfirmation = '';
 String favName = 'Home';
 String favNameText = '';
 bool requestCancelledByDriver = false;
-bool logout = false;
 bool deleteAccount = false;
 String transportType = 'Taxi';
 bool isOutStation = false;

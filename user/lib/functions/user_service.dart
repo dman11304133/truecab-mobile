@@ -9,32 +9,40 @@ import 'functions.dart';
 class UserService {
   static Map<String, dynamic> myReferralCode = {};
 
-  static Future<String> updateProfile(String name, String email, String mobile, String gender, String image) async {
-    String result = '';
+  static Future<String> updateProfile(String? name, String? email, String? mobile, String? gender, String? image) async {
+    String result = 'failure';
     try {
-      var request = http.MultipartRequest('POST', Uri.parse('${url}api/v1/user/update-profile'));
+      debugPrint('👤 [PROFILE_UPDATE] Calling api/v1/user/profile');
+      
+      var request = http.MultipartRequest('POST', Uri.parse('${url}api/v1/user/profile'));
       request.headers.addAll({'Authorization': 'Bearer ${bearerToken[0].token}'});
       request.fields.addAll({
-        'name': name,
-        'email': email,
-        'mobile': mobile,
-        'gender': gender,
+        'name': name ?? '',
+        'email': email ?? '',
+        'mobile': mobile ?? '',
+        'gender': gender ?? '',
       });
-      if (image.isNotEmpty) {
+      
+      if (image != null && image.isNotEmpty) {
         request.files.add(await http.MultipartFile.fromPath('profile_picture', image));
       }
-      var response = await request.send();
-      var respon = await http.Response.fromStream(response);
+
+      var streamingResponse = await request.send();
+      var response = await http.Response.fromStream(streamingResponse);
+      
+      debugPrint('👤 [PROFILE_UPDATE] Status: ${response.statusCode}');
+      
       if (response.statusCode == 200) {
         await getUserDetails();
         result = 'success';
       } else if (response.statusCode == 401) {
         result = 'logout';
       } else {
-        debugPrint(respon.body);
+        debugPrint('⚠️ [PROFILE_UPDATE] Failure: ${response.body}');
         result = 'failure';
       }
     } catch (e) {
+      debugPrint('🚨 [PROFILE_UPDATE] Exception: $e');
       if (e is SocketException) {
         internet = false;
         result = 'no internet';
@@ -43,25 +51,31 @@ class UserService {
     return result;
   }
 
-  static Future<String> updateProfileWithoutImage(String name, String email, String mobile, String gender) async {
-    String result = '';
+  static Future<String> updateProfileWithoutImage(String? name, String? email, String? mobile, String? gender) async {
+    String result = 'failure';
     try {
-      var response = await ApiService.post('api/v1/user/update-profile', {
-        'name': name,
-        'email': email,
-        'mobile': mobile,
-        'gender': gender,
+      debugPrint('👤 [PROFILE_UPDATE_NO_IMG] Calling api/v1/user/profile');
+      
+      var response = await ApiService.post('api/v1/user/profile', {
+        'name': name ?? '',
+        'email': email ?? '',
+        'mobile': mobile ?? '',
+        'gender': gender ?? '',
       });
+
+      debugPrint('👤 [PROFILE_UPDATE_NO_IMG] Status: ${response.statusCode}');
+
       if (response.statusCode == 200) {
         await getUserDetails();
         result = 'success';
       } else if (response.statusCode == 401) {
         result = 'logout';
       } else {
-        debugPrint(response.body);
+        debugPrint('⚠️ [PROFILE_UPDATE_NO_IMG] Failure: ${response.body}');
         result = 'failure';
       }
     } catch (e) {
+      debugPrint('🚨 [PROFILE_UPDATE_NO_IMG] Exception: $e');
       if (e is SocketException) {
         internet = false;
         result = 'no internet';
@@ -126,20 +140,33 @@ class UserService {
   static Future<String> getReferral() async {
     String result = '';
     try {
-      var response = await ApiService.get('api/v1/get/referral');
+      debugPrint('UserService.getReferral() [API] Calling: ${url}api/v1/get/referral');
+      var response = await http.get(Uri.parse('${url}api/v1/get/referral'), headers: {
+        'Authorization': 'Bearer ${bearerToken[0].token}',
+        'Content-Type': 'application/json'
+      }).timeout(const Duration(seconds: 15));
+      
+      debugPrint('UserService.getReferral() [API] Status: ${response.statusCode}');
+      debugPrint('UserService.getReferral() [API] Response: ${response.body}');
+      
       if (response.statusCode == 200) {
-        myReferralCode = jsonDecode(response.body)['data'];
+        myReferralCode = jsonDecode(response.body)['data'] ?? {};
+        debugPrint('UserService.myReferralCode updated: $myReferralCode');
         result = 'success';
+        valueNotifierBook.incrementNotifier();
       } else if (response.statusCode == 401) {
         result = 'logout';
       } else {
-        debugPrint(response.body);
+        debugPrint('UserService.getReferral() [API] Failed: ${response.body}');
         result = 'failure';
       }
     } catch (e) {
+      debugPrint('UserService.getReferral() [API] Exception: $e');
       if (e is SocketException) {
         internet = false;
         result = 'no internet';
+      } else {
+        result = 'error: $e';
       }
     }
     return result;

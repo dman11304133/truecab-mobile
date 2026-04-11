@@ -144,6 +144,20 @@ class _NavDrawerState extends State<NavDrawer> {
                                 icon: Icons.view_list_outlined,
                               ),
                             ),
+                            SizedBox(
+                              width: media.width * 0.7,
+                              child: NavMenu(
+                                onTap: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              const History(initialIndex: 0)));
+                                },
+                                text: t('text_scheduled_rides'),
+                                icon: Icons.schedule,
+                              ),
+                            ),
                             ValueListenableBuilder(
                                 valueListenable:
                                     valueNotifierNotification.value,
@@ -391,16 +405,18 @@ class _NavDrawerState extends State<NavDrawer> {
                               width: media.width * 0.7,
                               child: NavMenu(
                                 onTap: () {
+                                  final navigator = Navigator.of(context);
+                                  navigator.pop();
                                   Future.delayed(
-                                      const Duration(microseconds: 500), () {
-                                    Navigator.push(
-                                        context,
+                                      const Duration(milliseconds: 500), () {
+                                    navigator.push(
                                         MaterialPageRoute(
                                             builder: (context) =>
                                                 const ReferralPage()));
                                   });
                                 },
-                                text: t('text_referral'),
+                                text: languages[choosenLanguage]
+                                    ['text_referral'],
                                 icon: Icons.person_add,
                               ),
                             ),

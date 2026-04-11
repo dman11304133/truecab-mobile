@@ -127,38 +127,49 @@ class _NamePageState extends State<NamePage> {
             : TextDirection.ltr,
         child: Stack(
           children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
+            SingleChildScrollView(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const SizedBox(height: 40),
                 Center(
-                  child: InkWell(
-                    onTap: () {
-                      setState(() {
-                        _pickImage = true;
-                      });
-                    },
-                    child: proImageFile != null
-                        ? Container(
-                            height: media.width * 0.35,
-                            width: media.width * 0.35,
-                            decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                color: backgroundColor,
-                                image: DecorationImage(
-                                    image: FileImage(File(proImageFile)),
-                                    fit: BoxFit.cover)),
-                          )
-                        : Container(
-                            alignment: Alignment.center,
-                            height: media.width * 0.35,
-                            width: media.width * 0.35,
-                            decoration: const BoxDecoration(
-                                shape: BoxShape.circle,
-                                image: DecorationImage(
-                                    image: AssetImage(
-                                        'assets/images/idcard.png'),
-                                    fit: BoxFit.contain)),
+                  child: Stack(
+                    children: [
+                      InkWell(
+                        onTap: () => setState(() => _pickImage = true),
+                        child: Container(
+                          padding: const EdgeInsets.all(4),
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            shape: BoxShape.circle,
+                            boxShadow: [
+                              BoxShadow(color: Colors.black.withOpacity(0.1), blurRadius: 10, spreadRadius: 2)
+                            ],
                           ),
+                          child: CircleAvatar(
+                            radius: 65,
+                            backgroundColor: Colors.grey[100],
+                            backgroundImage: proImageFile != null
+                                ? FileImage(File(proImageFile))
+                                : const AssetImage('assets/images/idcard.png') as ImageProvider,
+                          ),
+                        ),
+                      ),
+                      Positioned(
+                        bottom: 4,
+                        right: 4,
+                        child: Container(
+                          padding: const EdgeInsets.all(8),
+                          decoration: const BoxDecoration(
+                            color: Colors.indigo,
+                            shape: BoxShape.circle,
+                          ),
+                          child: const Icon(Icons.camera_alt, color: Colors.white, size: 18),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
                           const SizedBox(
@@ -669,14 +680,11 @@ class _NamePageState extends State<NamePage> {
                           text: t('text_next'),
                         ),
                       ),
-                const SizedBox(
-                  height: 25,
-                ),
-                SizedBox(
-                  height: media.height * 0.4,
-                )
+                const SizedBox(height: 40),
               ],
             ),
+          ),
+        ),
             //display toast
             //display toast
             (_pickImage == true)

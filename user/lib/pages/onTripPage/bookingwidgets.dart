@@ -2781,94 +2781,210 @@ class RideLaterBottomSheet extends StatefulWidget {
 }
 
 class _RideLaterBottomSheetState extends State<RideLaterBottomSheet> {
+  late DateTime _selectedDateTime;
+  late DateTime _minDate;
+
+  @override
+  void initState() {
+    super.initState();
+    _minDate = DateTime.now().add(Duration(
+        minutes: int.parse(userDetails['user_can_make_a_ride_after_x_miniutes'])));
+    
+    _selectedDateTime = choosenDateTime ?? _minDate;
+    
+    // Ensure selected date is not before minimum date (Fixes assertion crash)
+    if (_selectedDateTime.isBefore(_minDate)) {
+      _selectedDateTime = _minDate;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     var media = MediaQuery.of(context).size;
 
     return Container(
-      height: media.width * 1,
-      width: media.width * 1,
-      padding: EdgeInsets.all(media.width * 0.03),
-      alignment: Alignment.bottomCenter,
+      width: media.width,
+      padding: EdgeInsets.only(
+        top: media.width * 0.04,
+        bottom: MediaQuery.of(context).padding.bottom + media.width * 0.03,
+      ),
       decoration: BoxDecoration(
           color: page,
           borderRadius: BorderRadius.only(
-              topLeft: Radius.circular(media.width * 0.05),
-              topRight: Radius.circular(media.width * 0.05))),
+              topLeft: Radius.circular(media.width * 0.06),
+              topRight: Radius.circular(media.width * 0.06))),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisSize: MainAxisSize.min,
         children: [
-          Column(
-            children: [
-              MyText(
-                text: t('text_choose_date'),
-                size: media.width * eighteen,
-                fontweight: FontWeight.w500,
-              ),
-              (confirmRideLater)
-                  ? Row(
-                      children: [
-                        InkWell(
-                          onTap: () {
-                            confirmRideLater = false;
-
-                            Navigator.pop(context);
-                            valueNotifierBook.incrementNotifier();
-                          },
-                          child: MyText(
-                            text: t('text_reset_now'),
-                            size: media.width * fourteen,
-                            color: Colors.blue,
-                          ),
-                        )
-                      ],
-                    )
-                  : Container(),
-              Container(
-                height: media.width * 0.5,
-                width: media.width * 0.9,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(12), color: topBar),
-                child: CupertinoDatePicker(
-                    minimumDate: DateTime.now().add(Duration(
-                        minutes: int.parse(userDetails[
-                            'user_can_make_a_ride_after_x_miniutes']))),
-                    initialDateTime: DateTime.now().add(Duration(
-                        minutes: int.parse(userDetails[
-                            'user_can_make_a_ride_after_x_miniutes']))),
-                    maximumDate: DateTime.now().add(const Duration(days: 4)),
-                    onDateTimeChanged: (val) {
-                      // setState(() {
-                      choosenDateTime = val;
-                      // });
-                    }),
-              ),
-            ],
-          ),
+          // Drag handle
           Container(
-              padding: EdgeInsets.all(media.width * 0.05),
-              child: Button(
-                  onTap: () async {
-                    // setState(() {
-                    confirmRideLater = true;
-                    // });
-                    Navigator.pop(context);
-                    valueNotifierBook.incrementNotifier();
-                  },
-                  text: t('text_confirm'))),
+            width: media.width * 0.1,
+            height: 4,
+            decoration: BoxDecoration(
+              color: hintColor.withOpacity(0.3),
+              borderRadius: BorderRadius.circular(2),
+            ),
+          ),
+          SizedBox(height: media.width * 0.04),
+
+          // Header with icon
+          Container(
+            padding: EdgeInsets.symmetric(horizontal: media.width * 0.05),
+            child: Row(
+              children: [
+                Container(
+                  width: media.width * 0.11,
+                  height: media.width * 0.11,
+                  decoration: BoxDecoration(
+                    color: buttonColor.withOpacity(0.12),
+                    borderRadius: BorderRadius.circular(media.width * 0.03),
+                  ),
+                  child: Icon(
+                    Icons.calendar_month_rounded,
+                    color: buttonColor,
+                    size: media.width * 0.06,
+                  ),
+                ),
+                SizedBox(width: media.width * 0.03),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      MyText(
+                        text: t('text_choose_date'),
+                        size: media.width * eighteen,
+                        fontweight: FontWeight.w600,
+                      ),
+                      SizedBox(height: 2),
+                      MyText(
+                        text: 'Schedule your ride up to 4 days ahead',
+                        size: media.width * twelve,
+                        color: hintColor,
+                      ),
+                    ],
+                  ),
+                ),
+                if (confirmRideLater)
+                  InkWell(
+                    onTap: () {
+                      confirmRideLater = false;
+                      Navigator.pop(context);
+                      valueNotifierBook.incrementNotifier();
+                    },
+                    child: Container(
+                      padding: EdgeInsets.symmetric(
+                        horizontal: media.width * 0.03,
+                        vertical: media.width * 0.015,
+                      ),
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Colors.blue.withOpacity(0.3)),
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: MyText(
+                        text: t('text_reset_now'),
+                        size: media.width * twelve,
+                        color: Colors.blue,
+                        fontweight: FontWeight.w500,
+                      ),
+                    ),
+                  ),
+              ],
+            ),
+          ),
+
+          SizedBox(height: media.width * 0.04),
+
+          // Selected date/time summary card
+          Container(
+            margin: EdgeInsets.symmetric(horizontal: media.width * 0.05),
+            padding: EdgeInsets.symmetric(
+              horizontal: media.width * 0.04,
+              vertical: media.width * 0.03,
+            ),
+            decoration: BoxDecoration(
+              color: topBar,
+              borderRadius: BorderRadius.circular(12),
+              border: Border.all(color: buttonColor.withOpacity(0.2)),
+            ),
+            child: Row(
+              children: [
+                Icon(Icons.access_time_rounded, color: buttonColor, size: media.width * 0.05),
+                SizedBox(width: media.width * 0.03),
+                Expanded(
+                  child: MyText(
+                    text: DateFormat('EEE, MMM d  •  h:mm a').format(_selectedDateTime),
+                    size: media.width * fourteen,
+                    fontweight: FontWeight.w600,
+                  ),
+                ),
+                Container(
+                  padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                  decoration: BoxDecoration(
+                    color: buttonColor.withOpacity(0.1),
+                    borderRadius: BorderRadius.circular(6),
+                  ),
+                  child: MyText(
+                    text: 'Scheduled',
+                    size: media.width * ten,
+                    color: buttonColor,
+                    fontweight: FontWeight.w600,
+                  ),
+                ),
+              ],
+            ),
+          ),
+
+          SizedBox(height: media.width * 0.03),
+
+          // Date picker
+          Container(
+            height: media.width * 0.5,
+            margin: EdgeInsets.symmetric(horizontal: media.width * 0.05),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(16),
+              color: topBar,
+            ),
+            child: CupertinoDatePicker(
+                minimumDate: _minDate,
+                initialDateTime: _selectedDateTime,
+                maximumDate: DateTime.now().add(const Duration(days: 4)),
+                onDateTimeChanged: (val) {
+                  setState(() {
+                    _selectedDateTime = val;
+                    choosenDateTime = val;
+                  });
+                }),
+          ),
+
+          SizedBox(height: media.width * 0.04),
+
+          // Confirm button
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: media.width * 0.05),
+            child: Button(
+                onTap: () async {
+                  confirmRideLater = true;
+                  Navigator.pop(context);
+                  valueNotifierBook.incrementNotifier();
+                },
+                text: t('text_confirm')),
+          ),
+
+          SizedBox(height: media.width * 0.02),
+
+          // Cancel link
           if (!confirmRideLater && !rideLaterSuccess)
             InkWell(
               onTap: () {
                 Navigator.pop(context);
               },
-              child: SizedBox(
-                height: media.width * 0.06,
-                width: media.width * 0.9,
+              child: Padding(
+                padding: EdgeInsets.symmetric(vertical: media.width * 0.02),
                 child: MyText(
                   textAlign: TextAlign.center,
                   text: t('text_cancel'),
                   size: media.width * fourteen,
-                  color: verifyDeclined,
+                  color: hintColor,
                 ),
               ),
             ),

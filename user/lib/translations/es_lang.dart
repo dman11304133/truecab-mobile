@@ -680,4 +680,5 @@ Map<String, dynamic> es = {
   "text_end_trip_desc": "Has añadido 3 paradas más. ¿Te gustaría finalizar el viaje en todas ellas?",
   "text_new_trip_req": "Nuevo viaje solicitado",
   "text_new_trip_req_bid": "Nuevo viaje solicitado, puede ofertar o rechazar la solicitud",
+  "text_scheduled_rides": "Viajes Programados",
 };

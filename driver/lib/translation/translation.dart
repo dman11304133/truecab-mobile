@@ -678,6 +678,10 @@ Map<String, dynamic> languages = {
     "text_end_trip_desc": "You Have Added 3 More Stops.Would You Like To End The Trip For All Of Them?",
     "text_new_trip_req": "New Trip Requested",
     "text_new_trip_req_bid": "New Trip Requested, You Can Bid Or Reject The Request",
+    "text_scheduled_marketplace": "Scheduled Marketplace",
+    "text_claim_ride": "Claim Ride",
+    "text_my_claims": "My Claims",
+    "text_available_rides": "Available Rides",
   },
   "es": {
     "text_enter_social": "O ingresa con las redes sociales",
@@ -1361,6 +1365,10 @@ Map<String, dynamic> languages = {
     "text_end_trip_desc": "Has añadido 3 paradas más. ¿Te gustaría finalizar el viaje en todas ellas?",
     "text_new_trip_req": "Nuevo viaje solicitado",
     "text_new_trip_req_bid": "Nuevo viaje solicitado, puede ofertar o rechazar la solicitud",
+    "text_scheduled_marketplace": "Mercado de viajes",
+    "text_claim_ride": "Reclamar viaje",
+    "text_my_claims": "Mis reclamos",
+    "text_available_rides": "Viajes disponibles",
   },
   "fr": {
     "text_enter_social": "Ou entrez par les médias sociaux",
@@ -2041,5 +2049,9 @@ Map<String, dynamic> languages = {
     "text_end_trip_desc": "Vous avez ajouté 3 arrêts supplémentaires. Souhaitez-vous terminer le voyage pour chacun d'entre eux ?",
     "text_new_trip_req": "Nouveau voyage demandé",
     "text_new_trip_req_bid": "Nouveau voyage demandé, vous pouvez enchérir ou rejeter la demande",
+    "text_scheduled_marketplace": "Marché planifié",
+    "text_claim_ride": "Réclamer la course",
+    "text_my_claims": "Mes réclamations",
+    "text_available_rides": "Courses disponibles",
   }
 };

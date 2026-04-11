@@ -12,6 +12,7 @@ import '../NavigatorPages/driverdetails.dart';
 import '../NavigatorPages/driverearnings.dart';
 import '../NavigatorPages/editprofile.dart';
 import '../NavigatorPages/history.dart';
+import '../NavigatorPages/scheduled_marketplace.dart';
 import '../NavigatorPages/makecomplaint.dart';
 import '../NavigatorPages/managevehicles.dart';
 import '../NavigatorPages/myroutebookings.dart';
@@ -416,6 +417,22 @@ class _NavDrawerState extends State<NavDrawer> {
                                 text: languages[choosenLanguage]
                                     ['text_earnings'],
                                 icon: Icons.electric_bolt,
+                              ),
+                            ),
+
+                            SizedBox(
+                              width: media.width * 0.7,
+                              child: NavMenu(
+                                onTap: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              const ScheduledMarketplace()));
+                                },
+                                text: languages[choosenLanguage]
+                                    ['text_scheduled_marketplace'],
+                                icon: Icons.calendar_month,
                               ),
                             ),
 

@@ -8,7 +8,8 @@ import '../noInternet/nointernet.dart';
 import 'historydetails.dart';
 
 class History extends StatefulWidget {
-  const History({super.key});
+  final int? initialIndex;
+  const History({super.key, this.initialIndex});
 
   @override
   State<History> createState() => _HistoryState();
@@ -24,7 +25,18 @@ class _HistoryState extends State<History> {
 
   @override
   void initState() {
-    historyFiltter = 'is_completed=1';
+    if (widget.initialIndex != null) {
+      _showHistory = widget.initialIndex!;
+      if (_showHistory == 0) {
+        historyFiltter = 'is_later=1';
+      } else if (_showHistory == 1) {
+        historyFiltter = 'is_completed=1';
+      } else if (_showHistory == 2) {
+        historyFiltter = 'is_cancelled=1';
+      }
+    } else {
+      historyFiltter = 'is_completed=1';
+    }
     _getHistory();
 
     _shimmer = AnimationController.unbounded(vsync: MyTickerProvider())

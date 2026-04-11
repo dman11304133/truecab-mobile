@@ -51,6 +51,7 @@ var audio = 'audio/notification_sound.mp3';
 bool internet = true;
 // int waitingTime = 0; // moved to ride_state.dart
 String gender = '';
+bool logout = false;
 String packageName = '';
 String signKey = '';
 dynamic proImageFile;
@@ -1112,6 +1113,12 @@ etaRequestWithPromo({outstation}) async {
 
 //rental eta request
 
+Map<String, dynamic> get myReferralCode => UserService.myReferralCode;
+set myReferralCode(Map<String, dynamic> val) => UserService.myReferralCode = val;
+
+getReferral() async => await UserService.getReferral();
+
+
 rentalEta() async {
   dynamic result;
   try {
@@ -2055,9 +2062,7 @@ getFaqPages(id) async => await SettingsService.getFaqPages(id);
 removeFavAddress(id) async => await UserService.removeFavAddress(id);
 
 //get user referral
-
-Map<String, dynamic> myReferralCode = {};
-getReferral() async => await UserService.getReferral();
+// Note: myReferralCode and getReferral() are now defined earlier in the file to avoid duplicates.
 
 
 //user logout

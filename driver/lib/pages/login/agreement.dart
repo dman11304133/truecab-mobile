@@ -39,11 +39,8 @@ class _AggreementPageState extends State<AggreementPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Expanded(
-                child: SingleChildScrollView(
-                  physics: const BouncingScrollPhysics(),
-                  child: Column(
-                    children: [
+            Column(
+              children: [
                       SizedBox(
                         height: media.height * 0.01,
                       ),
@@ -144,7 +141,6 @@ class _AggreementPageState extends State<AggreementPage> {
                       ),
                     ],
                   ),
-                )),
             ischeck == true
                 ? Padding(
               padding: const EdgeInsets.only(top: 15, bottom: 15),

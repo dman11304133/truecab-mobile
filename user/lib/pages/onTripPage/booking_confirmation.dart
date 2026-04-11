@@ -1264,6 +1264,7 @@ class _BookingConfirmationState extends State<BookingConfirmation>
   // ─────────────────────────────────────────────────────────────────────────
 
   Widget _buildMapLayer(BuildContext context, Size media) {
+    DateTime now = DateTime.now();
     return Container(
                                       alignment: Alignment.topCenter,
                                       height: media.height * 1,
@@ -6014,10 +6015,7 @@ class _BookingConfirmationState extends State<BookingConfirmation>
                                                                 media.width *
                                                                     0.03,
                                                           ),
-                                                          if (userRequestData[
-                                                                  'is_trip_start'] ==
-                                                              0)
-                                                            Row(
+                                                          Row(
                                                               children: [
                                                                 Expanded(
                                                                     child:
@@ -7027,18 +7025,14 @@ class _BookingConfirmationState extends State<BookingConfirmation>
                                                               12),
                                                       color: topBar),
                                                   child: CupertinoDatePicker(
-                                                      minimumDate: DateTime.now()
-                                                          .add(Duration(
-                                                              minutes: int.parse(
-                                                                  userDetails[
-                                                                      'user_can_make_a_ride_after_x_miniutes']))),
-                                                      initialDateTime: DateTime.now()
-                                                          .add(Duration(
-                                                              minutes: int.parse(
-                                                                  userDetails[
-                                                                      'user_can_make_a_ride_after_x_miniutes']))),
+                                                      minimumDate: now.add(Duration(
+                                                          minutes: int.parse(userDetails[
+                                                              'user_can_make_a_ride_after_x_miniutes']))),
+                                                      initialDateTime: now.add(Duration(
+                                                          minutes: int.parse(userDetails[
+                                                              'user_can_make_a_ride_after_x_miniutes']))),
                                                       maximumDate:
-                                                          DateTime.now().add(
+                                                          now.add(
                                                               const Duration(
                                                                   days: 4)),
                                                       onDateTimeChanged: (val) {
@@ -7228,14 +7222,14 @@ class _BookingConfirmationState extends State<BookingConfirmation>
                                                               color: topBar),
                                                           child:
                                                               CupertinoDatePicker(
-                                                                  minimumDate: DateTime.now().add(Duration(
+                                                                  minimumDate: now.add(Duration(
                                                                       minutes: int.parse(userDetails[
                                                                           'user_can_make_a_ride_after_x_miniutes']))),
                                                                   initialDateTime:
-                                                                      DateTime.now().add(Duration(
+                                                                      now.add(Duration(
                                                                           minutes: int.parse(userDetails[
                                                                               'user_can_make_a_ride_after_x_miniutes']))),
-                                                                  maximumDate: DateTime.now().add(
+                                                                  maximumDate: now.add(
                                                                       const Duration(
                                                                           days:
                                                                               4)),
@@ -8688,7 +8682,7 @@ class _BookingConfirmationState extends State<BookingConfirmation>
 
   @override
   Widget build(BuildContext context) {
-
+    DateTime now = DateTime.now();
     popFunction() {
       if (userRequestData.isNotEmpty &&
           userRequestData['accepted_at'] == null) {

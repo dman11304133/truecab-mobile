@@ -640,7 +640,7 @@ class _DocumentUploadState extends State<DocumentUpload> {
                                                 decoration: BoxDecoration(
                                                   borderRadius:
                                                       BorderRadius.circular(12),
-                                                  color: page,
+                                                  color: Colors.transparent,
                                                   border: Border.all(
                                                       color:  textColor
                                                           .withOpacity(

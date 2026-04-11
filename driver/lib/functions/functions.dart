@@ -3134,6 +3134,96 @@ Map<String, dynamic> myFaqPage = {};
 getFaqData(lat, lng) async => await SettingsService.getFaqData(lat, lng);
 
 getFaqPages(id) async => await SettingsService.getFaqPages(id);
+//scheduled ride marketplace
+List scheduledRides = [];
+List myClaimedRides = [];
+
+getScheduledRides() async {
+  dynamic result;
+  try {
+    var response = await http.get(
+      Uri.parse('${url}api/v1/request/scheduled/available'),
+      headers: {
+        'Authorization': 'Bearer ${bearerToken[0].token}',
+        'Content-Type': 'application/json'
+      },
+    );
+    if (response.statusCode == 200) {
+      scheduledRides = jsonDecode(response.body)['data'];
+      result = 'success';
+    } else if (response.statusCode == 401) {
+      result = 'logout';
+    } else {
+      debugPrint(response.body);
+      result = 'failure';
+    }
+  } catch (e) {
+    if (e is SocketException) {
+      result = 'no internet';
+      internet = false;
+    }
+  }
+  return result;
+}
+
+claimScheduledRide(requestId) async {
+  dynamic result;
+  try {
+    var response = await http.post(
+      Uri.parse('${url}api/v1/request/scheduled/claim'),
+      headers: {
+        'Authorization': 'Bearer ${bearerToken[0].token}',
+        'Content-Type': 'application/json'
+      },
+      body: jsonEncode({'request_id': requestId}),
+    );
+    if (response.statusCode == 200) {
+      if (jsonDecode(response.body)['success'] == true) {
+        result = 'success';
+      } else {
+        result = jsonDecode(response.body)['message'] ?? 'failed';
+      }
+    } else if (response.statusCode == 401) {
+      result = 'logout';
+    } else {
+      result = jsonDecode(response.body)['message'] ?? 'failed';
+    }
+  } catch (e) {
+    if (e is SocketException) {
+      result = 'no internet';
+      internet = false;
+    }
+  }
+  return result;
+}
+
+getMyClaimedRides() async {
+  dynamic result;
+  try {
+    var response = await http.get(
+      Uri.parse('${url}api/v1/request/scheduled/my-claims'),
+      headers: {
+        'Authorization': 'Bearer ${bearerToken[0].token}',
+        'Content-Type': 'application/json'
+      },
+    );
+    if (response.statusCode == 200) {
+      myClaimedRides = jsonDecode(response.body)['data'];
+      result = 'success';
+    } else if (response.statusCode == 401) {
+      result = 'logout';
+    } else {
+      debugPrint(response.body);
+      result = 'failure';
+    }
+  } catch (e) {
+    if (e is SocketException) {
+      result = 'no internet';
+      internet = false;
+    }
+  }
+  return result;
+}
 
 //request history
 List myHistory = [];
