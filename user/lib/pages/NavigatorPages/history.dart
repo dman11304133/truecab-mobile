@@ -6,6 +6,7 @@ import '../../styles/styles.dart';
 import '../../widgets/widgets.dart';
 import '../noInternet/nointernet.dart';
 import 'historydetails.dart';
+import '../loadingPage/loading.dart';
 
 class History extends StatefulWidget {
   final int? initialIndex;
@@ -22,6 +23,9 @@ class _HistoryState extends State<History> {
   dynamic isCompleted;
   bool showFilter = false;
   dynamic _shimmer;
+  bool _isLoading = false;
+  bool _cancelRide = false;
+  String _cancelId = '';
 
   @override
   void initState() {
@@ -685,6 +689,19 @@ class _HistoryState extends State<History> {
                                                                   ),
                                                                 ],
                                                               ),
+                                                            if (_showHistory == 0) ...[
+                                                              const SizedBox(height: 10),
+                                                              Button(
+                                                                onTap: () {
+                                                                  setState(() {
+                                                                    _cancelId = myHistory[i]['id'];
+                                                                    _cancelRide = true;
+                                                                  });
+                                                                },
+                                                                text: t('text_cancel_ride'),
+                                                                color: Colors.red,
+                                                              ),
+                                                            ]
                                                           ],
                                                         ),
                                                       ),
@@ -976,6 +993,80 @@ class _HistoryState extends State<History> {
                         });
                       },
                     ))
+                : Container(),
+            (_cancelRide)
+                ? Positioned(
+                    top: 0,
+                    child: Container(
+                      height: media.height * 1,
+                      width: media.width * 1,
+                      color: Colors.black.withOpacity(0.6),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Container(
+                            padding: EdgeInsets.all(media.width * 0.05),
+                            width: media.width * 0.9,
+                            decoration: BoxDecoration(
+                                color: page,
+                                borderRadius:
+                                    BorderRadius.circular(media.width * 0.03)),
+                            child: Column(
+                               children: [
+                                MyText(
+                                  text: t('text_cancel_ride'),
+                                  size: media.width * twenty,
+                                  fontweight: FontWeight.w600,
+                                ),
+                                SizedBox(
+                                  height: media.width * 0.05,
+                                ),
+                                MyText(
+                                  text: t('text_cancel_confirm'),
+                                  size: media.width * fourteen,
+                                  textAlign: TextAlign.center,
+                                ),
+                                SizedBox(
+                                  height: media.width * 0.08,
+                                ),
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Button(
+                                        onTap: () {
+                                          setState(() {
+                                            _cancelRide = false;
+                                          });
+                                        },
+                                        width: media.width * 0.35,
+                                        text: t('text_no')),
+                                    Button(
+                                        onTap: () async {
+                                          setState(() {
+                                            _cancelRide = false;
+                                            _isLoading = true;
+                                          });
+
+                                          await cancelLaterRequest(_cancelId);
+                                          await _getHistory();
+                                          setState(() {
+                                            _isLoading = false;
+                                          });
+                                        },
+                                        width: media.width * 0.35,
+                                        text: t('text_yes')),
+                                  ],
+                                )
+                              ],
+                            ),
+                          )
+                        ],
+                      ),
+                    ))
+                : Container(),
+            (_isLoading)
+                ? const Positioned(top: 0, child: Loading())
                 : Container(),
           ],
         ),

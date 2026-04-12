@@ -7025,14 +7025,14 @@ class _BookingConfirmationState extends State<BookingConfirmation>
                                                               12),
                                                       color: topBar),
                                                   child: CupertinoDatePicker(
-                                                      minimumDate: now.add(Duration(
+                                                      minimumDate: DateTime.now().add(Duration(
                                                           minutes: int.parse(userDetails[
                                                               'user_can_make_a_ride_after_x_miniutes']))),
-                                                      initialDateTime: now.add(Duration(
+                                                      initialDateTime: DateTime.now().add(Duration(
                                                           minutes: int.parse(userDetails[
                                                               'user_can_make_a_ride_after_x_miniutes']))),
                                                       maximumDate:
-                                                          now.add(
+                                                          DateTime.now().add(
                                                               const Duration(
                                                                   days: 4)),
                                                       onDateTimeChanged: (val) {
@@ -7222,14 +7222,14 @@ class _BookingConfirmationState extends State<BookingConfirmation>
                                                               color: topBar),
                                                           child:
                                                               CupertinoDatePicker(
-                                                                  minimumDate: now.add(Duration(
+                                                                  minimumDate: DateTime.now().add(Duration(
                                                                       minutes: int.parse(userDetails[
                                                                           'user_can_make_a_ride_after_x_miniutes']))),
                                                                   initialDateTime:
-                                                                      now.add(Duration(
+                                                                      DateTime.now().add(Duration(
                                                                           minutes: int.parse(userDetails[
                                                                               'user_can_make_a_ride_after_x_miniutes']))),
-                                                                  maximumDate: now.add(
+                                                                  maximumDate: DateTime.now().add(
                                                                       const Duration(
                                                                           days:
                                                                               4)),

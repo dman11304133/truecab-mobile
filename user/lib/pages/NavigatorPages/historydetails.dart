@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_user/translations/translation.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../../functions/functions.dart';
 import '../../styles/styles.dart';
 import '../../widgets/widgets.dart';
@@ -57,6 +58,15 @@ class _HistoryDetailsState extends State<HistoryDetails> {
   bool makecomplaintbool = false;
   bool _isLoading = false;
   TextEditingController complaintText = TextEditingController();
+
+  _callNumber(String mobile) async {
+    final Uri launchUri = Uri(
+      scheme: 'tel',
+      path: mobile,
+    );
+    await launchUrl(launchUri);
+  }
+
   @override
   Widget build(BuildContext context) {
     var media = MediaQuery.of(context).size;
@@ -256,26 +266,43 @@ class _HistoryDetailsState extends State<HistoryDetails> {
                                       height: media.width * 0.04,
                                     ),
                                     const MySeparator(),
-                                    if (myHistory[selectedHistory]
-                                            ['driverDetail'] !=
-                                        null)
+                                     if (myHistory[selectedHistory]
+                                             ['driverDetail'] !=
+                                         null)
                                       Column(
                                         children: [
                                           SizedBox(
-                                            height: media.width * 0.02,
+                                            height: media.width * 0.04,
                                           ),
-                                          Row(
-                                            children: [
-                                              Expanded(
-                                                child: Row(
+                                          Container(
+                                            padding: EdgeInsets.all(media.width * 0.03),
+                                            decoration: BoxDecoration(
+                                              color: Colors.white,
+                                              borderRadius: BorderRadius.circular(12),
+                                              border: Border.all(color: Colors.blue.withOpacity(0.1), width: 1),
+                                              boxShadow: [
+                                                BoxShadow(
+                                                  color: Colors.grey.withOpacity(0.05),
+                                                  blurRadius: 10,
+                                                  spreadRadius: 2
+                                                )
+                                              ]
+                                            ),
+                                            child: Column(
+                                              children: [
+                                                Row(
                                                   children: [
                                                     Container(
-                                                      height:
-                                                          media.width * 0.13,
-                                                      width: media.width * 0.13,
+                                                      height: media.width * 0.15,
+                                                      width: media.width * 0.15,
                                                       decoration: BoxDecoration(
-                                                          shape:
-                                                              BoxShape.circle,
+                                                          shape: BoxShape.circle,
+                                                          boxShadow: [
+                                                            BoxShadow(
+                                                              color: Colors.black.withOpacity(0.1),
+                                                              blurRadius: 5
+                                                            )
+                                                          ],
                                                           image: DecorationImage(
                                                               image: NetworkImage(
                                                                   myHistory[selectedHistory]
@@ -289,47 +316,97 @@ class _HistoryDetailsState extends State<HistoryDetails> {
                                                                   .cover)),
                                                     ),
                                                     SizedBox(
-                                                      width: media.width * 0.02,
+                                                      width: media.width * 0.04,
                                                     ),
                                                     Expanded(
-                                                      child: MyText(
-                                                        text: myHistory[selectedHistory]
-                                                                    [
-                                                                    'driverDetail']
-                                                                ['data']['name']
-                                                            .toString(),
-                                                        size: media.width *
-                                                            sixteen,
-                                                        maxLines: 1,
+                                                      child: Column(
+                                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                                        children: [
+                                                          MyText(
+                                                            text: myHistory[selectedHistory]
+                                                                        [
+                                                                        'driverDetail']
+                                                                    ['data']['name']
+                                                                .toString(),
+                                                            size: media.width * sixteen,
+                                                            fontweight: FontWeight.bold,
+                                                            maxLines: 1,
+                                                          ),
+                                                          if (myHistory[selectedHistory]['ride_user_rating'] != null)
+                                                          Row(
+                                                            children: [
+                                                              Icon(
+                                                                Icons.star,
+                                                                size: media.width * fourteen,
+                                                                color: Colors.orange,
+                                                              ),
+                                                              SizedBox(width: 4),
+                                                              MyText(
+                                                                text: myHistory[selectedHistory]['ride_user_rating'].toString(),
+                                                                size: media.width * twelve,
+                                                                color: hintColor,
+                                                              ),
+                                                            ],
+                                                          )
+                                                        ],
+                                                      ),
+                                                    ),
+                                                    InkWell(
+                                                      onTap: () {
+                                                        _callNumber(myHistory[selectedHistory]['driver_mobile'] ?? myHistory[selectedHistory]['driverDetail']['data']['mobile']);
+                                                      },
+                                                      child: Container(
+                                                        padding: EdgeInsets.all(media.width * 0.025),
+                                                        decoration: BoxDecoration(
+                                                          color: Colors.green.withOpacity(0.1),
+                                                          shape: BoxShape.circle
+                                                        ),
+                                                        child: Icon(Icons.call, color: Colors.green, size: media.width * twenty),
                                                       ),
                                                     )
                                                   ],
                                                 ),
-                                              ),
-                                              if (myHistory[selectedHistory]
-                                                      ['ride_user_rating'] !=
-                                                  null)
-                                                MyText(
-                                                  text: myHistory[
-                                                              selectedHistory]
-                                                          ['ride_user_rating']
-                                                      .toString(),
-                                                  size: media.width * eighteen,
-                                                  fontweight: FontWeight.w500,
-                                                  color: textColor,
+                                                Padding(
+                                                  padding: EdgeInsets.symmetric(vertical: media.width * 0.02),
+                                                  child: Divider(color: Colors.grey.withOpacity(0.1)),
                                                 ),
-                                              if (myHistory[selectedHistory]
-                                                      ['ride_user_rating'] !=
-                                                  null)
-                                                Icon(
-                                                  Icons.star,
-                                                  size: media.width * twenty,
-                                                  color: Colors.yellow[600],
+                                                Row(
+                                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                  children: [
+                                                    Column(
+                                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                                      children: [
+                                                        MyText(
+                                                          text: t('text_vehicle_info'),
+                                                          size: media.width * twelve,
+                                                          color: hintColor,
+                                                        ),
+                                                        MyText(
+                                                          text: (myHistory[selectedHistory]['driverDetail']['data']['car_make_name'] ?? '-') + ' ' + (myHistory[selectedHistory]['driverDetail']['data']['car_model_name'] ?? ''),
+                                                          size: media.width * fourteen,
+                                                          fontweight: FontWeight.w500,
+                                                        ),
+                                                      ],
+                                                    ),
+                                                    Container(
+                                                      padding: EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                                                      decoration: BoxDecoration(
+                                                        color: Colors.grey.withOpacity(0.1),
+                                                        borderRadius: BorderRadius.circular(6)
+                                                      ),
+                                                      child: MyText(
+                                                        text: (myHistory[selectedHistory]['driverDetail']['data']['car_number'] ?? '-').toString(),
+                                                        size: media.width * twelve,
+                                                        fontweight: FontWeight.bold,
+                                                      ),
+                                                    )
+                                                  ],
                                                 )
-                                            ],
+                                              ],
+                                            ),
                                           ),
                                           SizedBox(
-                                            height: media.width * 0.02,
+                                            height: media.width * 0.04,
                                           ),
                                           const MySeparator()
                                         ],
@@ -1259,7 +1336,8 @@ class _HistoryDetailsState extends State<HistoryDetails> {
                                                         ['id'];
                                               });
                                             },
-                                            text: t('text_cancel_ride')),
+                                            text: t('text_cancel_ride'),
+                                            color: Colors.red),
                                       )
                                     : Container(),
                           ],

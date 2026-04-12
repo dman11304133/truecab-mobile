@@ -147,6 +147,57 @@ class _ScheduledMarketplaceState extends State<ScheduledMarketplace> with Single
                 const SizedBox(height: 12),
                 Row(
                   children: [
+                    Container(
+                      height: media.width * 0.1,
+                      width: media.width * 0.1,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: borderLines.withOpacity(0.1),
+                        image: safeImage(ride['user_image']?.toString()),
+                      ),
+                    ),
+                    const SizedBox(width: 12),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          MyText(
+                            text: ride['user_name'] ?? 'User',
+                            size: 14,
+                            fontweight: FontWeight.bold,
+                          ),
+                          if (!isAvailable)
+                            MyText(
+                              text: ride['user_mobile'] ?? '',
+                              size: 12,
+                              color: hintColor,
+                            ),
+                        ],
+                      ),
+                    ),
+                    if (!isAvailable)
+                      InkWell(
+                        onTap: () {
+                          makingPhoneCall(ride['user_mobile']);
+                        },
+                        child: Container(
+                          padding: const EdgeInsets.all(8),
+                          decoration: BoxDecoration(
+                            color: const Color(0xff5BDD0A).withOpacity(0.1),
+                            shape: BoxShape.circle,
+                          ),
+                          child: Icon(
+                            Icons.call,
+                            color: textColor,
+                            size: media.width * 0.05,
+                          ),
+                        ),
+                      ),
+                  ],
+                ),
+                const SizedBox(height: 12),
+                Row(
+                  children: [
                     const Icon(Icons.access_time, size: 16, color: Colors.blue),
                     const SizedBox(width: 8),
                     MyText(

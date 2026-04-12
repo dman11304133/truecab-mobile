@@ -100,7 +100,7 @@ class _DropLocationState extends State<DropLocation>
     addAutoFill.clear();
     selectedGoodsId = '';
     goodsSize = '';
-    dropAddressConfirmation = addressList[0].address.toString();
+    dropAddressConfirmation = addressList.isNotEmpty ? addressList[0].address.toString() : '';
     super.initState();
   }
 
@@ -515,47 +515,50 @@ class _DropLocationState extends State<DropLocation>
                                   Button(
                                       onTap: () async {
                                         debugPrint('🚗 [DROPLOCATION] Confirm Drop Location tapped. Address: $dropAddressConfirmation');
-                                        if (dropAddressConfirmation != '') {
-                                          //remove in envato
-                                          if (addressList
-                                              .where((element) =>
-                                                  element.type == 'drop')
-                                              .isEmpty) {
-                                            addressList.add(AddressList(
-                                                id: (addressList.length + 1)
-                                                    .toString(),
-                                                type: 'drop',
-                                                address:
-                                                    dropAddressConfirmation,
-                                                latlng: LatLng(_center.latitude,
-                                                    _center.longitude)));
-                                          } else {
-                                            addressList
-                                                    .firstWhere((element) =>
-                                                        element.type == 'drop')
-                                                    .address =
-                                                dropAddressConfirmation;
-                                            addressList
-                                                    .firstWhere((element) =>
-                                                        element.type == 'drop')
-                                                    .latlng =
-                                                LatLng(_center.latitude,
-                                                    _center.longitude);
-                                          }
-                                          if (addressList.length == 2) {
-                                            setState(() {
-                                              _isLoading = true;
-                                            });
-                                            var val = await etaRequest();
-                                            if (val == 'logout') {
-                                              navigateLogout();
+                                          if (dropAddressConfirmation != '') {
+                                            //remove in envato
+                                            if (addressList
+                                                .where((element) =>
+                                                    element.type == 'drop')
+                                                .isEmpty) {
+                                              addressList.add(AddressList(
+                                                  id: (addressList.length + 1)
+                                                      .toString(),
+                                                  type: 'drop',
+                                                  address:
+                                                      dropAddressConfirmation,
+                                                  latlng: LatLng(_center.latitude,
+                                                      _center.longitude)));
+                                            } else {
+                                              if (addressList.any((element) => element.type == 'drop')) {
+                                                addressList
+                                                        .firstWhere((element) =>
+                                                            element.type == 'drop')
+                                                        .address =
+                                                    dropAddressConfirmation;
+                                                addressList
+                                                        .firstWhere((element) =>
+                                                            element.type == 'drop')
+                                                        .latlng =
+                                                    LatLng(_center.latitude,
+                                                        _center.longitude);
+                                              }
                                             }
-                                            setState(() {
-                                              _isLoading = false;
-                                              droplocation = true;
-                                            });
+                                            if (addressList.length == 2) {
+                                              setState(() {
+                                                _isLoading = true;
+                                              });
+                                              var val = await etaRequest();
+                                              if (val == 'logout') {
+                                                navigateLogout();
+                                              }
+                                              setState(() {
+                                                _isLoading = false;
+                                                droplocation = true;
+                                              });
+                                            }
                                           }
-                                        }
+
                                       },
                                       color: (dropAddressConfirmation == '')
                                           ? Colors.grey
@@ -935,11 +938,13 @@ class _DropLocationState extends State<DropLocation>
                                             ),
                                             Expanded(
                                               child: MyText(
-                                                text: addressList
-                                                    .firstWhere((element) =>
-                                                        element.type ==
-                                                        'pickup')
-                                                    .address,
+                                                text: addressList.any((element) => element.type == 'pickup')
+                                                    ? addressList
+                                                        .firstWhere((element) =>
+                                                            element.type ==
+                                                            'pickup')
+                                                        .address
+                                                    : '',
                                                 maxLines: 2,
                                                 fontweight: FontWeight.w500,
                                                 size: media.width * twelve,
@@ -973,10 +978,12 @@ class _DropLocationState extends State<DropLocation>
                                             ),
                                             Expanded(
                                               child: MyText(
-                                                text: addressList
-                                                    .firstWhere((element) =>
-                                                        element.type == 'drop')
-                                                    .address,
+                                                text: addressList.any((element) => element.type == 'drop')
+                                                    ? addressList
+                                                        .firstWhere((element) =>
+                                                            element.type == 'drop')
+                                                        .address
+                                                    : '',
                                                 maxLines: 2,
                                                 fontweight: FontWeight.w500,
                                                 size: media.width * twelve,

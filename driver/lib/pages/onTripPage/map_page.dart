@@ -554,10 +554,10 @@ class _MapsState extends State<Maps>
         final Uint8List offlinebikeicon1;
         final Uint8List onridebikeicon1;
         // if(userDetails['transport_type'] == 'taxi'){
-        markerIcon = await getBytesFromAsset('assets/images/top-taxi.png', 40);
+        markerIcon = await getBytesFromAsset('assets/images/top-taxi.png', 55);
         markerIcon2 = await getBytesFromAsset('assets/images/bike.png', 40);
         markerIcon3 =
-            await getBytesFromAsset('assets/images/top-taxi.png', 40);
+            await getBytesFromAsset('assets/images/top-taxi.png', 55);
         if (userDetails['role'] == 'owner') {
           onlinebikeicon1 =
               await getBytesFromAsset('assets/images/bike_online.png', 40);
@@ -4345,7 +4345,6 @@ class _MapsState extends State<Maps>
                                                                                     SizedBox(
                                                                                       height: media.width * 0.03,
                                                                                     ),
-                                                                                    if (driverReq['is_trip_start'] != 1)
                                                                                       Row(
                                                                                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                                                                         children: [

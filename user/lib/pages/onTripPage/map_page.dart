@@ -214,10 +214,10 @@ class _MapsState extends State<Maps>
     serviceEnabled = await location.serviceEnabled();
     polyline.clear();
     final Uint8List markerIcon =
-        await getBytesFromAsset('assets/images/top-taxi.png', 40);
+        await getBytesFromAsset('assets/images/top-taxi.png', 55);
     pinLocationIcon = BitmapDescriptor.fromBytes(markerIcon);
     final Uint8List deliveryIcons =
-        await getBytesFromAsset('assets/images/top-taxi.png', 40);
+        await getBytesFromAsset('assets/images/top-taxi.png', 55);
     deliveryIcon = BitmapDescriptor.fromBytes(deliveryIcons);
     final Uint8List bikeIcons =
         await getBytesFromAsset('assets/images/bike.png', 40);
