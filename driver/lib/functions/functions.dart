@@ -2313,6 +2313,12 @@ Map etaDetails = {};
 etaRequest() async {
   dynamic result;
   try {
+    if (addressList.where((e) => e.type == 'pickup').isEmpty || 
+        addressList.where((e) => e.type == 'drop').isEmpty) {
+      debugPrint('🚗 [ETA_REQUEST] ❌ Failed: Missing pickup or drop in addressList');
+      return false;
+    }
+
     Map<String, dynamic> etaData = {
       'pick_lat':
           addressList.firstWhere((e) => e.type == 'pickup').latlng.latitude,
@@ -2399,13 +2405,13 @@ geoCodingForLatLng(id, sessionToken) async {
 createRequest(name, phone) async {
   dynamic result;
   try {
-    var response = await http.post(
-        Uri.parse('${url}api/v1/request/create-instant-ride'),
-        headers: {
-          'Authorization': 'Bearer ${bearerToken[0].token}',
-          'Content-Type': 'application/json',
-        },
-        body: jsonEncode({
+        if (addressList.where((e) => e.type == 'pickup').isEmpty || 
+            addressList.where((e) => e.type == 'drop').isEmpty) {
+          debugPrint('🚗 [INSTANT_RIDE] ❌ Failed: Missing pickup or drop in addressList');
+          return 'failed';
+        }
+
+        var bodyData = {
           'pick_lat':
               addressList.firstWhere((e) => e.type == 'pickup').latlng.latitude,
           'pick_lng': addressList
@@ -2424,8 +2430,16 @@ createRequest(name, phone) async {
           'name': name,
           'mobile': phone,
           'poly_line': polyString,
-          'request_eta_amount': etaDetails['total'].toString()
-        }));
+          'request_eta_amount': (etaDetails != null && etaDetails['total'] != null) ? etaDetails['total'].toString() : '0'
+        };
+
+        var response = await http.post(
+            Uri.parse('${url}api/v1/request/create-instant-ride'),
+            headers: {
+              'Authorization': 'Bearer ${bearerToken[0].token}',
+              'Content-Type': 'application/json',
+            },
+            body: jsonEncode(bodyData));
     debugPrint('🚗 [INSTANT_RIDE] Request URL: ${url}api/v1/request/create-instant-ride');
     debugPrint('🚗 [INSTANT_RIDE] Request Status: ${response.statusCode}');
     debugPrint('🚗 [INSTANT_RIDE] Response Body: ${response.body}');
@@ -2451,13 +2465,13 @@ createRequest(name, phone) async {
 createRequestDelivery(name, phone) async {
   dynamic result;
   try {
-    var response = await http.post(
-        Uri.parse('${url}api/v1/request/create-delivery-instant-ride'),
-        headers: {
-          'Authorization': 'Bearer ${bearerToken[0].token}',
-          'Content-Type': 'application/json',
-        },
-        body: jsonEncode({
+        if (addressList.where((e) => e.type == 'pickup').isEmpty || 
+            addressList.where((e) => e.type == 'drop').isEmpty) {
+          debugPrint('🚗 [INSTANT_RIDE_DELIVERY] ❌ Failed: Missing pickup or drop in addressList');
+          return 'failed';
+        }
+
+        var bodyData = {
           'pick_lat':
               addressList.firstWhere((e) => e.type == 'pickup').latlng.latitude,
           'pick_lng': addressList
@@ -2476,10 +2490,19 @@ createRequestDelivery(name, phone) async {
           'name': name,
           'mobile': phone,
           'poly_line': polyString,
-          'request_eta_amount': etaDetails['total'].toString(),
+          'request_eta_amount': (etaDetails != null && etaDetails['total'] != null) ? etaDetails['total'].toString() : '0',
           'goods_type_id': selectedGoodsId,
           'goods_type_quantity': goodsSize
-        }));
+        };
+
+        var response = await http.post(
+            Uri.parse('${url}api/v1/request/create-delivery-instant-ride'),
+            headers: {
+              'Authorization': 'Bearer ${bearerToken[0].token}',
+              'Content-Type': 'application/json',
+            },
+            body: jsonEncode(bodyData));
+
     debugPrint('🚗 [INSTANT_RIDE_DELIVERY] Request URL: ${url}api/v1/request/create-delivery-instant-ride');
     debugPrint('🚗 [INSTANT_RIDE_DELIVERY] Request Status: ${response.statusCode}');
     debugPrint('🚗 [INSTANT_RIDE_DELIVERY] Response Body: ${response.body}');
