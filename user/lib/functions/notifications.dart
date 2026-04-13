@@ -75,6 +75,8 @@ Future<void> initMessaging() async {
         }
       } else {
         showRideNotification(message.notification);
+        // Trigger home screen refresh so UI updates for active rides
+        valueNotifierHome.incrementNotifier();
       }
     }
   });
@@ -83,6 +85,9 @@ Future<void> initMessaging() async {
     if (message.data['push_type'].toString() == 'general') {
       latestNotification = message.data['message'];
       isGeneral = true;
+      valueNotifierHome.incrementNotifier();
+    } else {
+      // Ride-related notification tapped - refresh UI
       valueNotifierHome.incrementNotifier();
     }
   });

@@ -44,6 +44,13 @@ class RideService {
       var response = await ApiService.post('api/v1/request/started', body);
       if (response.statusCode == 200) {
         return 'success';
+      } else {
+        try {
+          var respBody = jsonDecode(response.body);
+          if (response.statusCode == 500 && respBody['message'] == 'request cancelled') {
+            await getUserDetails();
+          }
+        } catch (e) {}
       }
       return 'failure';
     } catch (e) {
@@ -57,6 +64,13 @@ class RideService {
       var response = await ApiService.post('api/v1/request/end', body);
       if (response.statusCode == 200) {
         return 'success';
+      } else {
+        try {
+          var respBody = jsonDecode(response.body);
+          if (response.statusCode == 500 && respBody['message'] == 'request cancelled') {
+            await getUserDetails();
+          }
+        } catch (e) {}
       }
       return 'failure';
     } catch (e) {

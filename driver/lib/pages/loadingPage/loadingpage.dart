@@ -194,19 +194,57 @@ class _LoadingPageState extends State<LoadingPage> {
               height: media.height * 1,
               width: media.width * 1,
               decoration: BoxDecoration(
-                color: splashColor,
+                gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [
+                    const Color(0xff309700), // Primary Driver Green
+                    const Color(0xff123e00), // Deep Forest Green
+                  ],
+                ),
               ),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Container(
-                    padding: EdgeInsets.all(media.width * 0.01),
-                    width: media.width * 0.5,
-                    height: media.width * 0.6,
-                    decoration: const BoxDecoration(
-                        image: DecorationImage(
-                            image: AssetImage('assets/images/logo.png'),
-                            fit: BoxFit.contain)),
+                  ShowUp(
+                    delay: 300,
+                    child: Container(
+                      padding: EdgeInsets.all(media.width * 0.05),
+                      width: media.width * 0.45,
+                      height: media.width * 0.45,
+                      decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: Colors.white,
+                          boxShadow: [
+                            BoxShadow(
+                                color: Colors.black.withOpacity(0.3),
+                                blurRadius: 30,
+                                spreadRadius: 2),
+                            BoxShadow(
+                                color: Colors.white.withOpacity(0.1),
+                                blurRadius: 15,
+                                spreadRadius: -5),
+                          ]),
+                      child: ClipOval(
+                        child: Image.asset(
+                          'assets/images/logo.png',
+                          fit: BoxFit.contain,
+                          errorBuilder: (context, error, stackTrace) =>
+                              Icon(Icons.taxi_alert,
+                                  size: media.width * 0.15, color: buttonColor),
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: media.height * 0.06),
+                  ShowUp(
+                    delay: 600,
+                    child: MyText(
+                      text: "DRIVERS",
+                      size: media.width * 0.06,
+                      fontweight: FontWeight.bold,
+                      color: Colors.white.withOpacity(0.9),
+                    ),
                   ),
                 ],
               ),

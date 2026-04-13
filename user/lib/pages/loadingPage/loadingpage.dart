@@ -256,7 +256,14 @@ class _LoadingPageState extends State<LoadingPage> {
               height: media.height * 1,
               width: media.width * 1,
               decoration: BoxDecoration(
-                color: splashColor,
+                gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: [
+                    splashColor,
+                    const Color(0xff1a265a), // A deeper version of the splash color for blending
+                  ],
+                ),
               ),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -272,27 +279,33 @@ class _LoadingPageState extends State<LoadingPage> {
                           color: Colors.white,
                           boxShadow: [
                             BoxShadow(
-                                color: Colors.black.withOpacity(0.2),
-                                blurRadius: 25,
-                                spreadRadius: 5)
+                                color: Colors.black.withOpacity(0.3),
+                                blurRadius: 30,
+                                spreadRadius: 2),
+                            BoxShadow(
+                                color: Colors.white.withOpacity(0.1),
+                                blurRadius: 15,
+                                spreadRadius: -5),
                           ]),
-                      child: Image.asset(
-                        'assets/images/logo.png',
-                        fit: BoxFit.contain,
-                        errorBuilder: (context, error, stackTrace) =>
-                            Icon(Icons.taxi_alert,
-                                size: media.width * 0.15, color: buttonColor),
+                      child: ClipOval(
+                        child: Image.asset(
+                          'assets/images/logo.png',
+                          fit: BoxFit.contain,
+                          errorBuilder: (context, error, stackTrace) =>
+                              Icon(Icons.taxi_alert,
+                                  size: media.width * 0.15, color: buttonColor),
+                        ),
                       ),
                     ),
                   ),
-                  SizedBox(height: media.height * 0.04),
+                  SizedBox(height: media.height * 0.06),
                   ShowUp(
                     delay: 600,
                     child: MyText(
-                      text: "CUSTOMER",
+                      text: "PASSENGER", // Rebranding from CUSTOMER to PASSENGER
                       size: media.width * 0.06,
                       fontweight: FontWeight.bold,
-                      color: Colors.white,
+                      color: Colors.white.withOpacity(0.9),
                     ),
                   ),
                 ],

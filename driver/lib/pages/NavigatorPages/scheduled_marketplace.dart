@@ -24,15 +24,22 @@ class _ScheduledMarketplaceState extends State<ScheduledMarketplace> with Single
   }
 
   _fetchData() async {
-    setState(() {
-      _isLoading = true;
-    });
-    await getScheduledRides();
-    await getMyClaimedRides();
     if (mounted) {
       setState(() {
-        _isLoading = false;
+        _isLoading = true;
       });
+    }
+    try {
+      await getScheduledRides();
+      await getMyClaimedRides();
+    } catch (e) {
+      debugPrint('Error fetching scheduled rides: $e');
+    } finally {
+      if (mounted) {
+        setState(() {
+          _isLoading = false;
+        });
+      }
     }
   }
 
@@ -224,6 +231,15 @@ class _ScheduledMarketplaceState extends State<ScheduledMarketplace> with Single
                     color: buttonColor,
                     textcolor: Colors.white,
                   ),
+                if (!isAvailable)
+                  Button(
+                    onTap: () async {
+                      _showCancelClaimDialog(ride);
+                    },
+                    text: 'Cancel Ride',
+                    color: Colors.red,
+                    textcolor: Colors.white,
+                  ),
               ],
             ),
           );
@@ -232,14 +248,14 @@ class _ScheduledMarketplaceState extends State<ScheduledMarketplace> with Single
     );
   }
 
-  Widget _buildLocationRow(IconData icon, Color color, String address) {
+  Widget _buildLocationRow(IconData icon, Color color, String? address) {
     return Row(
       children: [
         Icon(icon, size: 14, color: color),
         const SizedBox(width: 8),
         Expanded(
           child: MyText(
-            text: address,
+            text: address ?? 'Address not available',
             size: 13,
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
@@ -250,36 +266,76 @@ class _ScheduledMarketplaceState extends State<ScheduledMarketplace> with Single
   }
 
   _showConfirmDialog(dynamic ride) {
+    final scaffoldMessenger = ScaffoldMessenger.of(context);
     showDialog(
       context: context,
-      builder: (context) => AlertDialog(
+      builder: (dialogContext) => AlertDialog(
         title: Text(languages[choosenLanguage]['text_confirm']),
         content: Text(languages[choosenLanguage]['text_confirmridelater']),
         actions: [
           TextButton(
-            onPressed: () => Navigator.pop(context),
+            onPressed: () => Navigator.pop(dialogContext),
             child: Text(languages[choosenLanguage]['text_cancel']),
           ),
           ElevatedButton(
             onPressed: () async {
-              Navigator.pop(context);
+              Navigator.pop(dialogContext);
               if (!mounted) return;
               setState(() => _isLoading = true);
               var result = await claimScheduledRide(ride['id']);
               if (!mounted) return;
               if (result == 'success') {
-                ScaffoldMessenger.of(context).showSnackBar(
+                scaffoldMessenger.showSnackBar(
                   SnackBar(content: Text(languages[choosenLanguage]['text_rideLaterSuccess'])),
                 );
                 _fetchData();
               } else {
                 setState(() => _isLoading = false);
-                ScaffoldMessenger.of(context).showSnackBar(
+                scaffoldMessenger.showSnackBar(
                   SnackBar(content: Text(result.toString())),
                 );
               }
             },
             child: Text(languages[choosenLanguage]['text_confirm']),
+          ),
+        ],
+      ),
+    );
+  }
+
+  _showCancelClaimDialog(dynamic ride) {
+    final scaffoldMessenger = ScaffoldMessenger.of(context);
+    showDialog(
+      context: context,
+      builder: (dialogContext) => AlertDialog(
+        title: const Text('Cancel Scheduled Ride'),
+        content: const Text('Are you sure you want to cancel this scheduled ride? The ride will go back to the marketplace for another driver to claim.'),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(dialogContext),
+            child: Text(languages[choosenLanguage]['text_cancel']),
+          ),
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
+            onPressed: () async {
+              Navigator.pop(dialogContext);
+              if (!mounted) return;
+              setState(() => _isLoading = true);
+              var result = await unclaimScheduledRide(ride['id']);
+              if (!mounted) return;
+              if (result == 'success') {
+                scaffoldMessenger.showSnackBar(
+                  const SnackBar(content: Text('Ride cancelled and returned to marketplace')),
+                );
+                _fetchData();
+              } else {
+                setState(() => _isLoading = false);
+                scaffoldMessenger.showSnackBar(
+                  SnackBar(content: Text(result.toString())),
+                );
+              }
+            },
+            child: const Text('Yes, Cancel', style: TextStyle(color: Colors.white)),
           ),
         ],
       ),

@@ -86,7 +86,7 @@ Map<String, dynamic> fr = {
   "text_endtrip": "Terminer la Course",
   "text_driver_otp": "Entrez OTP",
   "text_enterdriverotp": "Entrez l'OTP affiché dans l'application du client pour démarrer le trajet",
-  "text_enable_history": "Historique",
+  "text_enable_history": "Courses",
   "text_enable_wallet": "Portefeuille",
   "text_enable_referal": "Parrainage",
   "text_faq": "FAQ",

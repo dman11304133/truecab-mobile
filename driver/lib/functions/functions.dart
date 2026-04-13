@@ -1856,13 +1856,17 @@ requestDetailsUpdate(
         lastLong = latlngArray[latlngArray.length - 1]['lng'];
       }
     }
+    // Sanity Check: Ignore invalid coordinates
+    if (lat == 0.0 || lng == 0.0) return;
+
     if (latlngArray.isEmpty) {
       latlngArray.add({'lat': lat, 'lng': lng});
       lastLat = lat;
       lastLong = lng;
     } else {
       var distance = await calculateDistance(lastLat, lastLong, lat, lng);
-      if (distance >= 150.0) {
+      // Sanity Check: GPS Jump Filter (Ignore jumps > 2000m as glitches)
+      if (distance >= 150.0 && distance <= 2000.0) {
         latlngArray.add({'lat': lat, 'lng': lng});
         lastLat = lat;
         lastLong = lng;
@@ -2126,6 +2130,12 @@ driverArrived() async {
     } else {
       result = 'failed';
       debugPrint(response.body);
+      try {
+        var respBody = jsonDecode(response.body);
+        if (response.statusCode == 500 && respBody['message'] == 'request cancelled') {
+          await getUserDetails();
+        }
+      } catch (e) {}
     }
     return result;
   } catch (e) {
@@ -2155,6 +2165,12 @@ stopComplete(id) async {
     } else {
       result = 'failed';
       debugPrint(response.body);
+      try {
+        var respBody = jsonDecode(response.body);
+        if (response.statusCode == 500 && respBody['message'] == 'request cancelled') {
+          await getUserDetails();
+        }
+      } catch (e) {}
     }
     return result;
   } catch (e) {
@@ -2275,6 +2291,12 @@ tripStartDispatcher() async {
     } else {
       debugPrint(response.body);
       result = 'failure';
+      try {
+        var respBody = jsonDecode(response.body);
+        if (response.statusCode == 500 && respBody['message'] == 'request cancelled') {
+          await getUserDetails();
+        }
+      } catch (e) {}
     }
   } catch (e) {
     if (e is SocketException) {
@@ -3248,6 +3270,38 @@ getMyClaimedRides() async {
   return result;
 }
 
+//request history - driver unclaim scheduled ride
+unclaimScheduledRide(requestId) async {
+  dynamic result;
+  try {
+    var response = await http.post(
+      Uri.parse('${url}api/v1/request/scheduled/unclaim'),
+      headers: {
+        'Authorization': 'Bearer ${bearerToken[0].token}',
+        'Content-Type': 'application/json'
+      },
+      body: jsonEncode({'request_id': requestId}),
+    );
+    if (response.statusCode == 200) {
+      if (jsonDecode(response.body)['success'] == true) {
+        result = 'success';
+      } else {
+        result = jsonDecode(response.body)['message'] ?? 'failed';
+      }
+    } else if (response.statusCode == 401) {
+      result = 'logout';
+    } else {
+      result = jsonDecode(response.body)['message'] ?? 'failed';
+    }
+  } catch (e) {
+    if (e is SocketException) {
+      result = 'no internet';
+      internet = false;
+    }
+  }
+  return result;
+}
+
 //request history
 List myHistory = [];
 Map<String, dynamic> myHistoryPage = {};
@@ -3830,11 +3884,16 @@ streamRide() {
       .handleError((onError) {
     rideStreamChanges?.cancel();
   }).listen((DatabaseEvent event) {
-    if (event.snapshot.key.toString() == 'cancelled_by_user') {
-      getUserDetails();
-      if (driverReq.isEmpty) {
-        userReject = true;
-      }
+    if (event.snapshot.key.toString() == 'cancelled_by_user' ||
+        event.snapshot.key.toString() == 'is_cancelled') {
+        if (event.snapshot.key.toString() == 'is_cancelled' && event.snapshot.value.toString() != 'true' && event.snapshot.value.toString() != '1') {
+            // Ignore if is_cancelled is set to false
+        } else {
+            getUserDetails();
+            if (driverReq.isEmpty) {
+              userReject = true;
+            }
+        }
     } else if (event.snapshot.key.toString() == 'message_by_user') {
       getCurrentMessages();
     } else if (event.snapshot.key.toString() == 'is_paid' ||
@@ -3848,10 +3907,14 @@ streamRide() {
       .handleError((onError) {
     rideStreamChanges?.cancel();
   }).listen((DatabaseEvent event) async {
-    if (event.snapshot.key.toString() == 'cancelled_by_user') {
-      getUserDetails();
-
-      userReject = true;
+    if (event.snapshot.key.toString() == 'cancelled_by_user' ||
+        event.snapshot.key.toString() == 'is_cancelled') {
+        if (event.snapshot.key.toString() == 'is_cancelled' && event.snapshot.value.toString() != 'true' && event.snapshot.value.toString() != '1') {
+            // Ignore if is_cancelled is set to false
+        } else {
+            getUserDetails();
+            userReject = true;
+        }
     } else if (event.snapshot.key.toString() == 'message_by_user') {
       getCurrentMessages();
     } else if (event.snapshot.key.toString() == 'is_paid' ||
@@ -4395,6 +4458,12 @@ paymentReceived() async {
     } else {
       debugPrint(response.body);
       result = 'failed';
+      try {
+        var respBody = jsonDecode(response.body);
+        if (response.statusCode == 500 && respBody['message'] == 'request cancelled') {
+          await getUserDetails();
+        }
+      } catch (e) {}
     }
   } catch (e) {
     if (e is SocketException) {

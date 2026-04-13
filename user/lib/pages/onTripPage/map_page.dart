@@ -144,9 +144,17 @@ class _MapsState extends State<Maps>
       debugPrint('ðŸ  [MAP_PAGE] App Resumed. Refreshing user details...');
       if (userRequestData.isNotEmpty) {
         ismulitipleride = true;
-        getUserDetails(id: userRequestData['id']);
+        getUserDetails(id: userRequestData['id']).then((val) {
+          if (userRequestData.isNotEmpty && (userRequestData['is_completed'] == 0 || userRequestData['is_completed'] == false) && (userRequestData['is_cancelled'] == 0 || userRequestData['is_cancelled'] == false)) {
+            navigate();
+          }
+        });
       } else {
-        getUserDetails();
+        getUserDetails().then((val) {
+          if (userRequestData.isNotEmpty && (userRequestData['is_completed'] == 0 || userRequestData['is_completed'] == false) && (userRequestData['is_cancelled'] == 0 || userRequestData['is_cancelled'] == false)) {
+            navigate();
+          }
+        });
       }
       if (_controller != null) {
         _controller?.setMapStyle(mapStyle);

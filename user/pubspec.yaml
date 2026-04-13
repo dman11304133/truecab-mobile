@@ -82,12 +82,12 @@ dev_dependencies:
 flutter_launcher_icons:
   android: true
   ios: true
-  image_path: "user_flutter_launcher_icons/mipmap-xxxhdpi/ic_launcher_unbaked.png"
+  image_path: "user_flutter_launcher_icons/ic_launcher_user.png"
   adaptive_icon_background: "#2d4099"
-  adaptive_icon_foreground: "user_flutter_launcher_icons/mipmap-xxxhdpi/ic_launcher_unbaked.png"
+  remove_alpha_ios: true
   web:
     generate: true
-    image_path: "user_flutter_launcher_icons/mipmap-xxxhdpi/ic_launcher_unbaked.png"
+    image_path: "user_flutter_launcher_icons/ic_launcher_user.png"
     background_color: "#2d4099"
     theme_color: "#2d4099"
 

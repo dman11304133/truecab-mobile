@@ -86,7 +86,7 @@ Map<String, dynamic> en = {
   "text_endtrip": "End Trip",
   "text_driver_otp": "Enter OTP",
   "text_enterdriverotp": "Enter the OTP displayed in Customer's App to start the ride",
-  "text_enable_history": "History",
+  "text_enable_history": "Rides",
   "text_enable_wallet": "Wallet",
   "text_enable_referal": "Referal",
   "text_faq": "FAQ",
