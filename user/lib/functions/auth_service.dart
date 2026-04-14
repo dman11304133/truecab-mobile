@@ -394,30 +394,62 @@ class AuthService {
             debugPrint('👤 [USER] 🏁 Last Known Ride status: is_completed=${userRequestData['is_completed']}, is_cancelled=${userRequestData['is_cancelled']}');
           }
           
-          // Only clear userRequestData if we are NOT in a specific ride request flow
-          // or if the generic endpoint explicitly confirms there are no rides.
-          if (id == null) {
-            if (userRequestData.isNotEmpty) {
-              polyline.clear();
-              fmpoly.clear();
-            }
-            userRequestData = {};
-            debugPrint('👤 [USER] 🚫 Global userRequestData CLEARED (Generic Case)');
+          // ── COMPLETED RIDE: navigate to Invoice before clearing ──────────
+          final wasCompleted = userRequestData.isNotEmpty &&
+              (userRequestData['is_completed'] == 1 ||
+               userRequestData['is_completed'] == true ||
+               userRequestData['is_trip_start'] == 1);
+          
+          if (wasCompleted) {
+            // Snapshot the ride data so Invoice & Review can still read it
+            // after userRequestData is cleared
+            userRequestData['is_completed'] = 1;
+            completedRideSnapshot = Map.from(userRequestData);
+            debugPrint('👤 [USER] ✅ Ride completed! Snapshot saved. Triggering invoice navigation via notifier.');
+            // Cancel streams — ride is over
+            requestStreamStart?.cancel();
+            requestStreamEnd?.cancel();
+            rideStreamUpdate?.cancel();
+            rideStreamStart?.cancel();
+            requestStreamEnd = null;
+            requestStreamStart = null;
+            rideStreamUpdate = null;
+            rideStreamStart = null;
+            // Fire the notifier — the UI will navigate to Invoice
+            valueNotifierHome.incrementNotifier();
+            valueNotifierBook.incrementNotifier();
+            // Delay the clear so the Invoice page can read userRequestData during navigation
+            Future.delayed(const Duration(seconds: 5), () {
+              userRequestData = {};
+            });
           } else {
-            debugPrint('👤 [USER] ⚠️ Preserved userRequestData (Missing from API but ID was $id)');
+            // Only clear userRequestData if we are NOT in a specific ride request flow
+            // or if the generic endpoint explicitly confirms there are no rides.
+            if (id == null) {
+              if (userRequestData.isNotEmpty) {
+                polyline.clear();
+                fmpoly.clear();
+              }
+              userRequestData = {};
+              debugPrint('👤 [USER] 🚫 Global userRequestData CLEARED (Generic Case)');
+            } else {
+              debugPrint('👤 [USER] ⚠️ Preserved userRequestData (Missing from API but ID was $id)');
+            }
+
+            requestStreamStart?.cancel();
+            requestStreamEnd?.cancel();
+            rideStreamUpdate?.cancel();
+            rideStreamStart?.cancel();
+            requestStreamEnd = null;
+            requestStreamStart = null;
+            rideStreamUpdate = null;
+            rideStreamStart = null;
+            valueNotifierHome.incrementNotifier();
+            valueNotifierBook.incrementNotifier();
           }
 
-          requestStreamStart?.cancel();
-          requestStreamEnd?.cancel();
-          rideStreamUpdate?.cancel();
-          rideStreamStart?.cancel();
-          requestStreamEnd = null;
-          requestStreamStart = null;
-          rideStreamUpdate = null;
-          rideStreamStart = null;
-          valueNotifierHome.incrementNotifier();
-          valueNotifierBook.incrementNotifier();
         }
+
         if (userDetails['active'] == false || userDetails['active'] == 0) {
           isActive = 'false';
         } else {

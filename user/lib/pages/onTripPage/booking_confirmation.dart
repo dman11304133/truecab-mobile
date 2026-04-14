@@ -268,17 +268,6 @@ class _BookingConfirmationState extends State<BookingConfirmation>
           isNotCompleted;
           
       if (active) {
-        // Also smoothly increment local time to reflect continuous running fare
-        if (userRequestData['is_trip_start']?.toString() == '1' || userRequestData['is_trip_start'] == 1) {
-            double currentLocalTime = double.tryParse((userRequestData['total_time'] ?? userRequestData['time'] ?? 0).toString()) ?? 0;
-            currentLocalTime += (1.0 / 60.0); // add 1 second (in minutes)
-            userRequestData['total_time'] = currentLocalTime;
-        } else if (userRequestData['is_driver_arrived']?.toString() == '1' || userRequestData['is_driver_arrived'] == 1) {
-            double currentWait = double.tryParse((userRequestData['calculated_waiting_time'] ?? waitingTime).toString()) ?? 0;
-            currentWait += 1.0; // add 1 second (waitingTime tracks seconds)
-            userRequestData['calculated_waiting_time'] = currentWait;
-        }
-
         calculateRunningFare();
         if (mounted) setState(() {});
       } else {
@@ -723,15 +712,15 @@ class _BookingConfirmationState extends State<BookingConfirmation>
     final Uint8List markerIcon;
     final Uint8List markerIcon2;
     if (choosenTransportType == 0) {
-      markerIcon = await getBytesFromAsset('assets/images/top-taxi.png', 40);
+      markerIcon = await getBytesFromAsset('assets/images/top-taxi.png', 80);
       pinLocationIcon = BitmapDescriptor.fromBytes(markerIcon);
-      markerIcon2 = await getBytesFromAsset('assets/images/bike.png', 40);
+      markerIcon2 = await getBytesFromAsset('assets/images/bike.png', 80);
       pinLocationIcon2 = BitmapDescriptor.fromBytes(markerIcon2);
     } else {
       markerIcon =
-          await getBytesFromAsset('assets/images/top-taxi.png', 40);
+          await getBytesFromAsset('assets/images/top-taxi.png', 80);
       pinLocationIcon = BitmapDescriptor.fromBytes(markerIcon);
-      markerIcon2 = await getBytesFromAsset('assets/images/bike.png', 40);
+      markerIcon2 = await getBytesFromAsset('assets/images/bike.png', 80);
       pinLocationIcon2 = BitmapDescriptor.fromBytes(markerIcon2);
     }
 
@@ -6597,7 +6586,7 @@ class _BookingConfirmationState extends State<BookingConfirmation>
                                                                                 MyText(
                                                                                   textAlign: TextAlign.end,
                                                                                   text: userRequestData['requested_currency_symbol'] + ' ' +
-                                                                                      (((userRequestData['is_trip_start'].toString() == '1' || userRequestData['is_trip_start'] == 1) && userRequestData['running_fare'] != null)
+                                                                                      ((userRequestData['running_fare'] != null && (userRequestData['is_driver_arrived'].toString() == '1' || userRequestData['is_driver_arrived'] == 1 || userRequestData['is_trip_start'].toString() == '1' || userRequestData['is_trip_start'] == 1))
                                                                                       ? userRequestData['running_fare'].toString()
                                                                                       : (userRequestData['is_bid_ride'] == 1)
                                                                                         ? userRequestData['accepted_ride_fare'].toString()
@@ -8846,10 +8835,8 @@ class _BookingConfirmationState extends State<BookingConfirmation>
                     }
                   }
                   // completion logic
-                  // Added extra robust check for is_trip_start or completed_at to prevent premature jump from incorrect Firebase state
                   if ((userRequestData['is_completed'] == 1 ||
                           userRequestData['is_completed'] == true) &&
-                      (userRequestData['is_trip_start'] == 1 || userRequestData['completed_at'] != null) &&
                       currentpage == true) {
                     debugPrint('📍 [UI_BRANCH] ✅ is_completed is 1. Navigating to Invoice.');
                     currentpage = false;
@@ -8863,6 +8850,7 @@ class _BookingConfirmationState extends State<BookingConfirmation>
                   } else if (userRequestData.isNotEmpty) {
                     debugPrint('📍 [UI_BRANCH] 🔃 Ride Active: is_accept=${userRequestData['is_accept']}, is_completed=${userRequestData['is_completed']}, is_trip_start=${userRequestData['is_trip_start']}');
                   }
+
 
                   // Removed 'auto-bounce to Maps' logic that triggered when userRequestData was empty.
                   // This was causing the user to be kicked back to the map screen during initial load.

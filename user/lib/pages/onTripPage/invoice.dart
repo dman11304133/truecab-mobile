@@ -12,6 +12,7 @@ import '../login/login.dart';
 import 'booking_confirmation.dart';
 import 'map_page.dart';
 import 'review_page.dart';
+import '../../functions/ride_state.dart';
 
 class Invoice extends StatefulWidget {
   const Invoice({Key? key}) : super(key: key);
@@ -29,7 +30,12 @@ class _InvoiceState extends State<Invoice> {
 
   @override
   void initState() {
-    debugPrint('📝 [INVOICE] initState called. userRequestData count: ${userRequestData.length}');
+    debugPrint('📝 [INVOICE] initState called. userRequestData count: ${userRequestData.length}, snapshot count: ${completedRideSnapshot.length}');
+    // If userRequestData is empty but we have a snapshot, restore it
+    if (userRequestData.isEmpty && completedRideSnapshot.isNotEmpty) {
+      userRequestData = Map.from(completedRideSnapshot);
+      debugPrint('📝 [INVOICE] Restored userRequestData from completedRideSnapshot.');
+    }
     myMarkers.clear();
     promoCode = '';
     payingVia = 0;
@@ -65,7 +71,8 @@ class _InvoiceState extends State<Invoice> {
                           MediaQuery.of(context).padding.top +
                               media.width * 0.05,
                           media.width * 0.05,
-                          media.width * 0.05),
+                          media.width * 0.05 +
+                              MediaQuery.of(context).padding.bottom),
                       height: media.height * 1,
                       width: media.width * 1,
                       color: page,

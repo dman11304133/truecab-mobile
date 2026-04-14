@@ -2419,6 +2419,22 @@ streamRide() {
   });
 }
 
+//helper to parse server date
+DateTime? parseServerDate(dynamic date) {
+  if (date == null) return null;
+  String s = date.toString().trim();
+  if (s.isEmpty) return null;
+  
+  // Force UTC parsing for raw MySQL timestamps (e.g. "2026-04-13 20:55:00")
+  // by replacing the space with 'T' and appending 'Z' if missing.
+  if (!s.endsWith('Z') && !s.contains('+') && s.contains('-') && s.contains(':')) {
+    s = '${s.replaceFirst(' ', 'T')}Z';
+  }
+  
+  final iso = DateTime.tryParse(s);
+  return iso;
+}
+
 //calculate running fare
 calculateRunningFare() {
   final bool tripStarted = userRequestData.isNotEmpty &&
@@ -2493,54 +2509,87 @@ calculateRunningFare() {
   double total;
 
   if (tripStarted) {
-    // Full in-motion fare
+    // Current distance from server
     double dist = double.tryParse(
             (userRequestData['total_distance'] ??
                     userRequestData['distance'] ??
                     0)
                 .toString()) ??
         0;
-    double time = double.tryParse(
-            (userRequestData['total_time'] ??
-                    userRequestData['time'] ??
-                    0)
-                .toString()) ??
-        0;
-    double waitTime = double.tryParse(
-            (userRequestData['calculated_waiting_time'] ?? waitingTime)
-                .toString()) ??
-        0;
+
+    // Time is now calculated absolutely using raw UTC timestamp from server
+    DateTime? startTime = parseServerDate(userRequestData['raw_trip_start_time'] ?? userRequestData['trip_start_time']);
+    double time = 0;
+    if (startTime != null) {
+      time = DateTime.now().difference(startTime).inSeconds / 60.0;
+    } else {
+      time = double.tryParse((userRequestData['total_time'] ?? 0).toString()) ?? 0;
+    }
+
+    // Waiting Time Logic
+    DateTime? arrivedTime = parseServerDate(userRequestData['raw_arrived_at'] ?? userRequestData['arrived_at']);
+    
+    // 1. Pre-Trip Wait (Absolute: Arrived -> Start)
+    double preTripWaitSecs = 0;
+    if (arrivedTime != null && startTime != null) {
+      preTripWaitSecs = startTime.difference(arrivedTime).inSeconds.toDouble();
+    }
+    
+    // 2. In-Trip Wait (Recorded during movement/stops)
+    // We use 'calculated_waiting_time' from server which usually contains total 
+    // but we subtract the pre-trip part if the server is already tracking it there.
+    // However, if we trust the driver's 'waiting_time_after_start' field if available.
+    double inTripWaitSecs = double.tryParse((userRequestData['waiting_time_after_start'] ?? 0).toString()) ?? 0;
+    
+    // Fallback: If inTripWaitSecs is 0, check if calculated_waiting_time has anything
+    if (inTripWaitSecs == 0) {
+      double totalWaitServer = double.tryParse((userRequestData['calculated_waiting_time'] ?? 0).toString()) ?? 0;
+      // If server total is greater than our absolute pre-trip, the extra is likely in-trip wait
+      if (totalWaitServer > preTripWaitSecs) {
+        inTripWaitSecs = totalWaitServer - preTripWaitSecs;
+      }
+    }
+
+    // Free Waiting Time (Minutes)
+    double freeWaitBefore = double.tryParse((userRequestData['free_waiting_time_in_mins_before_trip_start'] ?? 0).toString()) ?? 0;
+    double freeWaitAfter = double.tryParse((userRequestData['free_waiting_time_in_mins_after_trip_start'] ?? 0).toString()) ?? 0;
+
+    double billablePreWaitMins = max(0, (preTripWaitSecs / 60.0) - freeWaitBefore);
+    double billableInWaitMins = max(0, (inTripWaitSecs / 60.0) - freeWaitAfter);
+    double totalWaitMins = billablePreWaitMins + billableInWaitMins;
 
     debugPrint(
-        '📍 [CALC_FARE] Trip: base=$base dist=$dist time=$time waitSecs=$waitTime');
-
-    // waitTime is in SECONDS, wPrice is per MINUTE
-    double waitMins = waitTime / 60.0;
+        '📍 [CALC_FARE] Trip: base=$base dist=$dist time=$time totalWaitMins=$totalWaitMins (pre=$billablePreWaitMins in=$billableInWaitMins)');
 
     total = base +
-        ((dist > bDist ? dist - bDist : 0) * dPrice) +
+        ((dist > bDist) ? ((dist - bDist) * dPrice) : 0) +
         (time * tPrice) +
-        (waitMins * wPrice) +
+        (totalWaitMins * wPrice) +
         bFee +
         cFee;
   } else if (driverArrived) {
-    // Waiting phase — accumulate waiting charges since driver arrived
-    double waitTime =
-        double.tryParse(waitingTime.toString()) ?? 0;
+    // Driver waiting before trip starts
+    DateTime? arrivedTime = parseServerDate(userRequestData['arrived_at']);
+    double waitTimeSecs = 0;
+    if (arrivedTime != null) {
+      waitTimeSecs = DateTime.now().difference(arrivedTime).inSeconds.toDouble();
+    } else {
+      waitTimeSecs = double.tryParse(
+            (userRequestData['calculated_waiting_time'] ?? 0).toString()) ?? 0;
+    }
     
-    // waitTime is in SECONDS, wPrice is per MINUTE
-    double waitMins = waitTime / 60.0;
-        
-    debugPrint(
-        '📍 [CALC_FARE] Waiting: base=$base waitSecs=$waitTime wPrice=$wPrice');
-    total = base + (waitMins * wPrice) + bFee + cFee;
+    double freeWaitBefore = double.tryParse((userRequestData['free_waiting_time_in_mins_before_trip_start'] ?? 0).toString()) ?? 0;
+    double billableWaitMins = max(0, (waitTimeSecs / 60.0) - freeWaitBefore);
+    
+    total = base + (billableWaitMins * wPrice) + bFee + cFee;
+    debugPrint('📍 [CALC_FARE] Waiting: base=$base billableWaitMins=$billableWaitMins');
   } else {
-    // Driver accepted, en-route to pickup — show base fare only
+    // Standard base + fees
     total = base + bFee + cFee;
   }
 
   userRequestData['running_fare'] = total.toStringAsFixed(2);
-  debugPrint('📍 [CALC_FARE] ✅ running_fare=${userRequestData["running_fare"]}');
+  debugPrint('📍 [CALC_FARE] Result: ${userRequestData['running_fare']}');
 }
 
 //request notification

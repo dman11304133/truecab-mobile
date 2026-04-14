@@ -66,7 +66,7 @@ class _InvoiceState extends State<Invoice> {
                         media.width * 0.05,
                         MediaQuery.of(context).padding.top + media.width * 0.05,
                         media.width * 0.05,
-                        media.width * 0.05),
+                        media.width * 0.05 + MediaQuery.of(context).padding.bottom),
                     height: media.height * 1,
                     width: media.width * 1,
                     color: page,

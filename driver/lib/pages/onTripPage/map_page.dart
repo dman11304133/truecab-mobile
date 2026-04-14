@@ -157,6 +157,16 @@ class _MapsState extends State<Maps>
     getLocs();
     getonlineoffline();
 
+    // Start fare update timer
+    _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
+      if (mounted && driverReq.isNotEmpty && 
+          (driverReq['is_driver_arrived'].toString() == '1' || driverReq['is_driver_arrived'] == 1 ||
+           driverReq['is_trip_start'].toString() == '1' || driverReq['is_trip_start'] == 1)) {
+        calculateRunningFare();
+        setState(() {});
+      }
+    });
+
     super.initState();
   }
 
@@ -234,6 +244,7 @@ class _MapsState extends State<Maps>
 
   //navigate
   navigate() {
+    if (!mounted) return;
     Navigator.push(context,
         MaterialPageRoute(builder: (context) => const DigitalSignature()));
   }
@@ -241,6 +252,7 @@ class _MapsState extends State<Maps>
   navigateLogout() {
     if (ownermodule == '1') {
       Future.delayed(const Duration(seconds: 2), () {
+        if (!mounted) return;
         Navigator.pushAndRemoveUntil(
             context,
             MaterialPageRoute(builder: (context) => const LandingPage()),
@@ -249,6 +261,7 @@ class _MapsState extends State<Maps>
     } else {
       ischeckownerordriver = 'driver';
       Future.delayed(const Duration(seconds: 2), () {
+        if (!mounted) return;
         Navigator.pushAndRemoveUntil(
             context,
             MaterialPageRoute(builder: (context) => const Login()),
@@ -554,29 +567,29 @@ class _MapsState extends State<Maps>
         final Uint8List offlinebikeicon1;
         final Uint8List onridebikeicon1;
         // if(userDetails['transport_type'] == 'taxi'){
-        markerIcon = await getBytesFromAsset('assets/images/top-taxi.png', 55);
-        markerIcon2 = await getBytesFromAsset('assets/images/bike.png', 40);
+        markerIcon = await getBytesFromAsset('assets/images/top-taxi.png', 110);
+        markerIcon2 = await getBytesFromAsset('assets/images/bike.png', 80);
         markerIcon3 =
-            await getBytesFromAsset('assets/images/top-taxi.png', 55);
+            await getBytesFromAsset('assets/images/top-taxi.png', 110);
         if (userDetails['role'] == 'owner') {
           onlinebikeicon1 =
-              await getBytesFromAsset('assets/images/bike_online.png', 40);
+              await getBytesFromAsset('assets/images/bike_online.png', 80);
           onridebikeicon1 =
-              await getBytesFromAsset('assets/images/bike_onride.png', 40);
+              await getBytesFromAsset('assets/images/bike_onride.png', 80);
           offlinebikeicon1 =
-              await getBytesFromAsset('assets/images/bike.png', 40);
+              await getBytesFromAsset('assets/images/bike.png', 80);
           onrideicon1 =
-              await getBytesFromAsset('assets/images/onboardicon.png', 40);
+              await getBytesFromAsset('assets/images/onboardicon.png', 80);
           offlineicon1 =
-              await getBytesFromAsset('assets/images/offlineicon.png', 40);
+              await getBytesFromAsset('assets/images/offlineicon.png', 80);
           onlineicon1 =
-              await getBytesFromAsset('assets/images/onlineicon.png', 40);
+              await getBytesFromAsset('assets/images/onlineicon.png', 80);
           onridedeliveryicon1 = await getBytesFromAsset(
-              'assets/images/onboardicon.png', 40);
+              'assets/images/onboardicon.png', 80);
           offlinedeliveryicon1 = await getBytesFromAsset(
-              'assets/images/offlineicon.png', 40);
+              'assets/images/offlineicon.png', 80);
           onlinedeliveryicon1 = await getBytesFromAsset(
-              'assets/images/onlineicon.png', 40);
+              'assets/images/onlineicon.png', 80);
           onrideicon = BitmapDescriptor.fromBytes(onrideicon1);
           offlineicon = BitmapDescriptor.fromBytes(offlineicon1);
           onlineicon = BitmapDescriptor.fromBytes(onlineicon1);
@@ -5056,7 +5069,7 @@ class _MapsState extends State<Maps>
                                                                                                           width: media.width * 0.02,
                                                                                                         ),
                                                                                                         MyText(
-                                                                                                          text: ((driverReq['is_bid_ride'] == 1)) ? '${driverReq['requested_currency_symbol']}${driverReq['accepted_ride_fare'].toString()}' : '${driverReq['requested_currency_symbol']}${driverReq['request_eta_amount'].toString()}',
+                                                                                                          text: (driverReq['running_fare'] != null && (driverReq['is_driver_arrived'].toString() == '1' || driverReq['is_driver_arrived'] == 1 || driverReq['is_trip_start'].toString() == '1' || driverReq['is_trip_start'] == 1)) ? '${driverReq['requested_currency_symbol']}${driverReq['running_fare'].toString()}' : ((driverReq['is_bid_ride'] == 1)) ? '${driverReq['requested_currency_symbol']}${driverReq['accepted_ride_fare'].toString()}' : '${driverReq['requested_currency_symbol']}${driverReq['request_eta_amount'].toString()}',
                                                                                                           size: media.width * sixteen,
                                                                                                           fontweight: FontWeight.w500,
                                                                                                           color: textColor,

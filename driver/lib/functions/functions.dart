@@ -1327,6 +1327,7 @@ getUserDetails() async {
         if (userDetails['onTripRequest'] != null) {
           addressList.clear();
           driverReq = userDetails['onTripRequest']['data'];
+          calculateRunningFare();
           debugPrint('🚗 [RIDE STATE] is_driver_arrived=${driverReq['is_driver_arrived']} (type: ${driverReq['is_driver_arrived'].runtimeType}), is_trip_start=${driverReq['is_trip_start']} (type: ${driverReq['is_trip_start'].runtimeType}), transport_type=${driverReq['transport_type']}');
           if (payby == 0 && driverReq['is_paid'] == 1) {
             payby = 1;
@@ -1637,6 +1638,177 @@ driverStatus() async {
 }
 
 const platforms = MethodChannel('flutter.app/awake');
+
+//helper to parse server date
+DateTime? parseServerDate(dynamic date) {
+  if (date == null) return null;
+  String s = date.toString().trim();
+  if (s.isEmpty) return null;
+  
+  // Force UTC parsing for raw MySQL timestamps (e.g. "2026-04-13 20:55:00")
+  // by replacing the space with 'T' and appending 'Z' if missing.
+  if (!s.endsWith('Z') && !s.contains('+') && s.contains('-') && s.contains(':')) {
+    s = '${s.replaceFirst(' ', 'T')}Z';
+  }
+  
+  final iso = DateTime.tryParse(s);
+  return iso;
+}
+
+//calculate running fare
+calculateRunningFare() {
+  final bool tripStarted = driverReq.isNotEmpty &&
+      (driverReq['is_trip_start'].toString() == '1' ||
+          driverReq['is_trip_start'] == 1);
+
+  final bool driverArrived = driverReq.isNotEmpty &&
+      (driverReq['is_driver_arrived'].toString() == '1' ||
+          driverReq['is_driver_arrived'] == 1);
+
+  final bool rideAccepted = driverReq.isNotEmpty &&
+      driverReq['accepted_at'] != null;
+
+  if (!rideAccepted) return;
+
+  // Pricing fields with fallbacks
+  var basePrice = driverReq['base_price'] ??
+      driverReq['base_fare'] ??
+      (driverReq['type'] != null
+          ? (driverReq['type']['base_price'] ??
+              driverReq['type']['base_fare'])
+          : 0);
+
+  var distPrice = driverReq['price_per_distance'] ??
+      driverReq['distance_price'] ??
+      driverReq['price_per_km'] ??
+      (driverReq['type'] != null
+          ? (driverReq['type']['price_per_distance'] ??
+              driverReq['type']['distance_price'] ??
+              driverReq['type']['price_per_km'])
+          : 0);
+
+  var timePrice = driverReq['price_per_time'] ??
+      driverReq['time_price'] ??
+      driverReq['price_per_min'] ??
+      (driverReq['type'] != null
+          ? (driverReq['type']['price_per_time'] ??
+              driverReq['type']['time_price'] ??
+              driverReq['type']['price_per_min'])
+          : 0);
+
+  var waitingPrice = driverReq['waiting_charge'] ??
+      driverReq['waiting_charge_per_min'] ??
+      (driverReq['type'] != null
+          ? (driverReq['type']['waiting_charge'] ??
+              driverReq['type']['waiting_charge_per_min'])
+          : 0);
+
+  var baseDistance = driverReq['base_distance'] ??
+      (driverReq['type'] != null
+          ? driverReq['type']['base_distance']
+          : 0);
+
+  var bookingFee = driverReq['booking_fee'] ??
+      (driverReq['type'] != null
+          ? driverReq['type']['booking_fee']
+          : 0);
+
+  var convFee = driverReq['admin_commission'] ??
+      (driverReq['type'] != null
+          ? driverReq['type']['admin_commission']
+          : 0);
+
+  double base = double.tryParse(basePrice.toString()) ?? 0;
+  double dPrice = double.tryParse(distPrice.toString()) ?? 0;
+  double tPrice = double.tryParse(timePrice.toString()) ?? 0;
+  double wPrice = double.tryParse(waitingPrice.toString()) ?? 0;
+  double bDist = double.tryParse(baseDistance.toString()) ?? 0;
+  double bFee = double.tryParse(bookingFee.toString()) ?? 0;
+  double cFee = double.tryParse(convFee.toString()) ?? 0;
+
+  double total;
+
+  if (tripStarted) {
+    // Current distance from state/Firebase (totalDistance is global in driver app)
+    double dist = double.tryParse(
+            (totalDistance ?? 
+            driverReq['total_distance'] ??
+                    driverReq['distance'] ??
+                    0)
+                .toString()) ??
+        0;
+
+    // Time is now calculated absolutely using raw UTC timestamp from server
+    DateTime? startTime = parseServerDate(driverReq['raw_trip_start_time'] ?? driverReq['trip_start_time']);
+    double time = 0;
+    if (startTime != null) {
+      time = DateTime.now().difference(startTime).inSeconds / 60.0;
+    } else {
+      time = double.tryParse((driverReq['total_time'] ?? 0).toString()) ?? 0;
+    }
+
+    // Waiting Time Logic
+    DateTime? arrivedTime = parseServerDate(driverReq['raw_arrived_at'] ?? driverReq['arrived_at']);
+    
+    // 1. Pre-Trip Wait (Absolute: Arrived -> Start)
+    double preTripWaitSecs = 0;
+    if (arrivedTime != null && startTime != null) {
+      preTripWaitSecs = startTime.difference(arrivedTime).inSeconds.toDouble();
+    }
+    
+    // 2. In-Trip Wait (Recorded during movement/stops)
+    // We favor the global waitingTime/waitingAfterTime if the app is currently tracking it
+    double inTripWaitSecs = double.tryParse((driverReq['waiting_time_after_start'] ?? waitingAfterTime ?? 0).toString()) ?? 0;
+    
+    // Fallback: If inTripWaitSecs is 0, check if calculated_waiting_time or global waitingTime has anything
+    if (inTripWaitSecs == 0) {
+      double totalWaitServer = double.tryParse((driverReq['calculated_waiting_time'] ?? waitingTime ?? 0).toString()) ?? 0;
+      if (totalWaitServer > preTripWaitSecs) {
+        inTripWaitSecs = totalWaitServer - preTripWaitSecs;
+      }
+    }
+
+    // Free Waiting Time (Minutes)
+    double freeWaitBefore = double.tryParse((driverReq['free_waiting_time_in_mins_before_trip_start'] ?? 0).toString()) ?? 0;
+    double freeWaitAfter = double.tryParse((driverReq['free_waiting_time_in_mins_after_trip_start'] ?? 0).toString()) ?? 0;
+
+    double billablePreWaitMins = max(0, (preTripWaitSecs / 60.0) - freeWaitBefore);
+    double billableInWaitMins = max(0, (inTripWaitSecs / 60.0) - freeWaitAfter);
+    double totalWaitMins = billablePreWaitMins + billableInWaitMins;
+
+    debugPrint(
+        '📍 [CALC_FARE] Trip: base=$base dist=$dist time=$time totalWaitMins=$totalWaitMins (pre=$billablePreWaitMins in=$billableInWaitMins)');
+
+    total = base +
+        ((dist > bDist) ? ((dist - bDist) * dPrice) : 0) +
+        (time * tPrice) +
+        (totalWaitMins * wPrice) +
+        bFee +
+        cFee;
+  } else if (driverArrived) {
+    // Driver waiting before trip starts
+    DateTime? arrivedTime1 = parseServerDate(driverReq['arrived_at']);
+    double waitTimeSecs = 0;
+    if (arrivedTime1 != null) {
+      waitTimeSecs = DateTime.now().difference(arrivedTime1).inSeconds.toDouble();
+    } else {
+      waitTimeSecs = double.tryParse(
+            (driverReq['calculated_waiting_time'] ?? waitingTime ?? 0).toString()) ?? 0;
+    }
+    
+    double freeWaitBefore = double.tryParse((driverReq['free_waiting_time_in_mins_before_trip_start'] ?? 0).toString()) ?? 0;
+    double billableWaitMins = max(0, (waitTimeSecs / 60.0) - freeWaitBefore);
+    
+    total = base + (billableWaitMins * wPrice) + bFee + cFee;
+    debugPrint('📍 [CALC_FARE] Waiting: base=$base billableWaitMins=$billableWaitMins');
+  } else {
+    // Standard base + fees
+    total = base + bFee + cFee;
+  }
+
+  driverReq['running_fare'] = total.toStringAsFixed(2);
+  debugPrint('📍 [CALC_FARE] Result: ${driverReq['running_fare']}');
+}
 
 //update driver location in firebase
 
