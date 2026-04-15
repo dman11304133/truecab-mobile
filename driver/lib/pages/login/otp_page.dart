@@ -508,7 +508,8 @@ class _OtpState extends State<Otp> with TickerProviderStateMixin {
                           valueNotifierLogin.incrementNotifier();
                           if (phoneAuthCheck == false) {
                             // 🍎 [APPLE_BYPASS] Reviewer detected. Accept '123456' for the review account.
-                            if (phnumber.contains('1234567') && otpNumber == '123456') {
+                            String normalizedPh = phnumber.replaceAll(RegExp(r'[^0-9]'), '');
+                            if (normalizedPh.contains('1234567') && otpNumber.replaceAll(RegExp(r'[^0-9]'), '') == '123456') {
                               debugPrint('🍎 [APPLE_BYPASS] Reviewer valid OTP detected.');
                               // Force use the 7-digit number that exists in the database record
                               var verify = await verifyUser('1234567');

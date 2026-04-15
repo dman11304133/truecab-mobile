@@ -2367,6 +2367,9 @@ streamRide() {
                event.snapshot.key.toString() == 'is_driver_arrived' ||
                event.snapshot.key.toString() == 'is_trip_start' ||
                event.snapshot.key.toString() == 'total_distance' ||
+               event.snapshot.key.toString() == 'distance' ||
+               event.snapshot.key.toString() == 'calculated_waiting_time' ||
+               event.snapshot.key.toString() == 'waiting_time_after_start' ||
                event.snapshot.key.toString() == 'total_time' ||
                event.snapshot.key.toString() == 'is_paid') {
       debugPrint('📡 [FIREBASE] 🏁 sync state: ${event.snapshot.key} = ${event.snapshot.value}');
@@ -2405,6 +2408,9 @@ streamRide() {
     } else if (event.snapshot.key.toString() == 'is_accept' || 
                event.snapshot.key.toString() == 'is_completed' ||
                event.snapshot.key.toString() == 'total_distance' ||
+               event.snapshot.key.toString() == 'distance' ||
+               event.snapshot.key.toString() == 'calculated_waiting_time' ||
+               event.snapshot.key.toString() == 'waiting_time_after_start' ||
                event.snapshot.key.toString() == 'total_time') {
       debugPrint('📡 [FIREBASE] 🏁 sync state: ${event.snapshot.key} = ${event.snapshot.value}');
       if (userRequestData.isNotEmpty) {
@@ -2558,6 +2564,9 @@ calculateRunningFare() {
     double billableInWaitMins = max(0, (inTripWaitSecs / 60.0) - freeWaitAfter);
     double totalWaitMins = billablePreWaitMins + billableInWaitMins;
 
+    // Update global waitingTime for UI
+    waitingTime = (preTripWaitSecs + inTripWaitSecs).toInt();
+
     debugPrint(
         '📍 [CALC_FARE] Trip: base=$base dist=$dist time=$time totalWaitMins=$totalWaitMins (pre=$billablePreWaitMins in=$billableInWaitMins)');
 
@@ -2569,7 +2578,7 @@ calculateRunningFare() {
         cFee;
   } else if (driverArrived) {
     // Driver waiting before trip starts
-    DateTime? arrivedTime = parseServerDate(userRequestData['arrived_at']);
+    DateTime? arrivedTime = parseServerDate(userRequestData['raw_arrived_at'] ?? userRequestData['arrived_at']);
     double waitTimeSecs = 0;
     if (arrivedTime != null) {
       waitTimeSecs = DateTime.now().difference(arrivedTime).inSeconds.toDouble();
@@ -2580,6 +2589,9 @@ calculateRunningFare() {
     
     double freeWaitBefore = double.tryParse((userRequestData['free_waiting_time_in_mins_before_trip_start'] ?? 0).toString()) ?? 0;
     double billableWaitMins = max(0, (waitTimeSecs / 60.0) - freeWaitBefore);
+    
+    // Update global waitingTime for UI
+    waitingTime = waitTimeSecs.toInt();
     
     total = base + (billableWaitMins * wPrice) + bFee + cFee;
     debugPrint('📍 [CALC_FARE] Waiting: base=$base billableWaitMins=$billableWaitMins');

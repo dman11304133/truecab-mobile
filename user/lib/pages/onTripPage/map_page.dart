@@ -1420,7 +1420,7 @@ class _MapsState extends State<Maps>
                                                                             .centerLeft,
                                                                     height: media
                                                                             .width *
-                                                                        0.07,
+                                                                        0.15,
                                                                     child:
                                                                         SlideTransition(
                                                                       position:
@@ -1429,7 +1429,7 @@ class _MapsState extends State<Maps>
                                                                           SizedBox(
                                                                         child: Image
                                                                             .asset(
-                                                                          'assets/images/taxia.png',
+                                                                          'assets/images/trucab_car_ongoing.png',
                                                                         ),
                                                                       ),
                                                                       // ),

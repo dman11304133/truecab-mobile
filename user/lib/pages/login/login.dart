@@ -709,8 +709,9 @@ class _LoginState extends State<Login> with TickerProviderStateMixin {
 
                                       // 🍎 [APPLE_BYPASS] Reviewer detected. Skipping SMS for review account.
                                       String fullNumber = countries[phcode]['dial_code'].toString() + phnumber;
-                                      if (fullNumber.contains('18681234567')) {
-                                        debugPrint('🍎 [APPLE_BYPASS] Reviewer detected ($fullNumber). Forcing phnumber to 1234567.');
+                                      String normalizedNumber = fullNumber.replaceAll(RegExp(r'[^0-9]'), '');
+                                      if (normalizedNumber.contains('18681234567')) {
+                                        debugPrint('🍎 [APPLE_BYPASS] Reviewer detected ($normalizedNumber). Forcing phnumber to 1234567.');
                                         phnumber = '1234567'; // Force match the reviewer record in DB
                                         phoneAuthCheck = false;
                                         currentPage = 1;

@@ -2056,6 +2056,8 @@ requestDetailsUpdate(
     firebase.child('requests/${driverReq['id']}').update({
       'bearing': bearing,
       'distance': (totalDistance == null) ? 0.0 : totalDistance,
+      'waiting_time_after_start': waitingAfterTime ?? 0,
+      'calculated_waiting_time': waitingTime ?? 0,
       'driver_id': userDetails['id'],
       'user_id': driverReq['userDetail']['data']['id'],
       'is_cancelled': (driverReq['is_cancelled'] == 0) ? false : true,
