@@ -1708,25 +1708,37 @@ calculateRunningFare() {
           ? driverReq['type']['base_distance']
           : 0);
 
-  var bookingFee = driverReq['booking_fee'] ??
-      (driverReq['type'] != null
-          ? driverReq['type']['booking_fee']
-          : 0);
-
   var convFee = driverReq['admin_commission'] ??
       (driverReq['type'] != null
           ? driverReq['type']['admin_commission']
           : 0);
+
+  var commisionType = driverReq['admin_commision_type'] ??
+      (driverReq['type'] != null
+          ? driverReq['type']['admin_commision_type']
+          : 0);
+
+  var serviceTax = driverReq['service_tax'] ??
+      (driverReq['type'] != null
+          ? driverReq['type']['service_tax']
+          : 0);
+
+  var airportSurge = driverReq['airport_surge_fee'] ?? 0;
 
   double base = double.tryParse(basePrice.toString()) ?? 0;
   double dPrice = double.tryParse(distPrice.toString()) ?? 0;
   double tPrice = double.tryParse(timePrice.toString()) ?? 0;
   double wPrice = double.tryParse(waitingPrice.toString()) ?? 0;
   double bDist = double.tryParse(baseDistance.toString()) ?? 0;
-  double bFee = double.tryParse(bookingFee.toString()) ?? 0;
   double cFee = double.tryParse(convFee.toString()) ?? 0;
+  int cType = int.tryParse(commisionType.toString()) ?? 0;
+  double sTax = double.tryParse(serviceTax.toString()) ?? 0;
+  double aSurge = double.tryParse(airportSurge.toString()) ?? 0;
 
-  double total;
+  bool isBidRide = driverReq['is_bid_ride'] == 1 || driverReq['is_bid_ride'] == true || driverReq['is_bid_ride'] == '1';
+
+  double subTotal = 0;
+  double total = 0;
 
   if (tripStarted) {
     // Current distance from state/Firebase (totalDistance is global in driver app)
@@ -1779,15 +1791,14 @@ calculateRunningFare() {
     debugPrint(
         '📍 [CALC_FARE] Trip: base=$base dist=$dist time=$time totalWaitMins=$totalWaitMins (pre=$billablePreWaitMins in=$billableInWaitMins)');
 
-    total = base +
+    subTotal = base +
         ((dist > bDist) ? ((dist - bDist) * dPrice) : 0) +
         (time * tPrice) +
         (totalWaitMins * wPrice) +
-        bFee +
-        cFee;
+        aSurge;
   } else if (driverArrived) {
     // Driver waiting before trip starts
-    DateTime? arrivedTime1 = parseServerDate(driverReq['arrived_at']);
+    DateTime? arrivedTime1 = parseServerDate(driverReq['raw_arrived_at'] ?? driverReq['arrived_at']);
     double waitTimeSecs = 0;
     if (arrivedTime1 != null) {
       waitTimeSecs = DateTime.now().difference(arrivedTime1).inSeconds.toDouble();
@@ -1799,12 +1810,22 @@ calculateRunningFare() {
     double freeWaitBefore = double.tryParse((driverReq['free_waiting_time_in_mins_before_trip_start'] ?? 0).toString()) ?? 0;
     double billableWaitMins = max(0, (waitTimeSecs / 60.0) - freeWaitBefore);
     
-    total = base + (billableWaitMins * wPrice) + bFee + cFee;
+    subTotal = base + (billableWaitMins * wPrice) + aSurge;
     debugPrint('📍 [CALC_FARE] Waiting: base=$base billableWaitMins=$billableWaitMins');
   } else {
     // Standard base + fees
-    total = base + bFee + cFee;
+    subTotal = base + aSurge;
   }
+
+  double adminCommision = (cType == 1) ? (subTotal * (cFee / 100.0)) : cFee;
+  double taxAmount = subTotal * (sTax / 100.0);
+
+  if (isBidRide) {
+      subTotal -= adminCommision;
+      subTotal -= taxAmount;
+  }
+
+  total = subTotal + adminCommision + taxAmount;
 
   driverReq['running_fare'] = total.toStringAsFixed(2);
   debugPrint('📍 [CALC_FARE] Result: ${driverReq['running_fare']}');

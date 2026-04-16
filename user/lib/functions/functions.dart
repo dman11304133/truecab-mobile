@@ -2494,25 +2494,37 @@ calculateRunningFare() {
           ? userRequestData['type']['base_distance']
           : 0);
 
-  var bookingFee = userRequestData['booking_fee'] ??
-      (userRequestData['type'] != null
-          ? userRequestData['type']['booking_fee']
-          : 0);
-
   var convFee = userRequestData['admin_commission'] ??
       (userRequestData['type'] != null
           ? userRequestData['type']['admin_commission']
           : 0);
+          
+  var commisionType = userRequestData['admin_commision_type'] ??
+      (userRequestData['type'] != null
+          ? userRequestData['type']['admin_commision_type']
+          : 0);
+
+  var serviceTax = userRequestData['service_tax'] ??
+      (userRequestData['type'] != null
+          ? userRequestData['type']['service_tax']
+          : 0);
+
+  var airportSurge = userRequestData['airport_surge_fee'] ?? 0;
 
   double base = double.tryParse(basePrice.toString()) ?? 0;
   double dPrice = double.tryParse(distPrice.toString()) ?? 0;
   double tPrice = double.tryParse(timePrice.toString()) ?? 0;
   double wPrice = double.tryParse(waitingPrice.toString()) ?? 0;
   double bDist = double.tryParse(baseDistance.toString()) ?? 0;
-  double bFee = double.tryParse(bookingFee.toString()) ?? 0;
   double cFee = double.tryParse(convFee.toString()) ?? 0;
+  int cType = int.tryParse(commisionType.toString()) ?? 0;
+  double sTax = double.tryParse(serviceTax.toString()) ?? 0;
+  double aSurge = double.tryParse(airportSurge.toString()) ?? 0;
 
-  double total;
+  bool isBidRide = userRequestData['is_bid_ride'] == 1 || userRequestData['is_bid_ride'] == true || userRequestData['is_bid_ride'] == '1';
+
+  double subTotal = 0;
+  double total = 0;
 
   if (tripStarted) {
     // Current distance from server
@@ -2542,9 +2554,6 @@ calculateRunningFare() {
     }
     
     // 2. In-Trip Wait (Recorded during movement/stops)
-    // We use 'calculated_waiting_time' from server which usually contains total 
-    // but we subtract the pre-trip part if the server is already tracking it there.
-    // However, if we trust the driver's 'waiting_time_after_start' field if available.
     double inTripWaitSecs = double.tryParse((userRequestData['waiting_time_after_start'] ?? 0).toString()) ?? 0;
     
     // Fallback: If inTripWaitSecs is 0, check if calculated_waiting_time has anything
@@ -2570,12 +2579,11 @@ calculateRunningFare() {
     debugPrint(
         '📍 [CALC_FARE] Trip: base=$base dist=$dist time=$time totalWaitMins=$totalWaitMins (pre=$billablePreWaitMins in=$billableInWaitMins)');
 
-    total = base +
+    subTotal = base +
         ((dist > bDist) ? ((dist - bDist) * dPrice) : 0) +
         (time * tPrice) +
         (totalWaitMins * wPrice) +
-        bFee +
-        cFee;
+        aSurge;
   } else if (driverArrived) {
     // Driver waiting before trip starts
     DateTime? arrivedTime = parseServerDate(userRequestData['raw_arrived_at'] ?? userRequestData['arrived_at']);
@@ -2593,12 +2601,22 @@ calculateRunningFare() {
     // Update global waitingTime for UI
     waitingTime = waitTimeSecs.toInt();
     
-    total = base + (billableWaitMins * wPrice) + bFee + cFee;
+    subTotal = base + (billableWaitMins * wPrice) + aSurge;
     debugPrint('📍 [CALC_FARE] Waiting: base=$base billableWaitMins=$billableWaitMins');
   } else {
     // Standard base + fees
-    total = base + bFee + cFee;
+    subTotal = base + aSurge;
   }
+  
+  double adminCommision = (cType == 1) ? (subTotal * (cFee / 100.0)) : cFee;
+  double taxAmount = subTotal * (sTax / 100.0);
+
+  if (isBidRide) {
+      subTotal -= adminCommision;
+      subTotal -= taxAmount;
+  }
+
+  total = subTotal + adminCommision + taxAmount;
 
   userRequestData['running_fare'] = total.toStringAsFixed(2);
   debugPrint('📍 [CALC_FARE] Result: ${userRequestData['running_fare']}');
